@@ -1,1 +1,8 @@
-{}
+{
+  "cssTheme": "Obsidianite",
+  "textFontFamily": "Google Sans",
+  "interfaceFontFamily": "Google Sans",
+  "enabledCssSnippets": [
+    "header-styles"
+  ]
+}

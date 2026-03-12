@@ -1,0 +1,17 @@
+/* Change header colors in Editing and Reading views */
+body {
+  --h1-color: #40E0D0;
+  --h2-color: #4093e0;
+  --h3-color: #8340e0;
+  --h4-color: #c540e0;
+  --h5-color: #F15BB5;
+  --h6-color: #e04070;
+}
+
+/* Additional classes for compatibility across themes/modes */
+.markdown-rendered h1, .cm-header-1 { color: var(--h1-color); }
+.markdown-rendered h2, .cm-header-2 { color: var(--h2-color); }
+.markdown-rendered h3, .cm-header-3 { color: var(--h3-color); }
+.markdown-rendered h4, .cm-header-4 { color: var(--h4-color); }
+.markdown-rendered h5, .cm-header-5 { color: var(--h5-color); }
+.markdown-rendered h6, .cm-header-6 { color: var(--h6-color); }
