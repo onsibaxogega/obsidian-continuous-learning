@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "fb988984c012c14a",
+        "id": "7bcfd545b167be91",
         "type": "tabs",
         "children": [
           {
-            "id": "a4168752b8d2e499",
+            "id": "77094fb3dc3b85de",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Certs/Azure/AZ-900/1) Cloud concepts.md",
+                "file": "Certs/Azure/AZ-900/2) Azure architecture and services.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1) Cloud concepts"
+              "title": "2) Azure architecture and services"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#manageability",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 348.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Certs/Azure/AZ-900/1) Cloud concepts.md",
+                "file": "Certs/Azure/AZ-900/2) Azure architecture and services.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1) Cloud concepts"
+              "title": "Outline of 2) Azure architecture and services"
             }
           }
         ],
@@ -170,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 356.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,20 +180,25 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "markdown-importer:Open format converter": false
     }
   },
-  "active": "a4168752b8d2e499",
+  "active": "77094fb3dc3b85de",
   "lastOpenFiles": [
     "Untitled.md",
+    "Certs/Azure/AZ-900/2) Azure architecture and services.md",
+    "README.md",
+    "Certs/Azure/AZ-900/_Overview.md",
+    "sdffsdasf.md",
+    "Certs/Azure/_Overview.md",
+    "Certs/Azure/_readme.md",
     "Certs/Azure/AZ-900/1) Cloud concepts.md",
+    "Pasted image 20260313115538.png",
+    "Pasted image 20260313115550.png",
+    "Certs/Azure/AZ-900/3) Azure management and governance.md",
     "Pasted image 20260312231200.png",
     "Untitled.base",
-    "Certs/Azure/AZ-900/_overview.md",
-    "Certs/Azure/AZ-900/2) Azure architecture and services.md",
-    "Certs/Azure/AZ-900/3) Azure management and governance.md",
-    "README.md",
-    "Certs/Azure/_readme.md",
     "Untitled.canvas",
     "Certs/Azure/AZ-900",
     "Certs/Azure",

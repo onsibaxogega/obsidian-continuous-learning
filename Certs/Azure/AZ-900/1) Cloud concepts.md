@@ -1,5 +1,5 @@
-- **Modules:**
-
+- 52 min
+- 3 modules
 ---
 
 # M1: Describe cloud computing
@@ -160,7 +160,7 @@ After completing this module, you’ll be able to:
 - **Vertical Scaling (Scaling Up / Down):**
     - Focuses on increasing or decreasing the _capabilities_ of a resource.
     - _Example:_ Adding more processing power (CPUs or RAM) to a single virtual machine (scaling up), or lowering the specifications if you over-specified your needs (scaling down).
-    
+
 - **Horizontal Scaling (Scaling Out / In):**
     - Focuses on adding or subtracting the _number_ of resources.
     - _Example:_ Adding additional virtual machines or containers during a steep jump in demand (scaling out), or removing them when demand drops (scaling in). This can be configured to happen either automatically or manually.
@@ -182,7 +182,6 @@ After completing this module, you’ll be able to:
 
 - Predictability is also heavily influenced by the `Microsoft Azure Well-Architected Framework`.
 - It is generally categorized into two main focuses: performance predictability and cost predictability.
-- 
 #### Performance Predictability
 
 - **Definition:** Predicting the resources needed to deliver a positive experience for your customers.
@@ -198,31 +197,133 @@ After completing this module, you’ll be able to:
 - **Tools:** You can use Azure tools like the `Total Cost of Ownership (TCO)` or the `Pricing Calculator` to get an estimate of potential cloud spend before deploying.
 
 
-----> continue from here:
+
 ## U4: Describe the benefits of security and governance in the cloud
 
 - By establishing a good governance footprint early, you can keep your cloud footprint updated, secure, and well-managed.
-    
 
 ### Governance & Compliance
 
 - Cloud features naturally support governance and compliance, whether you are deploying infrastructure as a service or software as a service.
-    
 - **Templates:** Set templates help ensure that all your deployed resources meet corporate standards and government regulatory requirements.
-    
-    - As standards change, you can update all your deployed resources to align with the new standards.
-        
+	- As standards change, you can update all your deployed resources to align with the new standards.
 - **Cloud-based auditing:** Helps flag any resource that is out of compliance with your corporate standards and provides mitigation strategies.
-    
 - Depending on your operating model, software patches and updates may automatically be applied, which aids both governance and security.
-    
 
 ### Security
 
 - You can find a cloud solution that matches your specific security needs by choosing the right service model:
-    
     - **IaaS (Infrastructure as a Service):** Best for maximum control. Provides physical resources but lets you manage the operating systems and installed software, including patches and maintenance.
-        
     - **PaaS (Platform as a Service) / SaaS (Software as a Service):** Best if you want patches and maintenance taken care of automatically.
-        
 - **DDoS Protection:** Because the cloud is built for the over-the-internet delivery of IT resources, cloud providers are inherently well-suited to handle `distributed denial of service (DDoS) attacks`, making your network more robust and secure.
+
+
+## U5: Describe the benefits of manageability in the cloud
+
+- 2 types of manageability for cloud:
+### Management of the cloud
+
+- **Management of the cloud** speaks to managing your cloud resources.
+- In the cloud, you can:
+	- Automatically scale resource deployment based on need.
+	- Deploy resources based on a preconfigured template, removing the need for manual configuration.
+	- Monitor the health of resources and automatically replace failing resources.
+	- Receive automatic alerts based on configured metrics, so you’re aware of performance in real time.
+
+### Management in the cloud
+
+- **Management in the cloud** speaks to how you’re able to manage your cloud environment and resources.
+- i.e., `mechanisms to conduct "management of the cloud"`. These include:
+	- Through a web portal.
+	- Using a command line interface.
+	- Using APIs.
+	- Using PowerShell.
+
+---
+
+
+
+
+# M3: Describe cloud service types
+
+
+## U1: Introduction
+
+### Learning objectives
+
+- After completing this module, you’ll be able to:
+	- Describe infrastructure as a service (IaaS).
+	- Describe platform as a service (PaaS).
+	- Describe software as a service (SaaS).
+	- Identify appropriate use cases for each cloud service (IaaS, PaaS, SaaS).
+
+
+
+## U2: Describe Infrastructure as a Service
+
+- With IaaS, you’re essentially renting the hardware in a cloud datacenter, but what you do with that hardware is up to you.
+### The cloud provider is responsible for maintaining:
+- the hardware, 
+- network connectivity (to the internet), 
+- and physical security.
+### You’re responsible for everything else: 
+- operating system installation, configuration, and maintenance; 
+- network configuration;
+- database and storage configuration; 
+- ... and so on.
+
+### Some common scenarios where IaaS might make sense include:
+
+#### Lift-and-shift migration:
+- You’re setting up cloud resources similar to your on-prem datacenter, and then simply moving the things running on-prem to running on the IaaS infrastructure.
+#### Testing and development: 
+- You have established configurations for development and test environments that you need to rapidly replicate.
+	- You can start up or shut down the different environments rapidly with an IaaS structure, while maintaining complete control.
+
+
+
+
+## U3: Describe Platform as a Service
+
+- Platform as a service (PaaS) is a middle ground between renting space in a datacenter (infrastructure as a service) and paying for a complete and deployed solution (software as a service). 
+- It is well suited to `provide a complete development environment without the headache of maintaining all the development infrastructure.`
+- ### In a PaaS environment, the cloud provider maintains:
+	- the physical infrastructure,
+	- physical security,
+	- and connection to the internet,
+	- the operating systems, 
+	- middleware, development tools, 
+	- and business intelligence services that make up a cloud solution. 
+- In a PaaS scenario, you don't have to worry about the licensing or patching for operating systems and databases.
+- Depending on the configuration, you or the cloud provider may be responsible for **networking settings and connectivity within your cloud environment, network and application security, and the directory infrastructure.**
+
+### Scenarios
+
+- Some common scenarios where PaaS might make sense include:
+
+#### Development framework: 
+- PaaS **provides a framework that developers can build upon to develop or customize cloud-based applications.**
+- Cloud features such as scalability, high-availability, and multi-tenant capability are included, reducing the amount of coding that developers must do.
+#### Analytics or business intelligence: 
+- **Tools provided as a service with PaaS allow organizations to analyze and mine their data,** finding insights and patterns and predicting outcomes to improve forecasting, product design decisions, investment returns, and other business decisions.
+
+
+
+
+## U4: Describe Software as a Service
+
+- With SaaS, you’re essentially renting or using a fully developed application.
+- **Examples:**
+	- email, 
+	- financial software, 
+	- messaging applications,
+	- and connectivity software
+
+- While the SaaS model may be the least flexible, it’s also the easiest to get up and running. It requires the least amount of technical knowledge or expertise to fully employ.
+- ### In a SaaS environment you’re responsible for:
+	- the data that you put into the system,
+	- the devices that you allow to connect to the system,
+	- and the users that have access.
+- Nearly everything else falls to the cloud provider
+
+---
