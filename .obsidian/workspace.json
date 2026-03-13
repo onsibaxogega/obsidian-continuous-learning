@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4a08de857bf63c49",
+        "id": "fb988984c012c14a",
         "type": "tabs",
         "children": [
           {
-            "id": "f23affdb163cef56",
+            "id": "a4168752b8d2e499",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Cloud_computing",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -112,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Certs/Azure/AZ-900/1) Cloud concepts.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from 1) Cloud concepts"
             }
           },
           {
@@ -155,21 +156,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "Certs/Azure/AZ-900/1) Cloud concepts.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of 1) Cloud concepts"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,14 +183,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "f23affdb163cef56",
+  "active": "a4168752b8d2e499",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Certs/Azure/AZ-900/1) Cloud concepts.md",
+    "Pasted image 20260312231200.png",
+    "Untitled.base",
+    "Certs/Azure/AZ-900/_overview.md",
     "Certs/Azure/AZ-900/2) Azure architecture and services.md",
     "Certs/Azure/AZ-900/3) Azure management and governance.md",
-    "Certs/Azure/AZ-900/1) Cloud concepts.md",
     "README.md",
     "Certs/Azure/_readme.md",
-    "Certs/Azure/AZ-900/_overview.md",
+    "Untitled.canvas",
     "Certs/Azure/AZ-900",
     "Certs/Azure",
     "Certs",

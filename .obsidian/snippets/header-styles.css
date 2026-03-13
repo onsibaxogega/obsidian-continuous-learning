@@ -1,11 +1,11 @@
 /* Change header colors in Editing and Reading views */
 body {
-  --h1-color: #40E0D0;
-  --h2-color: #4093e0;
-  --h3-color: #8340e0;
-  --h4-color: #c540e0;
-  --h5-color: #F15BB5;
-  --h6-color: #e04070;
+  --h1-color: #F15BB5;
+  --h2-color: #40E0D0;
+  --h3-color: #c540e0;
+  --h4-color: #4093e0;
+  --h5-color: #e04070;
+  --h6-color: #8340e0;
 }
 
 /* Additional classes for compatibility across themes/modes */

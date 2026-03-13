@@ -1,0 +1,51 @@
+/* --------------------------------------
+   READING VIEW (Rendered Markdown)
+-------------------------------------- */
+.markdown-rendered ul {
+  list-style-type: disc !important;
+}
+
+.markdown-rendered ul ul {
+  list-style-type: circle !important;
+}
+
+.markdown-rendered ul ul ul {
+  list-style-type: square !important;
+}
+
+/* --------------------------------------
+   EDITING VIEW (Live Preview)
+-------------------------------------- */
+/* Hide default Obsidian drawn bullets */
+.cm-line:not(.cm-active) .list-bullet::after,
+.cm-active .list-bullet::after {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* First level bullet point (Disc) */
+.cm-list-1 .list-bullet::after {
+  content: "💠";
+  font-size: 0.75rem;
+  line-height: 0.5;
+  margin-right: 2rem;
+  color: var(--text-normal);
+}
+
+/* Second level bullet point (Circle) */
+.cm-list-2 .list-bullet::after {
+  content: "❄️";
+  font-size: 0.75rem;
+  line-height: 0.5;
+  margin-right: 2rem;
+  color: var(--text-normal);
+}
+
+/* Third level bullet point (Square) */
+.cm-list-3 .list-bullet::after {
+  content: "🧊";
+  font-size: 0.65rem;
+  line-height: 0.5;
+  margin-right: 2rem;
+  color: var(--text-normal);
+}

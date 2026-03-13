@@ -3,6 +3,7 @@
   "textFontFamily": "Google Sans",
   "interfaceFontFamily": "Google Sans",
   "enabledCssSnippets": [
-    "header-styles"
+    "header-styles",
+    "ul-styles"
   ]
 }
