@@ -1,6 +1,6 @@
 {
   "cssTheme": "Obsidianite",
-  "textFontFamily": "Goo",
+  "textFontFamily": "Google Sans",
   "interfaceFontFamily": "Google Sans",
   "enabledCssSnippets": [
     "header-styles",

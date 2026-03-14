@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 229.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -174,17 +174,27 @@
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
             }
+          },
+          {
+            "id": "e8adec4b225f3d5c",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "markdown-importer:Open format converter": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -198,16 +208,16 @@
   },
   "active": "a4168752b8d2e499",
   "lastOpenFiles": [
+    "Certs/Azure/AZ-900/_overview.md",
+    "Certs/Azure/AZ-900/2) Azure architecture and services.md",
+    "Certs/Azure/_Overview.md",
+    "README.md",
     "Certs/Azure/AZ-900/3) Azure management and governance.md",
     "Certs/Azure/AZ-900/1) Cloud concepts.md",
-    "Certs/Azure/AZ-900/_overview.md",
     "Certs/Azure/_readme.md",
-    "Certs/Azure/_Overview.md",
-    "Certs/Azure/AZ-900/2) Azure architecture and services.md",
     "Untitled.md",
     "Pasted image 20260312231200.png",
     "Untitled.base",
-    "README.md",
     "Untitled.canvas",
     "Certs/Azure/AZ-900",
     "Certs/Azure",
