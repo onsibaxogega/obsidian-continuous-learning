@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7bcfd545b167be91",
+        "id": "fb988984c012c14a",
         "type": "tabs",
         "children": [
           {
-            "id": "77094fb3dc3b85de",
+            "id": "a4168752b8d2e499",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#manageability",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 348.5
+    "width": 300
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -164,13 +164,24 @@
               "icon": "lucide-list",
               "title": "Outline of 2) Azure architecture and services"
             }
+          },
+          {
+            "id": "c2e0f3fe507e53a9",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 356.5
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,24 +192,22 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "markdown-importer:Open format converter": false
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "quiz-generator:Open generator": false
     }
   },
-  "active": "77094fb3dc3b85de",
+  "active": "a4168752b8d2e499",
   "lastOpenFiles": [
-    "Untitled.md",
-    "Certs/Azure/AZ-900/2) Azure architecture and services.md",
-    "README.md",
-    "Certs/Azure/AZ-900/_Overview.md",
-    "sdffsdasf.md",
-    "Certs/Azure/_Overview.md",
-    "Certs/Azure/_readme.md",
-    "Certs/Azure/AZ-900/1) Cloud concepts.md",
-    "Pasted image 20260313115538.png",
-    "Pasted image 20260313115550.png",
     "Certs/Azure/AZ-900/3) Azure management and governance.md",
+    "Certs/Azure/AZ-900/1) Cloud concepts.md",
+    "Certs/Azure/AZ-900/_overview.md",
+    "Certs/Azure/_readme.md",
+    "Certs/Azure/_Overview.md",
+    "Certs/Azure/AZ-900/2) Azure architecture and services.md",
+    "Untitled.md",
     "Pasted image 20260312231200.png",
     "Untitled.base",
+    "README.md",
     "Untitled.canvas",
     "Certs/Azure/AZ-900",
     "Certs/Azure",
