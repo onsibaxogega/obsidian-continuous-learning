@@ -115,9 +115,9 @@
 
 ### Availability Zones
 
-> #availability_zones are *physically separate datacenters within an Azure region*. 
+>An #availability_zone is a *physically separate datacenter (or group of datacenters) within an Azure region*
 > 	Each availability zone is made up of `one or more datacenters` equipped with `independent power, cooling, and networking.`
-> 	 **`An availability zone is set up to be an isolation boundary. If one zone goes down, the other continues working.`** 
+> 	 **`An availability zone is set up to be an `isolation boundary`. If one zone goes down, the other continues working.`** 
 
 - Availability zones (within the same region?) are `connected through high-speed, private fiber-optic networks.` :
 	- ![Diagram showing three datacenters connected in a single Azure region representing an availability zone.](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/availability-zones-c22f95a3-14cd8677.png)
@@ -261,17 +261,25 @@
 
 ### Management group, subscriptions, and resource group hierarchy
 
-- You can build a flexible structure of management groups and subscriptions to organize your resources into a hierarchy for unified policy and access management. The following diagram shows an example of creating a hierarchy for governance by using management groups.
+- You can build a `flexible structure of management groups and subscriptions` to organize your resources into a `hierarchy for unified policy and access management.` The following diagram shows an example of creating a hierarchy for governance by using management groups.
 
 ![Diagram showing an example of a management group hierarchy tree.](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/management-groups-subscriptions-dfd5a108-60f31f5a.png)
 
-Some examples of how you could use management groups might be:
+#### Examples of hierarchy organization
 
-- **Create a hierarchy that applies a policy**. You could limit VM locations to the US West Region in a group called Production. This policy will inherit onto all the subscriptions that are descendants of that management group and will apply to all VMs under those subscriptions. This security policy can't be altered by the resource or subscription owner, which allows for improved governance.
-- **Provide user access to multiple subscriptions**. By moving multiple subscriptions under a management group, you can create one Azure role-based access control (Azure RBAC) assignment on the management group. Assigning Azure RBAC at the management group level means that all sub-management groups, subscriptions, resource groups, and resources underneath that management group would also inherit those permissions. One assignment on the management group can enable users to have access to everything they need instead of scripting Azure RBAC over different subscriptions.
+- **Create a hierarchy that applies a policy**. 
+	- You could limit VM locations to the US West Region in a management group called "Production". 
+		- This policy will inherit onto all the subscriptions that are descendants of that management group and will apply to all VMs under those subscriptions. 
+			- This security policy can't be altered by the resource or subscription owner, which allows for improved governance.
+- **Provide user access to multiple subscriptions**. 
+	- By moving multiple subscriptions under a management group, `you can create one Azure role-based access control (Azure RBAC) assignment on the management group. `
+		- Assigning Azure `RBAC at the management group level means that all sub-management groups, subscriptions, resource groups, and resources underneath that management group would also inherit those permissions.` 
+			- One assignment on the management group can enable users to have access to everything they need instead of scripting Azure RBAC over different subscriptions.
 
-Important facts about management groups:
 
-- 10,000 management groups can be supported in a single directory.
-- A management group tree can support up to six levels of depth. This limit doesn't include the root level or the subscription level.
-- Each management group and subscription can support only one parent.
+####  **Important facts about management groups:**
+
+> 	 10,000 management groups can be supported in a single directory.
+> 	A management group tree can support up to six levels of depth. This limit doesn't include the root level or the subscription level.
+> 	Each management group and subscription can support only one parent.
+
