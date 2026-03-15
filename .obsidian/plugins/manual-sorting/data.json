@@ -1,0 +1,46 @@
+{
+  "customOrder": {
+    "/": {
+      "children": [
+        "Certs",
+        "README.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Certs": {
+      "children": [
+        "Certs/Azure"
+      ],
+      "sortOrder": "custom"
+    },
+    "Certs/Azure": {
+      "children": [
+        "Certs/Azure/Overview.md",
+        "Certs/Azure/AZ-900",
+        "Certs/Azure/AI-900.md",
+        "Certs/Azure/AI-103.md",
+        "Certs/Azure/AI-200.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Certs/Azure/AZ-900": {
+      "children": [
+        "Certs/Azure/AZ-900/Overview.md",
+        "Certs/Azure/AZ-900/1) Cloud concepts.md",
+        "Certs/Azure/AZ-900/2) Azure architecture and services",
+        "Certs/Azure/AZ-900/3) Azure management and governance.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Certs/Azure/AZ-900/2) Azure architecture and services": {
+      "children": [
+        "Certs/Azure/AZ-900/2) Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
+        "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md"
+      ],
+      "sortOrder": "custom"
+    }
+  },
+  "sortOrder": "custom",
+  "debugMode": false,
+  "newItemPlacement": "top"
+}

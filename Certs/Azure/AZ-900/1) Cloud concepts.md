@@ -1,7 +1,3 @@
-- 52 min
-- 3 modules
----
-
 # M1: Describe cloud computing
 
 ## U1: Introduction to Microsoft Azure Fundamentals

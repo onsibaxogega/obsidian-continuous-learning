@@ -8,9 +8,9 @@
 - **Format:** The exam is closed-book
 - **Passing Score:** 700/1000 : `70%`
 
-|**AZ-900 Domain Area**|**Weight**|
-|---|---|
-|Describe cloud concepts|25-30%|
-|Describe Azure architecture and services|35-40%|
-|Describe Azure management and governance|30-35%|
+| **AZ-900 Domain Area**                   | **Weight** | **Length**   | **Modules** |
+| ---------------------------------------- | ---------- | ------------ | ----------- |
+| Describe cloud concepts                  | 25-30%     | 52 min       | 3           |
+| Describe Azure architecture and services | 35-40%     | 3 hr. 25 min | 4           |
+| Describe Azure management and governance | 30-35%     | 1 hr 42 min  | 4           |
 
