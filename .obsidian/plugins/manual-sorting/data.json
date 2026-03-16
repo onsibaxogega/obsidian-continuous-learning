@@ -36,7 +36,9 @@
     "Certs/Azure/AZ-900/2) Azure architecture and services": {
       "children": [
         "Certs/Azure/AZ-900/2) Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
-        "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md"
+        "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md",
+        "Certs/Azure/AZ-900/2) Azure architecture and services/M3 - Describe Azure storage services.md",
+        "Certs/Azure/AZ-900/2) Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
       ],
       "sortOrder": "custom"
     },

@@ -1,8 +1,8 @@
 
 ### Quick Links
 
-- https://techcommunity.microsoft.com/blog/skills-hub-blog/the-ai-job-boom-is-here-are-you-ready-to-showcase-your-skills/4494128
-
+- [Msft blogpost about retiring certs](https://techcommunity.microsoft.com/blog/skills-hub-blog/the-ai-job-boom-is-here-are-you-ready-to-showcase-your-skills/4494128)
+- [Enterprise Skills Initiative (ITSD, ASU)](https://esi.microsoft.com/landing)
 
 # Learning Material Organization Hierarchy
 

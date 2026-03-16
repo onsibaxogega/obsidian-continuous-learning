@@ -1,5 +1,6 @@
 
-- Course: [AZ-900T00-A: Introduction to Cloud Infrastructure](https://learn.microsoft.com/en-us/training/courses/az-900t00)
+- Course: AZ-900T00-A: Introduction to Cloud Infrastructure
+- [link to course/info](https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification)
 - [Unofficial PDF version](https://softwarearchitect.ca/wp-content/uploads/2023/08/AZ-900-Official-Course-Study-Guide-v2.0.pdf) (may have variations / be outdated)
 # Key Details for AZ-900:
 - **Total Questions:** Generally 35–60
