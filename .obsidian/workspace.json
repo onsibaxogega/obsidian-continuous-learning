@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fb988984c012c14a",
+        "id": "dfd4e725bb16ef56",
         "type": "tabs",
         "children": [
           {
-            "id": "9187f9202119b486",
+            "id": "6b52e465924d3745",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5
+    "width": 470.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -206,15 +206,23 @@
       "quiz-generator:Open generator": false
     }
   },
-  "active": "9187f9202119b486",
+  "active": "6b52e465924d3745",
   "lastOpenFiles": [
+    "().md",
+    "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md",
+    "peering.md",
+    "README.md",
+    "Knowledge Cache/Bash Scripting/Common Commands.md",
+    "Knowledge Cache/Bash Scripting/Fundamentals.md",
+    "Knowledge Cache/Bash Scripting",
+    "Knowledge Cache/Design Patterns/Observer Pattern.md",
+    "Knowledge Cache/Design Patterns",
+    "Knowledge Cache",
+    "Certs/Azure/AZ-900/Overview.md",
     "Certs/Azure/AI-900.md",
     "Certs/Azure/Overview.md",
     "Certs/Azure/AI-103.md",
     "Certs/Azure/AI-200.md",
-    "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md",
-    "Certs/Azure/AZ-900/Overview.md",
-    "README.md",
     "Certs/Azure/AZ-900/3) Azure management and governance.md",
     "Certs/Azure/_readme.md",
     "Certs/Azure/AZ-900/2) Azure architecture and services/M1 - Describe the core architectural components of Azure.md",

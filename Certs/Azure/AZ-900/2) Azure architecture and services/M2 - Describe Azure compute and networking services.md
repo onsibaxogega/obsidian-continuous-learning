@@ -13,7 +13,7 @@
 	- [ ] Describe application `hosting options`, including `Azure Web Apps, containers, and virtual machines.`
 	- [ ] Describe `virtual networking`, including the purpose of Azure Virtual Networks, Azure virtual subnets, peering, Azure DNS, VPN Gateway, and ExpressRoute.
 	- [ ] Define `public and private endpoints`.
-
+---
 
 # U2: Describe Azure virtual machines
 
@@ -97,7 +97,7 @@
 	- **Storage disks** (hard disk drives, solid state drives, etc.)
 	- **Networking** (virtual network, public IP address, and port configuration)
 
-
+---
 
 
 
@@ -120,7 +120,7 @@
 - Azure Virtual Desktop lets you use `Windows 10 or Windows 11 Enterprise multi-session`, 
 	- the only Windows client-based operating system that enables multiple concurrent users on a single VM. 
 - Azure Virtual Desktop also provides a more consistent experience with broader application support compared to Windows Server-based operating systems.
-
+---
 
 
 
@@ -178,6 +178,7 @@
 - Containers are `often used to create solutions using a microservice architecture`. 
 	- For example, you might split a website into a container hosting your front end, another hosting your back end, and a third for storage. 
 		- This split allows you to separate portions of your app into logical sections that can be maintained, scaled, or updated independently.
+---
 
 
 # U6: Describe Azure functions
@@ -198,7 +199,7 @@
 	- _Stateless (Default):_ Restarts completely fresh for every single event.
     - _Stateful (Durable Functions):_ Passes context through the function to track prior activity and build complex workflows.
 - **Deployment Portability:** Can be moved out of the serverless environment if needed, allowing for custom scaling, Virtual Network integration, or strict hardware isolation.
-
+---
 
 
 # U7: Describe application hosting options
@@ -261,3 +262,158 @@
 	- Send push notifications.
 	- Execute custom back-end logic in C# or Node.js.
 - On the mobile app side, there's SDK support for native iOS and Android, Xamarin, and React native apps.
+---
+
+
+
+# U8: Describe Azure virtual networking
+
+> #Azure_Virtual_Network (VNet) is the fundamental building block for *your private network in the cloud,* providing a *logically isolated environment* that enables *Azure resources*—like virtual machines—to securely communicate with *each other, the internet, and your on-premises infrastructure.*
+
+-  Azure virtual networking `supports both public and private endpoints` to enable communication` between external or internal resources with other internal resources`.
+	- Public endpoints have a public IP address and can be accessed from anywhere in the world.
+	- Private endpoints exist within a virtual network and have a private IP address from within the address space of that virtual network.
+ 
+ 
+ ## Azure virtual networks provide the following key networking capabilities
+ 
+- Isolation and segmentation
+- Internet communications
+- Communicate between Azure resources
+- Communicate with on-premises resources
+- Route network traffic
+- Filter network traffic
+- Connect virtual networks
+
+
+### Isolation & Segmentation
+
+- An Azure virtual network creates an isolated, private IP address space (non-internet routable). You can divide this space into `subnets` and resolve names using Azure's built-in DNS or custom internal/external DNS servers
+
+### Internet Communications
+
+- Enabled by assigning a `public IP address directly to a resource` or placing it behind a `public load balancer`.
+### Azure Resource Communication
+
+- VNets connect compute resources directly (e.g., VMs, AKS). 
+- #Service_endpoints provide secure, optimal *routing from a VNet to other managed Azure resources* like SQL databases and storage accounts.
+
+### On-Premises Communication
+
+- #Point-to-site_VPN: An encrypted connection *from an individual external client computer into the Azure VNet*.
+- #Site-to-site_VPN: An encrypted connection over the public internet *linking an on-premises VPN device/gateway to an Azure VPN gateway*.
+- #Azure_ExpressRoute: A dedicated, *highly secure private connection to Azure that completely bypasses the public interne*t.
+
+### Traffic Routing
+
+- Azure routes traffic automatically by default. You can override this using:
+	- #Route_tables: Custom rules that dictate how packets are routed between specific subnets.
+	- #Border_Gateway_Protocol (BGP): Propagates your on-premises routing tables to your Azure VNets via VPN or ExpressRoute.
+
+### Traffic Filtering
+
+- #Network_security_groups (NSGs): Resources containing *inbound/outbound security rules* that allow or block traffic based on IP address, port, and protocol.
+- #Network_virtual_appliances (NVAs): *Specialized VMs that function as hardened network hardware, such as firewalls* or WAN optimizers.
+
+### Connecting VNets
+
+- #Virtual_network_peering: Connects two VNets (even across global regions) directly over the private Microsoft backbone network, keeping traffic off the public internet.
+- #User-defined_routes (UDR): Custom routing rules giving you granular control over traffic flow between subnets or peered VNets.
+---
+
+
+# U9: Exercise for this section
+
+- Demonstrates the end-to-end process of deploying a Linux web server using the Azure CLI and modifying its network boundary to allow public internet traffic.
+## Core Concepts Demonstrated
+
+- **Resource groups:** Used as a logical container to provision, manage, and eventually delete the compute and network resources as a single lifecycle unit.
+- **Virtual machines:** Provisioning a standard Ubuntu Linux compute instance using command-line parameters.
+- **Custom Script Extension:** Used to automate post-deployment configuration by executing a remote Bash script to install the Nginx web server software without manually SSHing into the machine.
+- **Network security groups (NSGs):** Demonstrated that Azure's default security posture for Linux VMs only allows inbound SSH (Port 22) traffic, causing initial HTTP requests to the web server to time out.
+- **Inbound security rules:** Created a new firewall rule with a high priority to explicitly allow TCP traffic on Port 80, successfully exposing the web server to the public internet.
+- **Resource cleanup:** Highlighted the best practice of deleting the root resource group to instantly deallocate and destroy all nested resources, preventing unexpected billing charges.
+---
+
+
+# U10: Describe Azure virtual private networks
+
+## Virtual Private Networks
+
+- A #Virtual_private_network (VPN) establishes an encrypted tunnel over an untrusted network (the public internet) to securely connect trusted private networks.
+
+## VPN Gateways
+
+- A #VPN_gateway is a specific virtual network gateway deployed into a dedicated subnet to handle encrypted internet transit.
+- Supported topologies include:
+	- Site-to-site (on-premises datacenter to VNet),
+	- Point-to-site (individual device to VNet), 
+	- and Network-to-network (VNet to VNet).
+- A VNet is strictly limited to one VPN gateway, but that single gateway can multiplex connections to multiple locations.
+- All VPN gateway types in Azure use pre-shared keys for authentication.
+
+### VPN Gateway Types
+
+- A #Policy-based_VPN evaluates every packet against statically defined IP address sets to determine the appropriate encryption tunnel.
+- A #Route-based_VPN models IPSec tunnels as network interfaces and relies on standard IP routing (static routes or dynamic protocols) to direct packets.
+	- `Route-based is the modern standard, handles topology changes better,` and is strictly required for VNet-to-VNet, Point-to-site, multisite connections, and ExpressRoute coexistence.
+
+## High-Availability Configurations
+
+- #Active/standby_configuration is the default deployment state, utilizing two background instances where the standby takes over during maintenance (seconds of downtime) or unexpected disruption (~90 seconds of downtime).
+- #Active/active_configuration leverages the BGP routing protocol to assign unique public IPs to both instances, maintaining separate, concurrent tunnels to your on-premises hardware.
+- #ExpressRoute_failover utilizes a VPN gateway over the public internet as an automatic backup path if your dedicated, physical ExpressRoute circuit drops.
+- #Zone-redundant_gateways distribute the gateway infrastructure physically and logically across Azure Availability Zones to survive datacenter-level outages (requires specific SKUs and Standard public IPs).
+---
+
+
+
+# U11: Describe Azure ExpressRoute
+
+> An #Azure_ExpressRoute circuit *extends on-premises networks into the Microsoft cloud over a private connection* via a connectivity provider, completely *bypassing the public internet.*
+
+
+## Features & Benefits
+
+* Grants direct, private access to Microsoft services (Azure compute/storage, Office 365, Dynamics 365).
+* #ExpressRoute_Global_Reach: Links multiple ExpressRoute circuits together, allowing your global on-premises facilities to communicate privately across the Microsoft backbone.
+* Leverages BGP to handle dynamic routing between your network and Microsoft.
+* Each connectivity provider uses redundant devices to ensure that connections established with Microsoft are highly available. You can configure multiple circuits to complement this feature.
+
+## Connectivity Models
+
+* #CloudExchange_colocation: 
+	- refers to your datacenter, office, or other facility being physically colocated at a cloud exchange, such as an ISP.
+	- If your facility is colocated at a cloud exchange, you can request a virtual cross-connect to the Microsoft cloud.
+* #Point-to-point_Ethernet: A dedicated point-to-point connection linking your physical facility to Azure.
+* #Any-to-any_connection: Integrates Azure directly into your existing IP VPN/WAN, routing to the cloud environment exactly like another branch office.
+* #ExpressRoute_Direct: Connects directly into Microsoft's global peering edge via dual 10 Gbps or 100 Gbps ports to support massive Active/Active scale.
+
+### Security Considerations
+* Core data payload is physically isolated from the public internet, reducing the attack surface.
+* Critical exception: DNS queries, certificate revocation list (CRL) checks, and Azure Content Delivery Network (CDN) requests will still resolve over the public internet, even with an active ExpressRoute circuit.
+---
+
+
+# U12: Describe Azure DNS
+
+> #Azure_DNS is a *hosting service for DNS domains* that provides name resolution utilizing Microsoft's global infrastructure.
+
+> `Note`: 
+> 	Azure DNS is strictly a hosting and record management service; it cannot be used as a domain registrar to purchase new domain names.
+
+
+## Reliability & Performance
+* Utilizes #Anycast_networking across a global network of name servers, automatically routing queries to the closest available server for low latency and high availability.
+## Security
+* Integrates with Azure Resource Manager to natively support #Azure_RBAC for granular access control.
+* Utilizes #Activity_logs for auditing and #Resource_locking to prevent accidental modification or deletion of critical DNS infrastructure.
+## Management & Integration
+* Manages DNS records for both internal Azure services and external resources via the Azure Portal, CLI, PowerShell, REST APIs, or SDKs using unified Azure credentials and billing.
+
+## Private Domains
+* Supports #Private_DNS_domains, allowing you to resolve custom domain names within your private virtual networks instead of relying on default Azure-provided names.
+
+## Alias Records
+* Uses #Alias_record_sets to map DNS names directly to underlying Azure resources (e.g., Public IPs, Traffic Manager profiles, CDN endpoints).
+* Dynamically and seamlessly updates DNS resolution if the associated Azure resource's IP address changes behind the scenes.

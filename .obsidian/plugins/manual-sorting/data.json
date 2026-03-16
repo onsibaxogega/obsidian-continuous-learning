@@ -2,8 +2,9 @@
   "customOrder": {
     "/": {
       "children": [
-        "Certs",
-        "README.md"
+        "README.md",
+        "Knowledge Cache",
+        "Certs"
       ],
       "sortOrder": "custom"
     },
@@ -36,6 +37,19 @@
       "children": [
         "Certs/Azure/AZ-900/2) Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
         "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Knowledge Cache": {
+      "children": [
+        "Knowledge Cache/Bash Scripting"
+      ],
+      "sortOrder": "custom"
+    },
+    "Knowledge Cache/Bash Scripting": {
+      "children": [
+        "Knowledge Cache/Bash Scripting/Fundamentals.md",
+        "Knowledge Cache/Bash Scripting/Common Commands.md"
       ],
       "sortOrder": "custom"
     }
