@@ -29,7 +29,8 @@
         "Certs/Azure/AZ-900/Overview.md",
         "Certs/Azure/AZ-900/1) Cloud concepts.md",
         "Certs/Azure/AZ-900/2) Azure architecture and services",
-        "Certs/Azure/AZ-900/3) Azure management and governance.md"
+        "Certs/Azure/AZ-900/3) Azure management and governance.md",
+        "Certs/Azure/AZ-900/Quizzes"
       ],
       "sortOrder": "custom"
     },
@@ -39,6 +40,12 @@
         "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md",
         "Certs/Azure/AZ-900/2) Azure architecture and services/M3 - Describe Azure storage services.md",
         "Certs/Azure/AZ-900/2) Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Certs/Azure/AZ-900/Quizzes": {
+      "children": [
+        "Certs/Azure/AZ-900/Quizzes/Quiz 1 - LP2_M1-M2.md"
       ],
       "sortOrder": "custom"
     },
