@@ -17,29 +17,35 @@
     "Certs/Azure": {
       "children": [
         "Certs/Azure/Overview.md",
-        "Certs/Azure/AZ-900",
         "Certs/Azure/AI-900.md",
         "Certs/Azure/AI-103.md",
-        "Certs/Azure/AI-200.md"
+        "Certs/Azure/AI-200.md",
+        "Certs/Azure/AZ-900"
       ],
       "sortOrder": "custom"
     },
     "Certs/Azure/AZ-900": {
       "children": [
         "Certs/Azure/AZ-900/Overview.md",
-        "Certs/Azure/AZ-900/1) Cloud concepts.md",
-        "Certs/Azure/AZ-900/2) Azure architecture and services",
-        "Certs/Azure/AZ-900/3) Azure management and governance.md",
+        "Certs/Azure/AZ-900/LP1 - Cloud concepts.md",
+        "Certs/Azure/AZ-900/LP2 - Azure architecture and services",
+        "Certs/Azure/AZ-900/LP3 - Azure management and governance",
         "Certs/Azure/AZ-900/Quizzes"
       ],
       "sortOrder": "custom"
     },
-    "Certs/Azure/AZ-900/2) Azure architecture and services": {
+    "Certs/Azure/AZ-900/LP2 - Azure architecture and services": {
       "children": [
-        "Certs/Azure/AZ-900/2) Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
-        "Certs/Azure/AZ-900/2) Azure architecture and services/M2 - Describe Azure compute and networking services.md",
-        "Certs/Azure/AZ-900/2) Azure architecture and services/M3 - Describe Azure storage services.md",
-        "Certs/Azure/AZ-900/2) Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
+        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
+        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
+        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
+        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Certs/Azure/AZ-900/LP3 - Azure management and governance": {
+      "children": [
+        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md"
       ],
       "sortOrder": "custom"
     },
