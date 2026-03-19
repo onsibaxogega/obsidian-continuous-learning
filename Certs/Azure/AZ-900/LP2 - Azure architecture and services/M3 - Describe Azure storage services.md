@@ -26,9 +26,6 @@ After completing this module, you’ll be able to:
 > An #Azure_Storage_account is a globally accessible, highly scalable, and secure *cloud storage service* that *provides a unique namespace for your data*, `supporting` various types of storage like *blobs, files, queues, and tables with configurable redundancy options.*
 
 - You choose a **storage** **account type**, which dictates supported services, **redundancy options**, and use cases.
-
-
-
 ## Storage Account Types
 
 | **Type**                        | **Supported services**                                | **Redundancy Options**               | **Usage**                                                                                                                                                                                                                                       |
@@ -38,6 +35,10 @@ After completing this module, you’ll be able to:
 | **Premium file shares**         | Azure Files                                           | LRS, ZRS                             | Premium storage account type for file shares only.<br>Recommended for enterprise or high-performance scale applications. Use this account type if you want a storage account that supports both Server Message Block (SMB) and NFS file shares. |
 | **Premium page blobs**          | Page blobs only                                       | LRS                                  | Premium storage account type for page blobs only.                                                                                                                                                                                               |
 
+> A **container** in an Azure storage account *organizes sets of blobs (files)*, acting like a directory in a file system to store data such as images, videos, or text. 
+- A single storage account can hold an unlimited number of containers, each holding an unlimited number of blobs, forming part of the unique URI for accessing that data.
+- A container name must be a valid DNS name, as it forms part of the unique URI (Uniform resource identifier) used to address the container or its blobs.
+- They cannot be nested within each other.
 
 ## Storage account endpoints
 

@@ -45,7 +45,10 @@
     },
     "Certs/Azure/AZ-900/LP3 - Azure management and governance": {
       "children": [
-        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md"
+        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
+        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
+        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
+        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md"
       ],
       "sortOrder": "custom"
     },
