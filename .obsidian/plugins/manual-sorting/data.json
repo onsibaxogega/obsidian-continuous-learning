@@ -62,6 +62,7 @@
     },
     "Knowledge Cache": {
       "children": [
+        "Knowledge Cache/Python",
         "Knowledge Cache/Bash Scripting"
       ],
       "sortOrder": "custom"
@@ -70,6 +71,15 @@
       "children": [
         "Knowledge Cache/Bash Scripting/Fundamentals.md",
         "Knowledge Cache/Bash Scripting/Common Commands.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Knowledge Cache/Python": {
+      "children": [
+        "Knowledge Cache/Python/unformatted python notes.md",
+        "Knowledge Cache/Python/Implementation & Execution.md",
+        "Knowledge Cache/Python/Variables & Types.md",
+        "Knowledge Cache/Python/Language Guidelines.md"
       ],
       "sortOrder": "custom"
     }

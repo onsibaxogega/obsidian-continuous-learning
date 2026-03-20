@@ -1,0 +1,2 @@
+- PEP 8 is the official style guide for Python code, a set of guidelines designed to improve the readability, consistency, and maintainability of Python programs.
+- Adhering to these conventions ensures that code written by different developers in the Python community looks and feels similar, making collaboration and maintenance much easier
