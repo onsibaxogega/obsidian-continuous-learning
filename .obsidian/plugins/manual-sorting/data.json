@@ -54,7 +54,9 @@
     },
     "Certs/Azure/AZ-900/Quizzes": {
       "children": [
-        "Certs/Azure/AZ-900/Quizzes/Quiz 1 - LP2_M1-M2.md"
+        "Certs/Azure/AZ-900/Quizzes/Practice Test 1.md",
+        "Certs/Azure/AZ-900/Quizzes/Practice Test 2.md",
+        "Certs/Azure/AZ-900/Quizzes/Practice Test 3.md"
       ],
       "sortOrder": "custom"
     },
