@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Certs/Azure/AI-103.md",
+                "file": "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI-103"
+              "title": "Build a natural language processing solution with Azure AI Language"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 521.5
+    "width": 363.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -156,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Certs/Azure/AI-103.md",
+                "file": "Cloud/Azure/AI-103.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -186,11 +186,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,44 +209,44 @@
   },
   "active": "9fa2f4e369bcfef6",
   "lastOpenFiles": [
-    "Certs/Azure/AI-200.md",
+    "Cloud/Azure/Applied Skills/Implement knowledge mining with Azure AI Search.md",
+    "Cloud/Azure/Applied Skills/Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
+    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language.md",
+    "Cloud/Azure/AI-103.md",
+    "Cloud/Azure/AI-901.md",
+    "Cloud/Azure/AI-200.md",
+    "Cloud/Azure/Overview.md",
+    "Cloud/Azure/Applied Skills",
+    "Cloud/Azure/AZ-900/Overview.md",
+    "Cloud/Azure/AZ-900/LP1 - Cloud concepts.md",
     "Knowledge Cache/Python/Implementation & Execution.md",
     "Knowledge Cache/Python/Variables & Types.md",
     "Knowledge Cache/Python/Language Guidelines.md",
     "Knowledge Cache/Python/unformatted python notes.md",
     "Knowledge Cache/Python",
-    "Certs/Azure/AZ-900/Quizzes/Practice Test 1.md",
-    "Certs/Azure/Overview.md",
-    "Certs/Azure/AI-103.md",
-    "Certs/Azure/AZ-900/Quizzes/Practice Test 3.md",
-    "Certs/Azure/AZ-900/Quizzes/Practice Test 2.md",
+    "Cloud/Azure/AZ-900/Quizzes/Practice Test 1.md",
+    "Cloud/Azure/AZ-900/Quizzes/Practice Test 3.md",
+    "Cloud/Azure/AZ-900/Quizzes/Practice Test 2.md",
     "Untitled.md",
     "Certs/Azure/AZ-900/Quizzes/Quiz 1 - LP2_M1-M2.md",
-    "Certs/Azure/AZ-900/Overview.md",
-    "Certs/Azure/AI-900.md",
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md",
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
-    "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
-    "Certs/Azure/AZ-900/LP1 - Cloud concepts.md",
-    "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
-    "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
-    "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md",
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance",
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance.md",
+    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md",
+    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
+    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
+    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
+    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
+    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
+    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
+    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md",
+    "Cloud/Azure/AZ-900/LP3 - Azure management and governance",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments/Pasted image 20260317150554.png",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments",
-    "Certs/Azure/AZ-900/Quizzes",
-    "().md",
-    "peering.md",
+    "Cloud/Azure/AZ-900/Quizzes",
     "Knowledge Cache/Bash Scripting",
     "Knowledge Cache/Design Patterns",
     "Knowledge Cache",
-    "Certs/Azure/AZ-900/LP2 - Azure architecture and services",
+    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services",
     "Pasted image 20260312231200.png",
     "Untitled.base",
-    "Untitled.canvas",
-    "Certs/Azure/AZ-900"
+    "Untitled.canvas"
   ]
 }

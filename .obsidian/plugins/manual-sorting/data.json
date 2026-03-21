@@ -4,59 +4,68 @@
       "children": [
         "README.md",
         "Knowledge Cache",
-        "Certs"
+        "Cloud"
       ],
       "sortOrder": "custom"
     },
-    "Certs": {
+    "Cloud": {
       "children": [
-        "Certs/Azure"
+        "Cloud/Azure"
       ],
       "sortOrder": "custom"
     },
-    "Certs/Azure": {
+    "Cloud/Azure": {
       "children": [
-        "Certs/Azure/Overview.md",
-        "Certs/Azure/AI-900.md",
-        "Certs/Azure/AI-103.md",
-        "Certs/Azure/AI-200.md",
-        "Certs/Azure/AZ-900"
+        "Cloud/Azure/Overview.md",
+        "Cloud/Azure/Applied Skills",
+        "Cloud/Azure/AI-901.md",
+        "Cloud/Azure/AI-103.md",
+        "Cloud/Azure/AI-200.md",
+        "Cloud/Azure/AZ-900"
       ],
       "sortOrder": "custom"
     },
-    "Certs/Azure/AZ-900": {
+    "Cloud/Azure/Applied Skills": {
       "children": [
-        "Certs/Azure/AZ-900/Overview.md",
-        "Certs/Azure/AZ-900/LP1 - Cloud concepts.md",
-        "Certs/Azure/AZ-900/LP2 - Azure architecture and services",
-        "Certs/Azure/AZ-900/LP3 - Azure management and governance",
-        "Certs/Azure/AZ-900/Quizzes"
+        "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language.md",
+        "Cloud/Azure/Applied Skills/Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
+        "Cloud/Azure/Applied Skills/Implement knowledge mining with Azure AI Search.md"
       ],
       "sortOrder": "custom"
     },
-    "Certs/Azure/AZ-900/LP2 - Azure architecture and services": {
+    "Cloud/Azure/AZ-900": {
       "children": [
-        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
-        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
-        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
-        "Certs/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
+        "Cloud/Azure/AZ-900/Overview.md",
+        "Cloud/Azure/AZ-900/LP1 - Cloud concepts.md",
+        "Cloud/Azure/AZ-900/LP2 - Azure architecture and services",
+        "Cloud/Azure/AZ-900/LP3 - Azure management and governance",
+        "Cloud/Azure/AZ-900/Quizzes"
       ],
       "sortOrder": "custom"
     },
-    "Certs/Azure/AZ-900/LP3 - Azure management and governance": {
+    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services": {
       "children": [
-        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
-        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
-        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
-        "Certs/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md"
+        "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
+        "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
+        "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
+        "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
       ],
       "sortOrder": "custom"
     },
-    "Certs/Azure/AZ-900/Quizzes": {
+    "Cloud/Azure/AZ-900/LP3 - Azure management and governance": {
       "children": [
-        "Certs/Azure/AZ-900/Quizzes/Practice Test 1.md",
-        "Certs/Azure/AZ-900/Quizzes/Practice Test 2.md",
-        "Certs/Azure/AZ-900/Quizzes/Practice Test 3.md"
+        "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
+        "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
+        "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
+        "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Cloud/Azure/AZ-900/Quizzes": {
+      "children": [
+        "Cloud/Azure/AZ-900/Quizzes/Practice Test 1.md",
+        "Cloud/Azure/AZ-900/Quizzes/Practice Test 2.md",
+        "Cloud/Azure/AZ-900/Quizzes/Practice Test 3.md"
       ],
       "sortOrder": "custom"
     },

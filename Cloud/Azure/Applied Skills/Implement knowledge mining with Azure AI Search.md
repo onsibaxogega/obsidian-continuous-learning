@@ -1,0 +1,3 @@
+- [link](https://learn.microsoft.com/en-us/credentials/applied-skills/implement-knowledge-mining-with-azure-ai-search/?subjects=artificial-intelligence&credential_types=applied%20skills&roles=ai-engineer%2Cdeveloper%2Csolution-architect&products=azure&expanded=azure&ns-enrollment-type=Collection&ns-enrollment-id=x3dntptmy0jxrg)
+- 6 hr 24 min
+- 8 modules

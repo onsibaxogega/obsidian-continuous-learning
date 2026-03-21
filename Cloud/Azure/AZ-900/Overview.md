@@ -1,4 +1,6 @@
 
+> `NOTE:`  [Done and Dusted](https://learn.microsoft.com/en-us/users/ogegaonsiba/credentials/certification/azure-fundamentals)
+
 - Course: AZ-900T00-A: Introduction to Cloud Infrastructure
 - [link to course/info](https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification)
 - [Unofficial PDF version](https://softwarearchitect.ca/wp-content/uploads/2023/08/AZ-900-Official-Course-Study-Guide-v2.0.pdf) (may have variations / be outdated)

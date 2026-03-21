@@ -1,0 +1,3 @@
+- [link](https://learn.microsoft.com/en-us/credentials/applied-skills/build-ai-powered-solutions-by-using-microsoft-azure-database-for-postgresql/?subjects=artificial-intelligence&credential_types=applied%20skills&roles=ai-engineer%2Cdeveloper%2Csolution-architect&products=azure&expanded=azure&ns-enrollment-type=Collection&ns-enrollment-id=x3dntptmy0jxrg)
+- 6 hr 50 min
+- 6 modules

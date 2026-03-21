@@ -3,14 +3,16 @@
 
 - [Msft blogpost about retiring certs](https://techcommunity.microsoft.com/blog/skills-hub-blog/the-ai-job-boom-is-here-are-you-ready-to-showcase-your-skills/4494128)
 - [Enterprise Skills Initiative (ITSD, ASU)](https://esi.microsoft.com/landing)
+- [My Azure Gen AI 'Applied Skills' Collection](https://learn.microsoft.com/en-us/collections/x3dntptmy0jxrg?subjects=artificial-intelligence&credential_types=applied+skills&roles=ai-engineer%2Cdeveloper%2Csolution-architect&products=azure&expanded=azure)
 
 # Learning Material Organization Hierarchy
 
 > `Course (usually contains cert code)`
-> 	`Learning Path`
+> 	`Learning Path` 
 > 			`Module`
 > 				`Unit`
 
+- `NOTE: `  **Applied skills** seems to all be **single learning paths** of **similar name** as the applied skill
 
 | **Retiring Microsoft Certification**             | **Certification retirement date**                                        | **Training retirement date*** | **Replacement Certification**                                   |
 | ------------------------------------------------ | ------------------------------------------------------------------------ | ----------------------------- | --------------------------------------------------------------- |
