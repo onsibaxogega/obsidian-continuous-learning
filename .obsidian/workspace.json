@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ca0fa72fcf0ad3f8",
+        "id": "d184a5ea5fb3f249",
         "type": "tabs",
         "children": [
           {
-            "id": "9fa2f4e369bcfef6",
+            "id": "27fe3a5ead50837c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language.md",
+                "file": "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Build a natural language processing solution with Azure AI Language"
+              "title": "M2 - Introduction to generative AI and agents"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 363.5
+    "width": 411.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -88,6 +88,21 @@
         "id": "163c7ebbd1435b21",
         "type": "tabs",
         "children": [
+          {
+            "id": "245f0a45c1fc988b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of M2 - Introduction to generative AI and agents"
+            }
+          },
           {
             "id": "0395e10e490465e0",
             "type": "leaf",
@@ -151,21 +166,6 @@
             }
           },
           {
-            "id": "245f0a45c1fc988b",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Cloud/Azure/AI-103.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of AI-103"
-            }
-          },
-          {
             "id": "c2e0f3fe507e53a9",
             "type": "leaf",
             "state": {
@@ -185,13 +185,11 @@
               "title": "Notes Review Queue"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,46 +205,46 @@
       "quiz-generator:Open generator": false
     }
   },
-  "active": "9fa2f4e369bcfef6",
+  "active": "27fe3a5ead50837c",
   "lastOpenFiles": [
-    "Cloud/Azure/Applied Skills/Implement knowledge mining with Azure AI Search.md",
-    "Cloud/Azure/Applied Skills/Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
-    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language.md",
-    "Cloud/Azure/AI-103.md",
-    "Cloud/Azure/AI-901.md",
-    "Cloud/Azure/AI-200.md",
+    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
+    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
+    "Cloud/Azure/AI-901/Overview.md",
+    "svg_link_here.md",
+    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
+    "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
+    "Untitled",
+    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
+    "Cloud/Azure/AI-901",
+    "Untitled.md",
     "Cloud/Azure/Overview.md",
+    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md",
+    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language/Overview.md",
+    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language",
+    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language.md",
+    "Cloud/Azure/Applied Skills/Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
+    "Cloud/Azure/AI-103.md",
+    "Cloud/Azure/AI-200.md",
+    "Cloud/Azure/Applied Skills/Implement knowledge mining with Azure AI Search.md",
+    "Python/Implementations & Execution.md",
+    "Python/Language Guidelines.md",
+    "Python/Variables & Types.md",
+    "Bash/Common Commands.md",
+    "Bash/Fundamentals.md",
     "Cloud/Azure/Applied Skills",
     "Cloud/Azure/AZ-900/Overview.md",
     "Cloud/Azure/AZ-900/LP1 - Cloud concepts.md",
-    "Knowledge Cache/Python/Implementation & Execution.md",
-    "Knowledge Cache/Python/Variables & Types.md",
-    "Knowledge Cache/Python/Language Guidelines.md",
-    "Knowledge Cache/Python/unformatted python notes.md",
-    "Knowledge Cache/Python",
+    "Python/unformatted python notes.md",
+    "Python",
     "Cloud/Azure/AZ-900/Quizzes/Practice Test 1.md",
     "Cloud/Azure/AZ-900/Quizzes/Practice Test 3.md",
     "Cloud/Azure/AZ-900/Quizzes/Practice Test 2.md",
-    "Untitled.md",
     "Certs/Azure/AZ-900/Quizzes/Quiz 1 - LP2_M1-M2.md",
-    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md",
-    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
-    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
-    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
-    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
-    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
-    "Cloud/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
-    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md",
     "Cloud/Azure/AZ-900/LP3 - Azure management and governance",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments/Pasted image 20260317150554.png",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments",
     "Cloud/Azure/AZ-900/Quizzes",
-    "Knowledge Cache/Bash Scripting",
-    "Knowledge Cache/Design Patterns",
-    "Knowledge Cache",
-    "Cloud/Azure/AZ-900/LP2 - Azure architecture and services",
     "Pasted image 20260312231200.png",
-    "Untitled.base",
     "Untitled.canvas"
   ]
 }
