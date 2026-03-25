@@ -159,3 +159,55 @@
 ---
 
 
+
+
+# U3: Prompts
+
+>A **prompt** is input to an LLM that triggers a response ( ~ a completion).
+
+## Types of Prompts
+- **System Prompts:** Set model `behavior`, `tone`, and `constraints` (e.g., "Be a friendly assistant").
+- **User Prompts:** Specific questions or commands from AI application user
+
+## Conversation History
+- Past interactions are summarized and included in prompts to maintain context and coherence (common practice by gen AI apps)
+
+## Retrieval Augmented Generation (RAG)
+- Retrieves relevant external info (data, documents, emails, ...) to augment prompts.
+- Enables more accurate, context-grounded responses.
+
+## Tips for Better Prompts
+- Be clear and specific.
+- Add context (topic, audience, format).
+- Use examples for style.
+- Request structured output (bullet points, tables).
+
+---
+
+
+
+# U4: AI agents
+
+
+> **AI Agents** are software applications built on generative AI that can` reason over and generate natural language`, `automate tasks by using tools`, and `respond to contextual conditions to take appropriate action`.
+
+
+
+## Components of an AI agent
+
+AI agents have three key elements:
+
+- **A large language model**: This is the agent's brain; using generative AI for language understanding and reasoning.
+- **Instructions**: A system prompt that defines the agent’s role and behavior. Think of it as the agent’s job description.
+- **Tools**: These are what the agent uses to interact with the world. Tools can include:
+    - _Knowledge_ tools that provide access to information, like search engines or databases.
+    - _Action_ tools that enable the agent to perform tasks, such as sending emails, updating calendars, or controlling devices.
+
+
+
+## Multi-agent systems
+
+- Agents can also work with one another, in multi-agent systems. 
+- Instead of one agent doing everything, `multiple agents can collaborate`—`each with its own specialty`:
+	- One might gather data, another might analyze it, and a third might take action.
+- Agents communicate with each other through prompts, using generative AI to determine what tasks are required and which agents are responsible for completing them.
