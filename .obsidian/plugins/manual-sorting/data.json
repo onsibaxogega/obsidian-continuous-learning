@@ -36,8 +36,7 @@
     "Cloud/Azure/AI-901": {
       "children": [
         "Cloud/Azure/AI-901/Overview.md",
-        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
-        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure"
+        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals"
       ],
       "sortOrder": "custom"
     },
@@ -48,10 +47,6 @@
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md"
       ],
-      "sortOrder": "custom"
-    },
-    "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure": {
-      "children": [],
       "sortOrder": "custom"
     },
     "Cloud/Azure/Applied Skills": {
@@ -107,6 +102,7 @@
     },
     "Python": {
       "children": [
+        "Python/Main Function.md",
         "Python/unformatted python notes.md",
         "Python/Implementations & Execution.md",
         "Python/Variables & Types.md",
