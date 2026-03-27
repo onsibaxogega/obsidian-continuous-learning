@@ -18,6 +18,7 @@
     },
     "Cloud": {
       "children": [
+        "Cloud/Overview.md",
         "Cloud/AWS",
         "Cloud/Azure"
       ],
@@ -54,7 +55,8 @@
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md",
-        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md"
+        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md",
+        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md"
       ],
       "sortOrder": "custom"
     },

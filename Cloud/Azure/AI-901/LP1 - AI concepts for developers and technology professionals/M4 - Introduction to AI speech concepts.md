@@ -259,6 +259,8 @@ Each stage builds on the previous one:
   - Virtual assistants reading notifications
   - Navigation apps announcing directions
   - Accessibility tools reading content aloud
+
+
 - Speech synthesis systems process text through four stages:
   - Text normalization
   - Linguistic analysis
@@ -283,11 +285,11 @@ Each stage builds on the previous one:
 ## Linguistic analysis: Map text to phonemes
 - Breaks normalized text into phonemes and determines pronunciation.
 - Tasks include:
-  - Segmenting text into words and syllables
-  - Looking up pronunciations in lexicons
-  - Applying G2P rules or neural models for unknown words
-  - Marking syllable boundaries and stress
-  - Determining phonetic context
+	- Segmenting text into words and syllables
+	- Looking up pronunciations in lexicons
+	- Applying G2P rules or neural models for unknown words
+	- Marking syllable boundaries and stress
+	- Determining phonetic context
 
 ### Grapheme-to-phoneme (G2P) conversion
 > **G2P** — maps written letters (graphemes) to pronunciation sounds (phonemes).
@@ -313,25 +315,28 @@ Each stage builds on the previous one:
 - Stress patterns (emphasized syllables)
 
 ### Example of meaning changes through emphasis
-- "I never said he ate the cake."
-- "I never said he ate the cake."
-- "I never said he ate the cake."
-- "I never said he ate the cake."
+- "*I* never said he ate the cake."
+- "I never said *he* ate the cake."
+- "I never said he *ate* the cake."
+- "I never said he ate the *cake*."
 
 ### Transformer-based prosody prediction
 - Transformers analyze context across entire sentences.
 - Process:
-  - **Input encoding:** phoneme sequence + linguistic features
+  - **Input encoding:** phoneme sequence + linguistic features(punctuation, part of speech, sentence structure)
   - **Contextual analysis:** self-attention identifies relationships
-  - **Prosody prediction:** pitch, duration, energy per phoneme
-  - **Style factors:** speaker identity, emotional tone, speaking style
+  - **Prosody prediction:** The model outputs predicted values for pitch, duration, and energy at each phoneme
+  - **Style factors:** The system considers speaking style (neutral, expressive, conversational) and speaker characteristics
 
 ### Factors influencing prosody
-- Syntax (clause boundaries)
-- Semantics (important concepts)
-- Discourse context (contrast, emphasis)
-- Speaker identity (pitch range, rate)
-- Emotional tone (excitement, concern, neutrality)
+- **Syntax**: Clause boundaries indicate where to pause
+- **Semantics**: Important concepts receive emphasis
+- **Discourse context**: Contrasting information or answers to questions may carry extra stress
+- **Speaker identity**: Each voice has characteristic pitch range and speaking rate
+- **Emotional tone**: Excitement, concern, or neutrality shape prosodic patterns
+
+
+- The prosody predictions create a target specification, e.g.: "Produce the phoneme /æ/ at 180 Hz for 80 milliseconds with moderate intensity, then pause for 200 milliseconds."
 
 > **Important** — Robotic speech often results from flat prosody, not incorrect phonemes.
 
@@ -345,15 +350,16 @@ Each stage builds on the previous one:
   - HiFi-GAN
 
 ### The synthesis process
-- **Acoustic feature generation:** transformer-based model converts phonemes + prosody into mel-spectrograms.
-- **Vocoding:** neural vocoder converts mel-spectrograms into raw audio waveforms (16,000–48,000 samples/sec).
-- **Post-processing:** filtering, normalization, audio effects.
+1. **Acoustic feature generation**: An acoustic model (`often a transformer`) converts phonemes and prosody targets into:
+	- **mel-spectrograms** — *visual representations of sound frequencies over time*
+2. **Vocoding**: The neural vocoder converts mel-spectrograms into raw audio waveforms (sequences of amplitude values at 16,000-48,000 samples per second)
+3. **Post-processing**: The system applies filtering, normalization, or audio effects to match target output specifications
 
-> **Note** — Neural vocoders provide:
-> - High fidelity  
-> - Naturalness  
-> - Real-time performance  
-> - Flexibility across speakers and languages  
+ - **Note**: Neural vocoders provide:
+	 - High fidelity  
+	 - Naturalness  
+	 - Real-time performance  
+	 - Flexibility across speakers and languages  
 
 - Vocoders perform the inverse of speech recognition:
   - ASR: audio → text
@@ -366,6 +372,6 @@ Each stage builds on the previous one:
   `/ˈdɑktər ˈtʃɛnz əˈpɔɪntmənt ɪz æt θri əˈklɑk pi ɛm/`
 - **Prosody generation:** predicts pitch rise on "appointment", pause after "is", emphasis on "three"
 - **Speech synthesis:** generates audio waveform matching specifications
-- Entire process typically completes in under one second.
+- The entire process typically completes in under one second on modern hardware.
 
 ---
