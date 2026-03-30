@@ -63,7 +63,8 @@
     },
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure": {
       "children": [
-        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md"
+        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
+        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md"
       ],
       "sortOrder": "custom"
     },

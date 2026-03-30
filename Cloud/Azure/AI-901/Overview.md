@@ -5,8 +5,8 @@
 	- by the time the exam will be released (6/30?), I expect to be nearly prepared for [[AI-103]] anyway
 
 
-| **learning path**                                       | **duration** | **modules** |
-| ------------------------------------------------------- | ------------ | ----------- |
-| AI concepts for developers and technology professionals | 3 hr 17 min  | 6           |
-| Get started with AI applications and agents on Azure    | 4 hr 59 min  | 9           |
-| *TOTALS*                                                  | *8 hr 16 min*  | *16*          |
+| **learning path**                                       | **duration**  | **modules** |
+| ------------------------------------------------------- | ------------- | ----------- |
+| AI concepts for developers and technology professionals | 3 hr 17 min   | 6           |
+| Get started with AI applications and agents on Azure    | 4 hr 59 min   | 6           |
+| *TOTALS*                                                | *8 hr 16 min* | *12*        |
