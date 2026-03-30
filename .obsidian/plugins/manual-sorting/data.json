@@ -44,8 +44,8 @@
     "Cloud/Azure/AI-901": {
       "children": [
         "Cloud/Azure/AI-901/Overview.md",
-        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
-        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals"
+        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
+        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure"
       ],
       "sortOrder": "custom"
     },
@@ -56,12 +56,15 @@
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md",
         "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md",
-        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md"
+        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md",
+        "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M6 - Introduction to AI-powered information extraction concepts.md"
       ],
       "sortOrder": "custom"
     },
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure": {
-      "children": [],
+      "children": [
+        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md"
+      ],
       "sortOrder": "custom"
     },
     "Cloud/Azure/Applied Skills": {
