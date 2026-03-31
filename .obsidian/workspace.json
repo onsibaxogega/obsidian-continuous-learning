@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
+                "file": "Cloud/Azure/AI-901/Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "M2 - Get started with generative AI and agents"
+              "title": "Overview"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "Overview"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
+                "file": "Cloud/Azure/AI-901/Overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of M2 - Get started with generative AI and agents"
+              "title": "Outline of Overview"
             }
           },
           {
@@ -205,7 +204,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 338.5
+    "width": 428.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,8 +222,9 @@
   },
   "active": "1861e36149f485f7",
   "lastOpenFiles": [
-    "Cloud/Azure/AI-901/Overview.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
+    "Cloud/Azure/AI-901/Overview.md",
+    "Cloud/AWS/Overview.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M6 - Introduction to AI-powered information extraction concepts.md",
     "Cloud/Azure/Overview.md",
@@ -237,7 +237,6 @@
     "Cloud/Azure/AZ-900/Overview.md",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
-    "Cloud/AWS/Overview.md",
     "Cloud/AWS",
     "Python/Main Function.md",
     "Python/Implementations & Execution.md",
