@@ -33,11 +33,18 @@
     "Cloud/Azure": {
       "children": [
         "Cloud/Azure/Overview.md",
-        "Cloud/Azure/Applied Skills",
-        "Cloud/Azure/AI-103.md",
         "Cloud/Azure/AI-200.md",
         "Cloud/Azure/AZ-900",
-        "Cloud/Azure/AI-901"
+        "Cloud/Azure/AI-901",
+        "Cloud/Azure/AI-103",
+        "Cloud/Azure/Applied Skills"
+      ],
+      "sortOrder": "custom"
+    },
+    "Cloud/Azure/AI-103": {
+      "children": [
+        "Cloud/Azure/AI-103/Overview.md",
+        "Cloud/Azure/AI-103/LP3 - Develop natural language solutions in Azure.md"
       ],
       "sortOrder": "custom"
     },
@@ -64,22 +71,18 @@
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure": {
       "children": [
         "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
-        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md"
+        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
+        "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md"
       ],
       "sortOrder": "custom"
     },
     "Cloud/Azure/Applied Skills": {
       "children": [
-        "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language",
-        "Cloud/Azure/Applied Skills/Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
-        "Cloud/Azure/Applied Skills/Implement knowledge mining with Azure AI Search.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language": {
-      "children": [
-        "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language/Overview.md",
-        "Cloud/Azure/Applied Skills/Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md"
+        "Cloud/Azure/Applied Skills/Overview.md",
+        "Cloud/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
+        "Cloud/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
+        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language",
+        "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md"
       ],
       "sortOrder": "custom"
     },
@@ -126,6 +129,13 @@
         "Python/Implementations & Execution.md",
         "Python/Variables & Types.md",
         "Python/Language Guidelines.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language": {
+      "children": [
+        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md",
+        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md"
       ],
       "sortOrder": "custom"
     }
