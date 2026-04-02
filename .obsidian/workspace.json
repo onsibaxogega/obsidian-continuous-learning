@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+                "file": "Cloud/Azure/AI-103/Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AS-Build a generative AI chat app"
+              "title": "Overview"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+                "file": "Cloud/Azure/AI-103/Overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of AS-Build a generative AI chat app"
+              "title": "Outline of Overview"
             }
           },
           {
@@ -208,10 +208,10 @@
   },
   "active": "bebf33de225d1916",
   "lastOpenFiles": [
+    "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
-    "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
     "Cloud/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
     "Cloud/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
     "Cloud/Azure/Applied Skills/Overview.md",

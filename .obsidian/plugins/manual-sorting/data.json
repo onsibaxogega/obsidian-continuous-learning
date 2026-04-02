@@ -86,6 +86,13 @@
       ],
       "sortOrder": "custom"
     },
+    "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language": {
+      "children": [
+        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md",
+        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md"
+      ],
+      "sortOrder": "custom"
+    },
     "Cloud/Azure/AZ-900": {
       "children": [
         "Cloud/Azure/AZ-900/Overview.md",
@@ -129,13 +136,6 @@
         "Python/Implementations & Execution.md",
         "Python/Variables & Types.md",
         "Python/Language Guidelines.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language": {
-      "children": [
-        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md",
-        "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md"
       ],
       "sortOrder": "custom"
     }
