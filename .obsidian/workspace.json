@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/Azure/AI-103/Overview.md",
+                "file": "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Overview"
+              "title": "AS-Build a generative AI chat app"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 411.5
+    "width": 321.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cloud/Azure/AI-103/Overview.md",
+                "file": "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Overview"
+              "title": "Outline of AS-Build a generative AI chat app"
             }
           },
           {
@@ -206,16 +206,25 @@
       "quiz-generator:Open generator": false
     }
   },
-  "active": "bebf33de225d1916",
+  "active": "245f0a45c1fc988b",
   "lastOpenFiles": [
+    "Python/Tooling/venv.md",
     "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+    "Python/Tooling/pyenv.md",
+    "Python/Core/Main Function.md",
+    "Python/Tooling",
+    "Python/Core",
+    "Python/Core/unformatted python notes.md",
+    "Python/Core/Implementations & Execution.md",
+    "Python/Core/Variables & Types.md",
+    "Python/Core/Language Guidelines.md",
+    "Cloud/Azure/AI-103/Overview.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
     "Cloud/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
     "Cloud/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
     "Cloud/Azure/Applied Skills/Overview.md",
-    "Cloud/Azure/AI-103/Overview.md",
     "Cloud/Azure/AI-103/LP3 - Develop natural language solutions in Azure.md",
     "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md",
     "Cloud/Azure/Overview.md",
@@ -230,22 +239,13 @@
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md",
     "Cloud/Overview.md",
     "Cloud/Azure/AZ-900/Overview.md",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
     "Cloud/AWS",
-    "Python/Main Function.md",
-    "Python/Implementations & Execution.md",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
-    "svg_link_here.md",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
-    "Untitled",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
     "Cloud/Azure/AI-901",
-    "Untitled.md",
     "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language",
     "Cloud/Azure/Applied Skills",
-    "Python",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments/Pasted image 20260317150554.png",
     "Pasted image 20260312231200.png",
     "Untitled.canvas"

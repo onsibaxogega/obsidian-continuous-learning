@@ -131,11 +131,25 @@
     },
     "Python": {
       "children": [
-        "Python/Main Function.md",
-        "Python/unformatted python notes.md",
-        "Python/Implementations & Execution.md",
-        "Python/Variables & Types.md",
-        "Python/Language Guidelines.md"
+        "Python/Tooling",
+        "Python/Core"
+      ],
+      "sortOrder": "custom"
+    },
+    "Python/Core": {
+      "children": [
+        "Python/Core/Main Function.md",
+        "Python/Core/unformatted python notes.md",
+        "Python/Core/Implementations & Execution.md",
+        "Python/Core/Variables & Types.md",
+        "Python/Core/Language Guidelines.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Python/Tooling": {
+      "children": [
+        "Python/Tooling/venv.md",
+        "Python/Tooling/pyenv.md"
       ],
       "sortOrder": "custom"
     }
