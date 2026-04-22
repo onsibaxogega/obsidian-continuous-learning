@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e72cb5714d7cd405",
+        "id": "302daa80fb9abac6",
         "type": "tabs",
         "children": [
           {
-            "id": "bebf33de225d1916",
+            "id": "8127ac2b9ef29e3e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+                "file": "Python/Tooling/venv.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AS-Build a generative AI chat app"
+              "title": "venv"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 321.5
+    "width": 294.5
   },
   "right": {
     "id": "df16b1efb0f1ac51",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of AS-Build a generative AI chat app"
+              "title": "Outline of README"
             }
           },
           {
@@ -186,11 +186,12 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 400.5
+    "width": 445.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -206,11 +207,15 @@
       "quiz-generator:Open generator": false
     }
   },
-  "active": "245f0a45c1fc988b",
+  "active": "c2e0f3fe507e53a9",
   "lastOpenFiles": [
-    "Python/Tooling/venv.md",
-    "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
     "Python/Tooling/pyenv.md",
+    "README.md",
+    "AI/A2A.md",
+    "AI/MCP.md",
+    "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+    "AI",
+    "Python/Tooling/venv.md",
     "Python/Core/Main Function.md",
     "Python/Tooling",
     "Python/Core",
@@ -236,16 +241,12 @@
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments/Pasted image 20260330103007.png",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md",
-    "Cloud/Overview.md",
-    "Cloud/Azure/AZ-900/Overview.md",
     "Cloud/AWS",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
     "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
     "Cloud/Azure/AI-901",
     "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language",
-    "Cloud/Azure/Applied Skills",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments/Pasted image 20260317150554.png",
     "Pasted image 20260312231200.png",
     "Untitled.canvas"

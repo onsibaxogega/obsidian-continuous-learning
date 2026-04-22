@@ -3,9 +3,17 @@
     "/": {
       "children": [
         "README.md",
+        "AI",
         "Python",
         "Bash",
         "Cloud"
+      ],
+      "sortOrder": "custom"
+    },
+    "AI": {
+      "children": [
+        "AI/A2A.md",
+        "AI/MCP.md"
       ],
       "sortOrder": "custom"
     },
