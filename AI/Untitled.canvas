@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"483bc67ffe414bba","x":-480,"y":0,"width":400,"height":200,"type":"file","file":"AI/MCP.md"},
+		{"id":"84730f3bbe4d17b3","x":-280,"y":-120,"width":250,"height":60,"type":"text","text":"Applied AI"},
+		{"id":"be847580240cceb6","x":80,"y":-60,"width":250,"height":60,"type":"text","text":"RAG"},
+		{"id":"40a0b3b3171f835a","x":5,"y":60,"width":400,"height":260,"type":"file","file":"AI/A2A.md"}
+	],
+	"edges":[]
+}

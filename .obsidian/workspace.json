@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "302daa80fb9abac6",
+        "id": "503a7f2ee949e7bd",
         "type": "tabs",
         "children": [
           {
-            "id": "8127ac2b9ef29e3e",
+            "id": "8b18cfe793535d37",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Python/Tooling/venv.md",
-                "mode": "source",
-                "source": false
+                "file": "AI/Untitled.canvas",
+                "viewState": {
+                  "x": -28.200000000000003,
+                  "y": 300.88000000000005,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "venv"
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
             }
           }
         ]
@@ -207,15 +210,29 @@
       "quiz-generator:Open generator": false
     }
   },
-  "active": "c2e0f3fe507e53a9",
+  "active": "8b18cfe793535d37",
   "lastOpenFiles": [
-    "Python/Tooling/pyenv.md",
-    "README.md",
+    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
+    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
     "AI/A2A.md",
-    "AI/MCP.md",
-    "Cloud/Azure/Applied Skills/AS-Build a generative AI chat app.md",
-    "AI",
+    "Cloud Certifications/Azure/Overview.md",
+    "Cloud Certifications/Overview.md",
+    "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 2.md",
+    "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 1.md",
+    "Python/Tooling/pyenv.md",
     "Python/Tooling/venv.md",
+    "AI/Untitled.canvas",
+    "AI/MCP.md",
+    "README.md",
+    "().md",
+    "AWS/IDP Accelerator/flowchart.md",
+    "AWS/IDP Accelerator/attachments/Pasted image 20260422111126.png",
+    "AWS/IDP Accelerator/attachments",
+    "AWS/IDP Accelerator",
+    "AWS",
+    "Untitled.md",
+    "Cloud Certifications/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+    "AI",
     "Python/Core/Main Function.md",
     "Python/Tooling",
     "Python/Core",
@@ -223,30 +240,18 @@
     "Python/Core/Implementations & Execution.md",
     "Python/Core/Variables & Types.md",
     "Python/Core/Language Guidelines.md",
-    "Cloud/Azure/AI-103/Overview.md",
-    "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
-    "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md",
-    "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
-    "Cloud/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
-    "Cloud/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
-    "Cloud/Azure/Applied Skills/Overview.md",
-    "Cloud/Azure/AI-103/LP3 - Develop natural language solutions in Azure.md",
-    "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md",
-    "Cloud/Azure/Overview.md",
-    "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md",
-    "Cloud/Azure/AI-901/Overview.md",
-    "Cloud/Azure/AI-103",
-    "Cloud/AWS/Overview.md",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M6 - Introduction to AI-powered information extraction concepts.md",
+    "Cloud Certifications/Azure/AI-103/Overview.md",
+    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
+    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md",
+    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
+    "Cloud Certifications/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
+    "Cloud Certifications/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
+    "Cloud Certifications/Azure/AI-103",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments/Pasted image 20260330103007.png",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md",
-    "Cloud/AWS",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
-    "Cloud/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
-    "Cloud/Azure/AI-901",
-    "Cloud/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language",
+    "Cloud Certifications/AWS",
+    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
+    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
     "Certs/Azure/AZ-900/2) Azure architecture and services/attachments/Pasted image 20260317150554.png",
     "Pasted image 20260312231200.png",
     "Untitled.canvas"
