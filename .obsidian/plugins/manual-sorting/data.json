@@ -2,10 +2,11 @@
   "customOrder": {
     "/": {
       "children": [
+        "Bash",
+        "Linux (Ubuntu)",
         "README.md",
         "AI",
         "Python",
-        "Bash",
         "Cloud Certifications",
         "AWS"
       ],
@@ -13,7 +14,6 @@
     },
     "AI": {
       "children": [
-        "AI/Untitled.canvas",
         "AI/A2A.md",
         "AI/MCP.md"
       ],
@@ -54,9 +54,13 @@
       "sortOrder": "custom"
     },
     "Cloud Certifications/AWS/CLF-C02": {
+<<<<<<< HEAD
       "children": [
         "Cloud Certifications/AWS/CLF-C02/Exam Prep Plan Overview.md"
       ],
+=======
+      "children": [],
+>>>>>>> origin
       "sortOrder": "custom"
     },
     "Cloud Certifications/Azure": {
@@ -156,6 +160,10 @@
         "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 2.md",
         "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 3.md"
       ],
+      "sortOrder": "custom"
+    },
+    "Linux (Ubuntu)": {
+      "children": [],
       "sortOrder": "custom"
     },
     "Python": {
