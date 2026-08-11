@@ -48,7 +48,14 @@
     },
     "Cloud Certifications/AWS": {
       "children": [
+        "Cloud Certifications/AWS/CLF-C02",
         "Cloud Certifications/AWS/Overview.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Cloud Certifications/AWS/CLF-C02": {
+      "children": [
+        "Cloud Certifications/AWS/CLF-C02/Exam Prep Plan Overview.md"
       ],
       "sortOrder": "custom"
     },

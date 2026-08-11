@@ -11,17 +11,14 @@
             "id": "8b18cfe793535d37",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "AI/Untitled.canvas",
-                "viewState": {
-                  "x": -28.200000000000003,
-                  "y": 300.88000000000005,
-                  "zoom": 0
-                }
+                "file": "Cloud Certifications/AWS/Overview.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "Overview"
             }
           }
         ]
@@ -44,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "custom",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -174,12 +173,22 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
-              "icon": "SpacedRepIcon",
-              "title": "Notes Review Queue"
+              "icon": "lucide-ghost",
+              "title": "review-queue-list-view"
             }
           },
           {
             "id": "e8adec4b225f3d5c",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "review-queue-list-view"
+            }
+          },
+          {
+            "id": "c87c67719916a58e",
             "type": "leaf",
             "state": {
               "type": "review-queue-list-view",
@@ -189,7 +198,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -212,6 +221,7 @@
   },
   "active": "8b18cfe793535d37",
   "lastOpenFiles": [
+    "AI/Untitled.canvas",
     "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
     "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
     "AI/A2A.md",
@@ -221,7 +231,6 @@
     "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 1.md",
     "Python/Tooling/pyenv.md",
     "Python/Tooling/venv.md",
-    "AI/Untitled.canvas",
     "AI/MCP.md",
     "README.md",
     "().md",
@@ -245,7 +254,6 @@
     "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md",
     "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
     "Cloud Certifications/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
-    "Cloud Certifications/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
     "Cloud Certifications/Azure/AI-103",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments/Pasted image 20260330103007.png",
     "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments",
