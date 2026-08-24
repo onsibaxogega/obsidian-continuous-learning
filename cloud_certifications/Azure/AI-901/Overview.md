@@ -2,7 +2,7 @@
 
 - [link to course](https://learn.microsoft.com/en-us/training/courses/ai-901t00)  ( ~ 8 hr 16 min )
 - **plan:** just go through content
-	- by the time the exam will be released (6/30?), I expect to be nearly prepared for [[Cloud Certifications/Azure/AI-103/Overview]] anyway
+	- by the time the exam will be released (6/30?), I expect to be nearly prepared for [[cloud_certifications/Azure/AI-103/Overview]] anyway
 
 
 | **learning path**                                       | **duration**  | **modules** |

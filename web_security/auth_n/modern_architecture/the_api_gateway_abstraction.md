@@ -2,7 +2,7 @@
 
 - When reading HTTP specifications, "the server" is treated as a single logical entity. However, in modern distributed systems and microservice architectures, this is an abstraction. 
 - The client rarely connects directly to the backend application server or the authentication server. 
-- Instead, this role is usually fulfilled by a **[[Web Security/AuthN/Overview & Definitions#Reverse Proxy|Reverse Proxy]]** or **[[Web Security/AuthN/Overview & Definitions#API Gateway|API Gateway]]**.
+- Instead, this role is usually fulfilled by a **[[web_security/auth_n/overview_&_definitions#Reverse Proxy|Reverse Proxy]]** or **[[web_security/auth_n/overview_&_definitions#API Gateway|API Gateway]]**.
 
 ### The Gateway as "The Server"
 - From the client's perspective, the Gateway *is* the server. 

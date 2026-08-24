@@ -2,219 +2,211 @@
   "customOrder": {
     "/": {
       "children": [
-        "Web Security",
-        "Applied AI",
-        "AWS",
-        "Cloud Certifications",
-        "Linux",
-        "Python",
+        "docs",
+        "web_security",
+        "applied_ai",
+        "cloud_certifications",
+        "linux",
+        "python",
         "README.md"
       ],
       "sortOrder": "custom"
     },
-    "Applied AI": {
+    "web_security": {
       "children": [
-        "Applied AI/A2A.md",
-        "Applied AI/MCP.md"
+        "web_security/overview_&_definitions.md",
+        "web_security/auth_n"
       ],
       "sortOrder": "custom"
     },
-    "AWS": {
+    "applied_ai": {
       "children": [
-        "AWS/IDP Accelerator"
+        "applied_ai/A2A.md",
+        "applied_ai/MCP.md"
       ],
       "sortOrder": "custom"
     },
-    "AWS/IDP Accelerator": {
+    "cloud_certifications": {
       "children": [
-        "AWS/IDP Accelerator/flowchart.md"
+        "cloud_certifications/AWS",
+        "cloud_certifications/Azure",
+        "cloud_certifications/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications": {
+    "cloud_certifications/AWS": {
       "children": [
-        "Cloud Certifications/AWS",
-        "Cloud Certifications/Azure",
-        "Cloud Certifications/Overview.md"
+        "cloud_certifications/AWS/CLF-C02",
+        "cloud_certifications/AWS/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/AWS": {
+    "cloud_certifications/AWS/CLF-C02": {
       "children": [
-        "Cloud Certifications/AWS/CLF-C02",
-        "Cloud Certifications/AWS/Overview.md"
+        "cloud_certifications/AWS/CLF-C02/Exam Prep Plan Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/AWS/CLF-C02": {
+    "cloud_certifications/Azure": {
       "children": [
-        "Cloud Certifications/AWS/CLF-C02/Exam Prep Plan Overview.md"
+        "cloud_certifications/Azure/AI-103",
+        "cloud_certifications/Azure/AI-901",
+        "cloud_certifications/Azure/Applied Skills",
+        "cloud_certifications/Azure/AZ-900",
+        "cloud_certifications/Azure/AI-200.md",
+        "cloud_certifications/Azure/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure": {
+    "cloud_certifications/Azure/AI-103": {
       "children": [
-        "Cloud Certifications/Azure/AI-103",
-        "Cloud Certifications/Azure/AI-901",
-        "Cloud Certifications/Azure/Applied Skills",
-        "Cloud Certifications/Azure/AZ-900",
-        "Cloud Certifications/Azure/AI-200.md",
-        "Cloud Certifications/Azure/Overview.md"
+        "cloud_certifications/Azure/AI-103/LP3 - Develop natural language solutions in Azure.md",
+        "cloud_certifications/Azure/AI-103/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AI-103": {
+    "cloud_certifications/Azure/AI-901": {
       "children": [
-        "Cloud Certifications/Azure/AI-103/LP3 - Develop natural language solutions in Azure.md",
-        "Cloud Certifications/Azure/AI-103/Overview.md"
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
+        "cloud_certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
+        "cloud_certifications/Azure/AI-901/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AI-901": {
+    "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals": {
       "children": [
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals",
-        "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure",
-        "Cloud Certifications/Azure/AI-901/Overview.md"
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md",
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md",
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md",
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M6 - Introduction to AI-powered information extraction concepts.md",
+        "cloud_certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals": {
+    "cloud_certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure": {
       "children": [
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M3 - Introduction to natural language processing concepts.md",
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M4 - Introduction to AI speech concepts.md",
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M5 - Introduction to computer vision concepts.md",
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M6 - Introduction to AI-powered information extraction concepts.md",
-        "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas"
+        "cloud_certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
+        "cloud_certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
+        "cloud_certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure": {
+    "cloud_certifications/Azure/Applied Skills": {
       "children": [
-        "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
-        "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
-        "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md"
+        "cloud_certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language",
+        "cloud_certifications/Azure/Applied Skills/AS-Build a generative AI chat app.md",
+        "cloud_certifications/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
+        "cloud_certifications/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
+        "cloud_certifications/Azure/Applied Skills/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/Applied Skills": {
+    "cloud_certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language": {
       "children": [
-        "Cloud Certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language",
-        "Cloud Certifications/Azure/Applied Skills/AS-Build a generative AI chat app.md",
-        "Cloud Certifications/Azure/Applied Skills/AS-Build AI-powered solutions by using Microsoft Azure Database for PostgreSQL.md",
-        "Cloud Certifications/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
-        "Cloud Certifications/Azure/Applied Skills/Overview.md"
+        "cloud_certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md",
+        "cloud_certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language": {
+    "cloud_certifications/Azure/AZ-900": {
       "children": [
-        "Cloud Certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/M1 - Analyze text with Azure Language in Foundry Tools.md",
-        "Cloud Certifications/Azure/Applied Skills/AS-Build a natural language processing solution with Azure AI Language/Overview.md"
+        "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services",
+        "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance",
+        "cloud_certifications/Azure/AZ-900/Quizzes",
+        "cloud_certifications/Azure/AZ-900/LP1 - Cloud concepts.md",
+        "cloud_certifications/Azure/AZ-900/Overview.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AZ-900": {
+    "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services": {
       "children": [
-        "Cloud Certifications/Azure/AZ-900/LP2 - Azure architecture and services",
-        "Cloud Certifications/Azure/AZ-900/LP3 - Azure management and governance",
-        "Cloud Certifications/Azure/AZ-900/Quizzes",
-        "Cloud Certifications/Azure/AZ-900/LP1 - Cloud concepts.md",
-        "Cloud Certifications/Azure/AZ-900/Overview.md"
+        "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
+        "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
+        "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
+        "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AZ-900/LP2 - Azure architecture and services": {
+    "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance": {
       "children": [
-        "Cloud Certifications/Azure/AZ-900/LP2 - Azure architecture and services/M1 - Describe the core architectural components of Azure.md",
-        "Cloud Certifications/Azure/AZ-900/LP2 - Azure architecture and services/M2 - Describe Azure compute and networking services.md",
-        "Cloud Certifications/Azure/AZ-900/LP2 - Azure architecture and services/M3 - Describe Azure storage services.md",
-        "Cloud Certifications/Azure/AZ-900/LP2 - Azure architecture and services/M4 - Describe Azure identity, access, and security.md"
+        "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
+        "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
+        "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
+        "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AZ-900/LP3 - Azure management and governance": {
+    "cloud_certifications/Azure/AZ-900/Quizzes": {
       "children": [
-        "Cloud Certifications/Azure/AZ-900/LP3 - Azure management and governance/M1 - Describe cost management in Azure.md",
-        "Cloud Certifications/Azure/AZ-900/LP3 - Azure management and governance/M2 - Describe features and tools in Azure for governance and compliance.md",
-        "Cloud Certifications/Azure/AZ-900/LP3 - Azure management and governance/M3 - Describe features and tools for managing and deploying Azure resource.md",
-        "Cloud Certifications/Azure/AZ-900/LP3 - Azure management and governance/M4 - Describe monitoring tools in Azure.md"
+        "cloud_certifications/Azure/AZ-900/Quizzes/Practice Test 1.md",
+        "cloud_certifications/Azure/AZ-900/Quizzes/Practice Test 2.md",
+        "cloud_certifications/Azure/AZ-900/Quizzes/Practice Test 3.md"
       ],
       "sortOrder": "custom"
     },
-    "Cloud Certifications/Azure/AZ-900/Quizzes": {
+    "linux": {
       "children": [
-        "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 1.md",
-        "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 2.md",
-        "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 3.md"
+        "linux/Bash"
       ],
       "sortOrder": "custom"
     },
-    "Linux": {
+    "linux/Bash": {
       "children": [
-        "Linux/Bash"
+        "linux/Bash/Common Commands.md",
+        "linux/Bash/Fundamentals.md"
       ],
       "sortOrder": "custom"
     },
-    "Linux/Bash": {
+    "python": {
       "children": [
-        "Linux/Bash/Common Commands.md",
-        "Linux/Bash/Fundamentals.md"
+        "python/Core",
+        "python/Tooling"
       ],
       "sortOrder": "custom"
     },
-    "Python": {
+    "python/Core": {
       "children": [
-        "Python/Core",
-        "Python/Tooling"
+        "python/Core/Implementations & Execution.md",
+        "python/Core/Language Guidelines.md",
+        "python/Core/Main Function.md",
+        "python/Core/unformatted python notes.md",
+        "python/Core/Variables & Types.md"
       ],
       "sortOrder": "custom"
     },
-    "Python/Core": {
+    "python/Tooling": {
       "children": [
-        "Python/Core/Implementations & Execution.md",
-        "Python/Core/Language Guidelines.md",
-        "Python/Core/Main Function.md",
-        "Python/Core/unformatted python notes.md",
-        "Python/Core/Variables & Types.md"
+        "python/Tooling/pyenv.md",
+        "python/Tooling/venv.md"
       ],
       "sortOrder": "custom"
     },
-    "Python/Tooling": {
+    "web_security/auth_n": {
       "children": [
-        "Python/Tooling/pyenv.md",
-        "Python/Tooling/venv.md"
+        "web_security/auth_n/overview_&_definitions.md",
+        "web_security/auth_n/the_http_authentication_framework.md",
+        "web_security/auth_n/http_authentication_schemes.md",
+        "web_security/auth_n/modern_architecture",
+        "web_security/auth_n/diagrams"
       ],
       "sortOrder": "custom"
     },
-    "Web Security": {
+    "web_security/auth_n/diagrams": {
       "children": [
-        "Web Security/Overview & Definitions.md",
-        "Web Security/AuthN"
+        "web_security/auth_n/diagrams/jwt_bearer.drawio"
       ],
       "sortOrder": "custom"
     },
-    "Web Security/AuthN": {
+    "web_security/auth_n/modern_architecture": {
       "children": [
-        "Web Security/AuthN/Overview & Definitions.md",
-        "Web Security/AuthN/The HTTP Authentication Framework.md",
-        "Web Security/AuthN/HTTP Authentication Schemes.md",
-        "Web Security/AuthN/Modern Architecture",
-        "Web Security/AuthN/diagrams"
+        "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md"
       ],
       "sortOrder": "custom"
     },
-    "Web Security/AuthN/diagrams": {
-      "children": [
-        "Web Security/AuthN/diagrams/jwt_bearer.drawio"
-      ],
-      "sortOrder": "custom"
-    },
-    "Web Security/AuthN/Modern Architecture": {
-      "children": [
-        "Web Security/AuthN/Modern Architecture/The API Gateway Abstraction.md"
-      ],
+    "docs": {
+      "children": [],
       "sortOrder": "custom"
     }
   },
