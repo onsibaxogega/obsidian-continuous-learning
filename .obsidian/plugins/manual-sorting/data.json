@@ -12,6 +12,13 @@
       ],
       "sortOrder": "custom"
     },
+    "Applied AI": {
+      "children": [
+        "Applied AI/A2A.md",
+        "Applied AI/MCP.md"
+      ],
+      "sortOrder": "custom"
+    },
     "AWS": {
       "children": [
         "AWS/IDP Accelerator"
@@ -207,13 +214,6 @@
     "Web Security/AuthN/Modern Architecture": {
       "children": [
         "Web Security/AuthN/Modern Architecture/The API Gateway Abstraction.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "Applied AI": {
-      "children": [
-        "Applied AI/A2A.md",
-        "Applied AI/MCP.md"
       ],
       "sortOrder": "custom"
     }
