@@ -12,13 +12,6 @@
       ],
       "sortOrder": "custom"
     },
-    "web_security": {
-      "children": [
-        "web_security/overview_&_definitions.md",
-        "web_security/auth_n"
-      ],
-      "sortOrder": "custom"
-    },
     "applied_ai": {
       "children": [
         "applied_ai/A2A.md",
@@ -146,6 +139,12 @@
       ],
       "sortOrder": "custom"
     },
+    "docs": {
+      "children": [
+        "docs/style.md"
+      ],
+      "sortOrder": "custom"
+    },
     "linux": {
       "children": [
         "linux/Bash"
@@ -171,8 +170,8 @@
         "python/Core/Implementations & Execution.md",
         "python/Core/Language Guidelines.md",
         "python/Core/Main Function.md",
-        "python/Core/unformatted python notes.md",
-        "python/Core/Variables & Types.md"
+        "python/Core/Variables & Types.md",
+        "python/Core/unformatted python notes.md"
       ],
       "sortOrder": "custom"
     },
@@ -180,6 +179,13 @@
       "children": [
         "python/Tooling/pyenv.md",
         "python/Tooling/venv.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "web_security": {
+      "children": [
+        "web_security/overview_&_definitions.md",
+        "web_security/auth_n"
       ],
       "sortOrder": "custom"
     },
@@ -203,10 +209,6 @@
       "children": [
         "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md"
       ],
-      "sortOrder": "custom"
-    },
-    "docs": {
-      "children": [],
       "sortOrder": "custom"
     }
   },
