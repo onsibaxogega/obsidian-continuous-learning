@@ -2,11 +2,6 @@
 .obsidian/workspace.json
 .obsidian/app.json
 
-.obsidian/community-plugins.json
-.obsidian/plugins/manual-sorting/data.json
-.obsidian/plugins/obsidian-spaced-repetition/data.json
-.obsidian/plugins/terminal/data.json
-
 # Ignore system and editor files (more specific to what I do)
 .vscode/
 .idea/
