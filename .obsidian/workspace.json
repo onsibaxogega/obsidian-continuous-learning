@@ -1,112 +1,41 @@
 {
   "main": {
-    "id": "d4a68383fb0a85b2",
+    "id": "1d4ca38a656d03e8",
     "type": "split",
     "children": [
       {
-        "id": "f961b4900398fe47",
-        "type": "split",
+        "id": "577c3caa2578a78c",
+        "type": "tabs",
         "children": [
           {
-<<<<<<< HEAD
-            "id": "8b18cfe793535d37",
+            "id": "a9948c2c4b4dd375",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud Certifications/AWS/Overview.md",
+                "file": "Web Security/AuthN/HTTP Authentication Schemes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Overview"
+              "title": "HTTP Authentication Schemes"
             }
-=======
-            "id": "78008a0da3de7467",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "9460cabadddfa28b",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Linux (Ubuntu)/Bash/Fundamentals.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "Fundamentals"
-                }
-              }
-            ]
-          },
-          {
-            "id": "cc4b2e61181ad1e1",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "505f4a97fe747519",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "terminal:terminal",
-                  "state": {
-                    "terminal:terminal": {
-                      "cwd": "/home/oogega/workspace/obsidian-continuous-learning",
-                      "focus": false,
-                      "profile": {
-                        "args": [],
-                        "environment": [],
-                        "executable": "/bin/sh",
-                        "followTheme": true,
-                        "name": "",
-                        "platforms": {
-                          "linux": true
-                        },
-                        "pythonExecutable": "python3",
-                        "restoreHistory": false,
-                        "rightClickAction": "copyPaste",
-                        "successExitCodes": [
-                          "0",
-                          "SIGINT",
-                          "SIGTERM"
-                        ],
-                        "terminalOptions": {
-                          "documentOverride": null
-                        },
-                        "type": "integrated",
-                        "useWin32Conhost": true
-                      },
-                      "profileSourceId": "linuxIntegratedDefault",
-                      "serial": null,
-                      "userTitle": ""
-                    }
-                  },
-                  "pinned": true,
-                  "icon": "terminal",
-                  "title": "Terminal: sh"
-                }
-              }
-            ]
->>>>>>> origin
           }
-        ],
-        "direction": "horizontal"
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "abe314995a2b75b5",
+    "id": "9df9d52b28631b8b",
     "type": "split",
     "children": [
       {
-        "id": "1b91a86bda1e358d",
+        "id": "74f852b2c817c42d",
         "type": "tabs",
         "children": [
           {
-            "id": "81294706735498ab",
+            "id": "2dc965e9cd77dd48",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -121,7 +50,7 @@
             }
           },
           {
-            "id": "aad327c18e646d5d",
+            "id": "55a405a622ca4964",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -138,7 +67,7 @@
             }
           },
           {
-            "id": "0baf70ea83850cdf",
+            "id": "c5ef3eb68816a94a",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -151,23 +80,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 360.5
   },
   "right": {
-    "id": "df16b1efb0f1ac51",
+    "id": "b66ed8e79fc72549",
     "type": "split",
     "children": [
       {
-        "id": "163c7ebbd1435b21",
+        "id": "a4f22d44526599c6",
         "type": "tabs",
         "children": [
           {
-            "id": "0395e10e490465e0",
+            "id": "db327709e136f73d",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Security/auth/auht.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,25 +106,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for auht"
             }
           },
           {
-            "id": "5c24c1af3ae5d87e",
+            "id": "b6cdab64917db283",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cloud/Azure/AI-901/Overview.md",
+                "file": "Security/auth/auht.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Overview"
+              "title": "Outgoing links from auht"
             }
           },
           {
-            "id": "a3a09493a418d720",
+            "id": "6d01fa99a3c70e2c",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -210,22 +139,7 @@
             }
           },
           {
-            "id": "245f0a45c1fc988b",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "README.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of README"
-            }
-          },
-          {
-            "id": "84c5a2d31db381b7",
+            "id": "5172b840be8710f8",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -239,112 +153,70 @@
             }
           },
           {
-            "id": "7ecdef6b79448461",
+            "id": "9e0ecc7374720582",
             "type": "leaf",
             "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "review-queue-list-view"
-<<<<<<< HEAD
+              "type": "outline",
+              "state": {
+                "file": "Web Security/AuthN/HTTP Authentication Schemes.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
             }
           },
           {
-            "id": "e8adec4b225f3d5c",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "review-queue-list-view"
-            }
-          },
-          {
-            "id": "c87c67719916a58e",
+            "id": "947a9fdd6630e02e",
             "type": "leaf",
             "state": {
               "type": "review-queue-list-view",
               "state": {},
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
-=======
->>>>>>> origin
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 445.5,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "markdown-importer:Open format converter": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
       "bases:Create new base": false,
       "obsidian-spaced-repetition:Review flashcards": false,
       "quiz-generator:Open generator": false,
       "terminal:Open terminal": false
     }
   },
-  "active": "505f4a97fe747519",
+  "active": "a9948c2c4b4dd375",
   "lastOpenFiles": [
-<<<<<<< HEAD
-=======
-    "Linux (Ubuntu)/Bash/Fundamentals.md",
-    "Linux (Ubuntu)/Bash/Common Commands.md",
-    "Linux (Ubuntu)",
->>>>>>> origin
-    "AI/Untitled.canvas",
-    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M2 - Introduction to generative AI and agents.md",
-    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/M1 - Introduction to AI concepts.md",
-    "AI/A2A.md",
-    "Cloud Certifications/Azure/Overview.md",
-    "Cloud Certifications/Overview.md",
-    "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 2.md",
-    "Cloud Certifications/Azure/AZ-900/Quizzes/Practice Test 1.md",
-    "Python/Tooling/pyenv.md",
-    "Python/Tooling/venv.md",
-    "AI/MCP.md",
-    "README.md",
-    "().md",
+    "Web Security/AuthN/The HTTP Authentication Framework.md",
+    "Web Security/AuthN/Overview & Definitions.md",
+    "Applied AI/MCP.md",
+    "Applied AI/A2A.md",
+    "Web Security/Overview & Definitions.md",
     "AWS/IDP Accelerator/flowchart.md",
-    "AWS/IDP Accelerator/attachments/Pasted image 20260422111126.png",
-    "AWS/IDP Accelerator/attachments",
-    "AWS/IDP Accelerator",
-    "AWS",
-    "Untitled.md",
-    "Cloud Certifications/Azure/Applied Skills/AS-Build a generative AI chat app.md",
-    "AI",
-    "Python/Core/Main Function.md",
-    "Python/Tooling",
-    "Python/Core",
-    "Python/Core/unformatted python notes.md",
-    "Python/Core/Implementations & Execution.md",
-    "Python/Core/Variables & Types.md",
-    "Python/Core/Language Guidelines.md",
-    "Cloud Certifications/Azure/AI-103/Overview.md",
-    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M1 - Get started with AI in Azure.md",
-    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M3 - Get started with text analysis in Azure.md",
-<<<<<<< HEAD
-    "Cloud Certifications/Azure/AI-901/LP2 - Get started with AI applications and agents on Azure/M2 - Get started with generative AI and agents.md",
-    "Cloud Certifications/Azure/Applied Skills/AS-Implement knowledge mining with Azure AI Search.md",
-=======
->>>>>>> origin
-    "Cloud Certifications/Azure/AI-103",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments/Pasted image 20260330103007.png",
-    "Cloud/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/attachments",
-    "Cloud Certifications/AWS",
-    "Cloud Certifications/Azure/AI-901/LP1 - AI concepts for developers and technology professionals/Transformer Architecture.canvas",
-    "Certs/Azure/AZ-900/2) Azure architecture and services/attachments/Pasted image 20260317150554.png",
-    "Pasted image 20260312231200.png",
-    "Untitled.canvas"
+    "Web Security/AuthN/Modern Architecture/The API Gateway Abstraction.md",
+    "Web Security/AuthN/Modern Architecture",
+    "Web Security/AuthN/HTTP Authentication Schemes.md",
+    "Security/auth/Overview.md",
+    "Security/auth/diagrams/jwt_bearer.drawio",
+    "Security/auth/diagrams",
+    "Security/auth/HTTP Authentication Schemes.md",
+    "Security/auth/src/jwt.py",
+    "Security/auth/src",
+    "Security/auth",
+    "Web Security"
   ]
 }
