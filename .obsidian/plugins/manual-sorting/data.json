@@ -196,24 +196,34 @@
         "web_security/auth_n/overview_&_definitions.md",
         "web_security/auth_n/the_http_authentication_framework.md",
         "web_security/auth_n/http_authentication_schemes.md",
+        "web_security/auth_n/json_web_tokens.md",
         "web_security/auth_n/modern_architecture"
       ],
       "sortOrder": "custom"
     },
     "web_security/auth_n/modern_architecture": {
       "children": [
+        "web_security/auth_n/modern_architecture/jwt_in_gcp_iap.md",
         "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md"
       ],
       "sortOrder": "custom"
     },
     "web_security/diagrams": {
       "children": [
+        "web_security/diagrams/descriptions",
+        "web_security/diagrams/http_authentication_framework.png",
         "web_security/diagrams/unrendered"
       ],
       "sortOrder": "custom"
     },
-    "web_security/diagrams/unrendered": {
+    "web_security/diagrams/descriptions": {
       "children": [],
+      "sortOrder": "custom"
+    },
+    "web_security/diagrams/unrendered": {
+      "children": [
+        "web_security/diagrams/unrendered/http_authentication_framework.json"
+      ],
       "sortOrder": "custom"
     }
   },
