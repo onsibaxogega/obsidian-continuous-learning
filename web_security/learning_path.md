@@ -1,0 +1,39 @@
+# Web Security Learning Path
+
+- [X]  1. [Overview & Definitions](./overview_&_definitions.md)
+- [ ]  2. Authentication (AuthN)
+  - [X]  2.1. [Overview & Definitions](./auth_n/overview_&_definitions.md)
+  - [X]  2.2. [The HTTP Authentication Framework](./auth_n/the_http_authentication_framework.md)
+  - [X]  2.3. [HTTP Authentication Schemes](./auth_n/http_authentication_schemes.md)
+  - [ ]  2.4. JSON Web Tokens (JWTs)
+  - [ ]  2.5. The OAuth 2.0 Framework
+  - [ ]  2.6. OpenID Connect (OIDC) & Single Sign-On (SSO)
+  - [ ]  2.7. Modern Architecture
+    - [X]  2.7.1. [The API Gateway Abstraction](./auth_n/modern_architecture/the_api_gateway_abstraction.md)
+    - [ ]  2.7.2. GCP Identity-Aware Proxy (IAP) & Okta Integration
+- [ ]  3. Authorization (AuthZ)
+  - [ ]  3.1. Role-Based (RBAC) vs Attribute-Based (ABAC) Access Control
+  - [ ]  3.2. Scopes vs. Claims vs. Roles
+  - [ ]  3.3. Modern Architecture
+    - [ ]  3.3.1. Implementing AuthZ in FastAPI (Dependencies & Middleware)
+- [ ]  4. Cross-Site Vulnerabilities (CORS, CSRF, XSS)
+  - [ ]  4.1. Cross-Origin Resource Sharing (CORS)
+    - [ ]  4.1.1. The Same-Origin Policy (SOP) & Preflight Requests
+    - [ ]  4.1.2. Architecture Pattern: Avoiding CORS via ALB Path Routing
+  - [ ]  4.2. Cross-Site Scripting (XSS)
+    - [ ]  4.2.1. React's Built-in Protections & `dangerouslySetInnerHTML`
+    - [ ]  4.2.2. Securing Tokens in SPAs (Local Storage vs. Memory)
+  - [ ]  4.3. Cross-Site Request Forgery (CSRF)
+    - [ ]  4.3.1. Vulnerability Mechanics & Defenses
+- [ ]  5. Secure Session Management & Cookies
+  - [ ]  5.1. Stateful Sessions vs. Stateless Tokens
+  - [ ]  5.2. Cookie Security Flags (`HttpOnly`, `Secure`, `SameSite`)
+  - [ ]  5.3. Modern Architecture
+    - [ ]  5.3.1. Handling `GCP_IAP_UID` Sessions
+    - [ ]  5.3.2. The Backend-For-Frontend (BFF) Pattern
+- [ ]  6. Cryptography in Transit (TLS/SSL)
+  - [ ]  6.1. Symmetric vs. Asymmetric Encryption
+  - [ ]  6.2. The TLS Handshake & Certificate Authorities
+  - [ ]  6.3. Modern Architecture
+    - [ ]  6.3.1. SSL Termination at the GCP Internal ALB
+    - [ ]  6.3.2. Multi-Domain SAN Certificates

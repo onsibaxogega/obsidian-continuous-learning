@@ -1,0 +1,650 @@
+{
+  "entities": [
+    {
+      "tag": "Shape",
+      "id": "client_head",
+      "x": 90,
+      "y": 40,
+      "width": 220,
+      "height": 70,
+      "color": "blue",
+      "icon": "laptop",
+      "texts": [
+        {
+          "text": "**Client**\nBrowser / User Agent"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "proxy_head",
+      "x": 590,
+      "y": 40,
+      "width": 220,
+      "height": 70,
+      "color": "orange",
+      "icon": "router",
+      "texts": [
+        {
+          "text": "**Intermediary Proxy**\nForward Proxy / Gateway"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "server_head",
+      "x": 1090,
+      "y": 40,
+      "width": 220,
+      "height": 70,
+      "color": "purple",
+      "icon": "server",
+      "texts": [
+        {
+          "text": "**Origin Server**\nProtected API / Resource"
+        }
+      ]
+    },
+    {
+      "tag": "Group",
+      "id": "grp_phase1",
+      "x": 40,
+      "y": 240,
+      "width": 1380,
+      "height": 570,
+      "color": "orange",
+      "title": {
+        "text": "**Phase 1: Proxy Authentication Challenge (HTTP 407 Flow)**",
+        "icon": "shield"
+      }
+    },
+    {
+      "tag": "Shape",
+      "id": "c1",
+      "containerId": "grp_phase1",
+      "x": 100,
+      "y": 340,
+      "width": 200,
+      "height": 55,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "**Client**\nSends initial request"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "p1",
+      "containerId": "grp_phase1",
+      "x": 600,
+      "y": 340,
+      "width": 200,
+      "height": 55,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "**Proxy**\nIntercepts connection"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "p2",
+      "containerId": "grp_phase1",
+      "x": 600,
+      "y": 515,
+      "width": 200,
+      "height": 55,
+      "color": "red",
+      "texts": [
+        {
+          "text": "**Proxy**\nDemands proxy auth"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "c2",
+      "containerId": "grp_phase1",
+      "x": 100,
+      "y": 515,
+      "width": 200,
+      "height": 55,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "**Client**\nReceives 407 challenge"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "c3",
+      "containerId": "grp_phase1",
+      "x": 100,
+      "y": 690,
+      "width": 200,
+      "height": 55,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "**Client**\nSupplies proxy credentials"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "p3",
+      "containerId": "grp_phase1",
+      "x": 600,
+      "y": 690,
+      "width": 200,
+      "height": 55,
+      "color": "green",
+      "texts": [
+        {
+          "text": "**Proxy**\nAuthorizes gateway tunnel"
+        }
+      ]
+    },
+    {
+      "tag": "Group",
+      "id": "grp_phase2",
+      "x": 40,
+      "y": 930,
+      "width": 1380,
+      "height": 740,
+      "color": "purple",
+      "title": {
+        "text": "**Phase 2: Origin Server Challenge & Verification (HTTP 401 & 200 Flow)**",
+        "icon": "lock"
+      }
+    },
+    {
+      "tag": "Shape",
+      "id": "p4",
+      "containerId": "grp_phase2",
+      "x": 600,
+      "y": 1030,
+      "width": 200,
+      "height": 55,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "**Proxy**\nForwards request to origin"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "s4",
+      "containerId": "grp_phase2",
+      "x": 1100,
+      "y": 1030,
+      "width": 200,
+      "height": 55,
+      "color": "purple",
+      "texts": [
+        {
+          "text": "**Origin**\nUnauthenticated access"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "s5",
+      "containerId": "grp_phase2",
+      "x": 1100,
+      "y": 1205,
+      "width": 200,
+      "height": 55,
+      "color": "red",
+      "texts": [
+        {
+          "text": "**Origin**\nIssues 401 challenge"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "p5",
+      "containerId": "grp_phase2",
+      "x": 600,
+      "y": 1205,
+      "width": 200,
+      "height": 55,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "**Proxy**\nPasses 401 upstream"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "c5",
+      "containerId": "grp_phase2",
+      "x": 100,
+      "y": 1205,
+      "width": 200,
+      "height": 55,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "**Client**\nRetrieves Bearer token"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "c6",
+      "containerId": "grp_phase2",
+      "x": 100,
+      "y": 1380,
+      "width": 200,
+      "height": 55,
+      "color": "purple",
+      "texts": [
+        {
+          "text": "**Client**\nSends Bearer credential"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "p6",
+      "containerId": "grp_phase2",
+      "x": 600,
+      "y": 1380,
+      "width": 200,
+      "height": 55,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "**Proxy**\nForwards auth header"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "s6",
+      "containerId": "grp_phase2",
+      "x": 1100,
+      "y": 1380,
+      "width": 200,
+      "height": 55,
+      "color": "purple",
+      "texts": [
+        {
+          "text": "**Origin**\nValidates token & realm"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "s7",
+      "containerId": "grp_phase2",
+      "x": 1100,
+      "y": 1555,
+      "width": 200,
+      "height": 55,
+      "color": "green",
+      "texts": [
+        {
+          "text": "**Origin**\nGrants resource access"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "p7",
+      "containerId": "grp_phase2",
+      "x": 600,
+      "y": 1555,
+      "width": 200,
+      "height": 55,
+      "color": "green",
+      "texts": [
+        {
+          "text": "**Proxy**\nRelays 200 payload"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "c7",
+      "containerId": "grp_phase2",
+      "x": 100,
+      "y": 1555,
+      "width": 200,
+      "height": 55,
+      "color": "green",
+      "texts": [
+        {
+          "text": "**Client**\nRenders protected data"
+        }
+      ]
+    },
+    {
+      "tag": "Group",
+      "id": "grp_spec_summary",
+      "x": 40,
+      "y": 1790,
+      "width": 1380,
+      "height": 260,
+      "color": "black",
+      "title": {
+        "text": "**HTTP Authentication Header Protocol Mapping (RFC 9110)**",
+        "icon": "list"
+      }
+    },
+    {
+      "tag": "Shape",
+      "id": "card_proxy_headers",
+      "containerId": "grp_spec_summary",
+      "x": 80,
+      "y": 1890,
+      "width": 360,
+      "height": 95,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "**Proxy Authentication**\n• `407 Proxy Authentication Required`\n• `Proxy-Authenticate: Basic realm=\"...\"`\n• `Proxy-Authorization: Basic <creds>`"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "card_origin_headers",
+      "containerId": "grp_spec_summary",
+      "x": 540,
+      "y": 1890,
+      "width": 360,
+      "height": 95,
+      "color": "purple",
+      "texts": [
+        {
+          "text": "**Origin Authentication**\n• `401 Unauthorized`\n• `WWW-Authenticate: Bearer realm=\"...\"`\n• `Authorization: Bearer <token>`"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "card_success_headers",
+      "containerId": "grp_spec_summary",
+      "x": 1000,
+      "y": 1890,
+      "width": 360,
+      "height": 95,
+      "color": "green",
+      "texts": [
+        {
+          "text": "**Success & State Updates**\n• `200 OK (Access Granted)`\n• `Authentication-Info: nextnonce=\"...\"`\n• Transmits session auth context"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "tag": "Relationship",
+      "from": "client_head",
+      "to": "c1",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "blue",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "c1",
+      "to": "c2",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "blue",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "c2",
+      "to": "c3",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "blue",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "c3",
+      "to": "c5",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "blue",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "c5",
+      "to": "c6",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "blue",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "c6",
+      "to": "c7",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "blue",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "proxy_head",
+      "to": "p1",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "p1",
+      "to": "p2",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "p2",
+      "to": "p3",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "p3",
+      "to": "p4",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "p4",
+      "to": "p5",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "p5",
+      "to": "p6",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "p6",
+      "to": "p7",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "orange",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "server_head",
+      "to": "s4",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "purple",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "s4",
+      "to": "s5",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "purple",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "s5",
+      "to": "s6",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "purple",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "s6",
+      "to": "s7",
+      "fromPort": "bottom",
+      "toPort": "top",
+      "lineStyle": "dashed",
+      "color": "purple",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "c1",
+      "to": "p1",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "1. GET /api/resource",
+      "color": "blue"
+    },
+    {
+      "tag": "Relationship",
+      "from": "p2",
+      "to": "c2",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "2. 407 Proxy-Authenticate",
+      "color": "red"
+    },
+    {
+      "tag": "Relationship",
+      "from": "c3",
+      "to": "p3",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "3. Proxy-Authorization",
+      "color": "orange"
+    },
+    {
+      "tag": "Relationship",
+      "from": "p4",
+      "to": "s4",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "4. Forward GET request",
+      "color": "blue"
+    },
+    {
+      "tag": "Relationship",
+      "from": "s5",
+      "to": "p5",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "5. 401 WWW-Authenticate",
+      "color": "red"
+    },
+    {
+      "tag": "Relationship",
+      "from": "p5",
+      "to": "c5",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "Relay 401 challenge",
+      "color": "red"
+    },
+    {
+      "tag": "Relationship",
+      "from": "c6",
+      "to": "p6",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "6. Authorization: Bearer",
+      "color": "purple"
+    },
+    {
+      "tag": "Relationship",
+      "from": "p6",
+      "to": "s6",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "Forward Authorization",
+      "color": "purple"
+    },
+    {
+      "tag": "Relationship",
+      "from": "s7",
+      "to": "p7",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "7. 200 OK Access Granted",
+      "color": "green"
+    },
+    {
+      "tag": "Relationship",
+      "from": "p7",
+      "to": "c7",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "Relay 200 OK + payload",
+      "color": "green"
+    }
+  ]
+}

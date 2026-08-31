@@ -2,13 +2,13 @@
   "customOrder": {
     "/": {
       "children": [
+        "README.md",
         "docs",
-        "web_security",
         "applied_ai",
         "cloud_certifications",
         "linux",
         "python",
-        "README.md"
+        "web_security"
       ],
       "sortOrder": "custom"
     },
@@ -184,8 +184,10 @@
     },
     "web_security": {
       "children": [
+        "web_security/learning_path.md",
         "web_security/overview_&_definitions.md",
-        "web_security/auth_n"
+        "web_security/auth_n",
+        "web_security/diagrams"
       ],
       "sortOrder": "custom"
     },
@@ -194,14 +196,7 @@
         "web_security/auth_n/overview_&_definitions.md",
         "web_security/auth_n/the_http_authentication_framework.md",
         "web_security/auth_n/http_authentication_schemes.md",
-        "web_security/auth_n/modern_architecture",
-        "web_security/auth_n/diagrams"
-      ],
-      "sortOrder": "custom"
-    },
-    "web_security/auth_n/diagrams": {
-      "children": [
-        "web_security/auth_n/diagrams/jwt_bearer.drawio"
+        "web_security/auth_n/modern_architecture"
       ],
       "sortOrder": "custom"
     },
@@ -209,6 +204,16 @@
       "children": [
         "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md"
       ],
+      "sortOrder": "custom"
+    },
+    "web_security/diagrams": {
+      "children": [
+        "web_security/diagrams/unrendered"
+      ],
+      "sortOrder": "custom"
+    },
+    "web_security/diagrams/unrendered": {
+      "children": [],
       "sortOrder": "custom"
     }
   },

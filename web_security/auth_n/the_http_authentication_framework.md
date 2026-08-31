@@ -43,3 +43,6 @@ Here is how the framework facilitates a JWT Bearer token exchange in practice:
 3. **Client:** `GET /api/dashboard`
    - *Header:* `Authorization: Bearer eyJhbGciOiJIUzI1NiIs...`
 1. **Server:** `200 OK`
+
+
+![http_authentication_framework.png](../diagrams/http_authentication_framework.png)
