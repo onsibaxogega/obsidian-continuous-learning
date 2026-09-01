@@ -12,85 +12,25 @@
 - **Defense in Depth:** Even if a malicious actor breached the internal corporate network and tried to send a direct HTTP request to the internal Cloud Run URL, they could not bypass security. Because they cannot forge Google's cryptographic signature on the JWT, the FastAPI backend will instantly reject the fake request.
 - **Decoupling Auth from Business Logic:** Your backend developers do not need to write complex SAML or OIDC login flows. They only need to write a simple middleware that verifies a standard JWT signature. IAP handles the heavy lifting of the actual login screens and session cookies.
 
----
+### How IAP and the ALB Actually Interact
 
-## 2. Architectural Flow
+It is common to say IAP is "attached" to the load balancer, but in Google Cloud, IAP is natively integrated into the ALB's underlying proxy infrastructure (the Envoy proxies). It is not a separate server sitting in front of the ALB. 
 
-### DIAGRAM: gcp_iap_jwt_injection
-
-This sequence illustrates the traffic flow from a corporate user accessing an internal AI tool, showing how IAP authenticates the user and passes the identity via JWT to a Serverless NEG.
-
-1.  **Ingress & Interception:**
-    *   The User navigates to `chat.ai.mo.gov`.
-    *   The traffic hits the GCP Internal Application Load Balancer (ALB).
-    *   The Identity-Aware Proxy (IAP), attached to the ALB, intercepts the request.
-2.  **Authentication (Okta):**
-    *   IAP checks if the user has a valid IAP session cookie (`GCP_IAP_UID`).
-    *   If no valid session exists, IAP redirects the user's browser to the central Identity Provider (Okta) via the OIDC protocol.
-    *   The User logs in at Okta. Okta redirects back to IAP with a success payload.
-3.  **JWT Minting & Injection:**
-    *   IAP validates the Okta response and establishes a browser session cookie for the user.
-    *   Crucially, IAP now generates a brand new JSON Web Token. It places the user's email into the payload and signs the token using Google's private cryptographic keys.
-    *   IAP attaches this token to the `X-Goog-Authenticated-User-JWT` HTTP header and forwards the request through the Proxy Subnet to the Serverless NEG.
-4.  **Backend Verification:**
-    *   The request arrives at the FastAPI Cloud Run container.
-    *   A FastAPI dependency intercepts the request, reads the `X-Goog-Authenticated-User-JWT` header, and fetches Google's public keys (from `https://www.gstatic.com/iap/verify/public_key`).
-    *   FastAPI mathematically verifies the signature. If valid, it extracts the user's email and processes the request with absolute certainty of the user's identity.
+1. **The ALB Handles the Connection:** The ALB receives the raw HTTP request from the corporate network and terminates the SSL/TLS certificate.
+2. **The IAP Interception Point:** If IAP is enabled for a specific *Backend Service* (e.g., your FastAPI Cloud Run NEG), the ALB pauses the routing process and hands the request to the local IAP module.
+3. **The IAP Policy Evaluation:** IAP checks for the session cookie. If missing, it tells the ALB to immediately return a `302 Redirect` to Okta. If present, it evaluates IAM permissions and mints the JWT.
+4. **The Handoff & Final Route:** IAP injects the JWT into the HTTP headers and hands the request *back* to the ALB's routing engine, which forwards it to the Cloud Run container.
+- > `NOTE:` Because IAP is applied at the *Backend Service* level, a single shared ALB can route traffic to an unauthenticated public website on one path, while strictly enforcing IAP on another path.
 
 ---
 
-## 3. Implementation
+## 2. Architectural Flow Diagram
 
-This snippet demonstrates a FastAPI dependency specifically designed to verify GCP IAP JWTs.
-
-```python
-# Setup: pip install google-auth
-
-from fastapi import Depends, HTTPException, Header, status
-from google.oauth2 import id_token
-from google.auth.transport import requests
-
-# Google's public key endpoint for IAP
-IAP_PUBLIC_KEY_URL = "https://www.gstatic.com/iap/verify/public_key"
-
-def verify_iap_jwt(
-    # FastAPI extracts the specific header automatically
-    x_goog_authenticated_user_jwt: str = Header(None)
-) -> dict:
-    """
-    Verifies the JWT injected by GCP Identity-Aware Proxy.
-    """
-    if not x_goog_authenticated_user_jwt:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Missing IAP JWT header"
-        )
-
-    try:
-        # The google-auth library handles fetching the public keys and verifying the signature
-        # We must explicitly verify the audience matches our specific GCP Backend Service ID
-        expected_audience = "/projects/1234567890/global/backendServices/0987654321"
-        
-        decoded_jwt = id_token.verify_token(
-            x_goog_authenticated_user_jwt,
-            requests.Request(),
-            audience=expected_audience,
-            certs_url=IAP_PUBLIC_KEY_URL
-        )
-        
-        return decoded_jwt  # prints {'sub': 'accounts.google.com:123', 'email': 'user@mo.gov', ...}
-        
-    except ValueError as e:
-        # Raised if the signature is invalid, expired, or audience doesn't match
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail=f"Invalid IAP JWT: {str(e)}"
-        )
-```
+![gcp_iap_jwt_injection.png](../../diagrams/gcp_iap_jwt_injection.png)
 
 ---
 
-## 4. Industry Best Practices & Security
+## 3. Industry Best Practices & Security
 
 - **Strict Audience Validation:**
 	- `Audience` (`aud`) validation is non-negotiable. If you don't check the audience, a valid IAP token from *App A* could be maliciously sent to *App B*, and *App B* would accept it because the Google signature is technically valid.

@@ -1,5 +1,5 @@
 
-This sequence diagram illustrates how a decoupled React Single Page Application (SPA) and a FastAPI backend utilize JWTs without relying on a central database for session state.
+A sequence diagram that illustrates how a decoupled React Single Page Application (SPA) and a FastAPI backend utilize JWTs without relying on a central database for session state.
 
 1. **Authentication Phase:**
    * The User inputs their credentials into the React SPA.

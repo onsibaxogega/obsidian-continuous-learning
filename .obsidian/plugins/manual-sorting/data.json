@@ -203,25 +203,32 @@
     },
     "web_security/auth_n/modern_architecture": {
       "children": [
-        "web_security/auth_n/modern_architecture/jwt_in_gcp_iap.md",
-        "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md"
+        "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md",
+        "web_security/auth_n/modern_architecture/jwt_in_gcp_iap.md"
       ],
       "sortOrder": "custom"
     },
     "web_security/diagrams": {
       "children": [
-        "web_security/diagrams/descriptions",
+        "web_security/diagrams/gcp_iap_jwt_injection.png",
+        "web_security/diagrams/stateless_jwt_verification.png",
         "web_security/diagrams/http_authentication_framework.png",
+        "web_security/diagrams/descriptions",
         "web_security/diagrams/unrendered"
       ],
       "sortOrder": "custom"
     },
     "web_security/diagrams/descriptions": {
-      "children": [],
+      "children": [
+        "web_security/diagrams/descriptions/gcp_iap_jwt_injection.md",
+        "web_security/diagrams/descriptions/stateless_jwt_verification.md"
+      ],
       "sortOrder": "custom"
     },
     "web_security/diagrams/unrendered": {
       "children": [
+        "web_security/diagrams/unrendered/gcp_iap_jwt_injection.json",
+        "web_security/diagrams/unrendered/stateless_jwt_verification.json",
         "web_security/diagrams/unrendered/http_authentication_framework.json"
       ],
       "sortOrder": "custom"

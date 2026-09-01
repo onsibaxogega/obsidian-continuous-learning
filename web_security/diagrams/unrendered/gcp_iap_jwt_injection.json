@@ -1,0 +1,585 @@
+{
+  "entities": [
+    {
+      "tag": "Group",
+      "id": "group_gcp",
+      "x": 780,
+      "y": 20,
+      "width": 740,
+      "height": 1700,
+      "color": "blue",
+      "title": {
+        "text": "Google Cloud Platform - VPC & Services",
+        "icon": "cloud"
+      }
+    },
+    {
+      "tag": "Shape",
+      "id": "part_user",
+      "x": 60,
+      "y": 140,
+      "width": 220,
+      "height": 60,
+      "color": "blue",
+      "icon": "laptop",
+      "texts": [
+        {
+          "text": "**Corporate User**\nBrowser / Client",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "part_okta",
+      "x": 420,
+      "y": 140,
+      "width": 220,
+      "height": 60,
+      "color": "orange",
+      "icon": "key-round",
+      "texts": [
+        {
+          "text": "**Okta IdP**\nEnterprise OIDC Provider",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "part_iap",
+      "x": 840,
+      "y": 140,
+      "width": 220,
+      "height": 60,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "icon": "shield",
+      "texts": [
+        {
+          "text": "**Cloud IAP + ALB**\nIdentity-Aware Proxy",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "part_cloudrun",
+      "x": 1240,
+      "y": 140,
+      "width": 220,
+      "height": 60,
+      "color": "green",
+      "containerId": "group_gcp",
+      "icon": "gcp-cloud-run",
+      "texts": [
+        {
+          "text": "**Cloud Run**\nFastAPI AI Service",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "part_keys",
+      "x": 1660,
+      "y": 140,
+      "width": 220,
+      "height": 60,
+      "color": "yellow",
+      "icon": "key",
+      "texts": [
+        {
+          "text": "**Google Public Keys**\nJWKS Repo",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_u1",
+      "x": 90,
+      "y": 300,
+      "width": 160,
+      "height": 50,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "User Request",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_iap1",
+      "x": 870,
+      "y": 300,
+      "width": 160,
+      "height": 50,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Check Session",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_iap2",
+      "x": 870,
+      "y": 460,
+      "width": 160,
+      "height": 50,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Challenge 302",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_u2",
+      "x": 90,
+      "y": 460,
+      "width": 160,
+      "height": 50,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "Handle Redirect",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_u3",
+      "x": 90,
+      "y": 620,
+      "width": 160,
+      "height": 50,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "Submit Login",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_okta1",
+      "x": 450,
+      "y": 620,
+      "width": 160,
+      "height": 50,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "Verify User & MFA",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_okta2",
+      "x": 450,
+      "y": 780,
+      "width": 160,
+      "height": 50,
+      "color": "orange",
+      "texts": [
+        {
+          "text": "Issue OIDC Code",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_iap3",
+      "x": 870,
+      "y": 780,
+      "width": 160,
+      "height": 50,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Mint Signed JWT",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_iap4",
+      "x": 870,
+      "y": 940,
+      "width": 160,
+      "height": 50,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Proxy Request",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_cr1",
+      "x": 1270,
+      "y": 940,
+      "width": 160,
+      "height": 50,
+      "color": "green",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Extract JWT Header",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_cr2",
+      "x": 1270,
+      "y": 1100,
+      "width": 160,
+      "height": 50,
+      "color": "green",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Query Public Key",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_keys1",
+      "x": 1690,
+      "y": 1100,
+      "width": 160,
+      "height": 50,
+      "color": "yellow",
+      "texts": [
+        {
+          "text": "Fetch Certs",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_keys2",
+      "x": 1690,
+      "y": 1260,
+      "width": 160,
+      "height": 50,
+      "color": "yellow",
+      "texts": [
+        {
+          "text": "JWKS Response",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_cr3",
+      "x": 1270,
+      "y": 1260,
+      "width": 160,
+      "height": 50,
+      "color": "green",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Validate Signature",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_cr4",
+      "x": 1270,
+      "y": 1420,
+      "width": 160,
+      "height": 50,
+      "color": "green",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Execute AI Task",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_iap5",
+      "x": 870,
+      "y": 1420,
+      "width": 160,
+      "height": 50,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Stream Response",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_iap6",
+      "x": 870,
+      "y": 1580,
+      "width": 160,
+      "height": 50,
+      "color": "purple",
+      "containerId": "group_gcp",
+      "texts": [
+        {
+          "text": "Set Session Cookie",
+          "hAlign": "center"
+        }
+      ]
+    },
+    {
+      "tag": "Shape",
+      "id": "act_u4",
+      "x": 90,
+      "y": 1580,
+      "width": 160,
+      "height": 50,
+      "color": "blue",
+      "texts": [
+        {
+          "text": "Render AI Output",
+          "hAlign": "center"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "tag": "Relationship",
+      "from": "part_user",
+      "to": "act_u1",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_u1",
+      "to": "act_u2",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_u2",
+      "to": "act_u3",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_u3",
+      "to": "act_u4",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "part_iap",
+      "to": "act_iap1",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap1",
+      "to": "act_iap2",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap2",
+      "to": "act_iap3",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap3",
+      "to": "act_iap4",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap4",
+      "to": "act_iap5",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap5",
+      "to": "act_iap6",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "part_okta",
+      "to": "act_okta1",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_okta1",
+      "to": "act_okta2",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "part_cloudrun",
+      "to": "act_cr1",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_cr1",
+      "to": "act_cr2",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_cr2",
+      "to": "act_cr3",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_cr3",
+      "to": "act_cr4",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "part_keys",
+      "to": "act_keys1",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_keys1",
+      "to": "act_keys2",
+      "lineStyle": "dotted",
+      "endArrowhead": null
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_u1",
+      "to": "act_iap1",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "1. GET /chat"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap2",
+      "to": "act_u2",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "2. [No Cookie] 302 Redirect",
+      "lineStyle": "dashed"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_u3",
+      "to": "act_okta1",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "3. Authenticate with Okta"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_okta2",
+      "to": "act_iap3",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "4. OIDC Callback + Auth Token",
+      "lineStyle": "dashed"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap4",
+      "to": "act_cr1",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "5. Forward with Signed JWT"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_cr2",
+      "to": "act_keys1",
+      "fromPort": "right",
+      "toPort": "left",
+      "label": "6. GET /iap/verify/public_key"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_keys2",
+      "to": "act_cr3",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "7. Public Certs JWKS",
+      "lineStyle": "dashed"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_cr4",
+      "to": "act_iap5",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "8. [JWT Valid] Stream Chunks",
+      "lineStyle": "dashed"
+    },
+    {
+      "tag": "Relationship",
+      "from": "act_iap6",
+      "to": "act_u4",
+      "fromPort": "left",
+      "toPort": "right",
+      "label": "9. 200 OK + AI Stream",
+      "lineStyle": "dashed",
+      "color": "green"
+    }
+  ]
+}
