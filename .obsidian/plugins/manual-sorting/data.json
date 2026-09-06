@@ -197,6 +197,8 @@
         "web_security/auth_n/the_http_authentication_framework.md",
         "web_security/auth_n/http_authentication_schemes.md",
         "web_security/auth_n/json_web_tokens.md",
+        "web_security/auth_n/oauth_2_0_framework.md",
+        "web_security/auth_n/openid_connect_protocol.md",
         "web_security/auth_n/modern_architecture"
       ],
       "sortOrder": "custom"

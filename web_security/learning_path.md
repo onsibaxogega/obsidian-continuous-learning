@@ -6,11 +6,11 @@
   - [X]  2.2. [The HTTP Authentication Framework](./auth_n/the_http_authentication_framework.md)
   - [X]  2.3. [HTTP Authentication Schemes](./auth_n/http_authentication_schemes.md)
   - [X]  2.4. [JSON Web Tokens (JWTs)](./auth_n/json_web_tokens.md)
-  - [ ]  2.5. The OAuth 2.0 Framework
-  - [ ]  2.6. OpenID Connect (OIDC) & Single Sign-On (SSO)
+  - [X]  2.5. [The OAuth 2.0 Framework](./auth_n/oauth_2_0_framework.md)
+  - [X]  2.6. [OpenID Connect (OIDC) & Single Sign-On (SSO)](./auth_n/openid_connect_protocol.md)
   - [ ]  2.7. Modern Architecture
     - [X]  2.7.1. [The API Gateway Abstraction](./auth_n/modern_architecture/the_api_gateway_abstraction.md)
-    - [ ]  2.7.2. [How GCP's IAP uses JWT](.\auth_n\modern_architecture\jwt_in_gcp_iap.md)
+    - [X]  2.7.2. [How GCP's IAP uses JWT](.\auth_n\modern_architecture\jwt_in_gcp_iap.md)
     - [ ]  2.7.3. [GCP Identity-Aware Proxy (IAP) & Okta Integration](./auth_n/modern_architecture/jwt_in_gcp_iap.md)
 - [ ]  3. Authorization (AuthZ)
   - [ ]  3.1. Role-Based (RBAC) vs Attribute-Based (ABAC) Access Control
