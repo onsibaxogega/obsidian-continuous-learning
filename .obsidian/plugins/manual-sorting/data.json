@@ -5,10 +5,10 @@
         "README.md",
         "docs",
         "applied_ai",
-        "cloud_certifications",
         "linux",
         "python",
-        "web_security"
+        "web_security",
+        "cloud_certifications"
       ],
       "sortOrder": "custom"
     },
@@ -23,7 +23,8 @@
       "children": [
         "cloud_certifications/AWS",
         "cloud_certifications/Azure",
-        "cloud_certifications/Overview.md"
+        "cloud_certifications/Overview.md",
+        "cloud_certifications/GCP"
       ],
       "sortOrder": "custom"
     },
@@ -139,6 +140,26 @@
       ],
       "sortOrder": "custom"
     },
+    "cloud_certifications/GCP": {
+      "children": [
+        "cloud_certifications/GCP/Overview.md",
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Associate Cloud Engineer": {
+      "children": [
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Overview.md",
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation": {
+      "children": [
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation/Introduction.md"
+      ],
+      "sortOrder": "custom"
+    },
     "docs": {
       "children": [
         "docs/style.md"
@@ -160,6 +181,8 @@
     },
     "python": {
       "children": [
+        "python/typing.md",
+        "python/web_dev",
         "python/Core",
         "python/Tooling"
       ],
@@ -180,6 +203,10 @@
         "python/Tooling/pyenv.md",
         "python/Tooling/venv.md"
       ],
+      "sortOrder": "custom"
+    },
+    "python/web_dev": {
+      "children": [],
       "sortOrder": "custom"
     },
     "web_security": {
