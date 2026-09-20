@@ -91,3 +91,18 @@ An API Gateway is a *specialized, advanced type of reverse proxy* designed speci
 - **Distinction:** While an API Gateway *is* a reverse proxy under the hood, it goes far beyond basic routing. It understands the API context and handles cross-cutting business concerns like JWT validation (AuthN offloading), rate limiting, request/response payload transformation, billing, and API versioning. 
 - **Colloquialisms & Misuses:**
     - Developers often use "Reverse Proxy" and "API Gateway" interchangeably. The easiest way to distinguish them is intent: if the tool is just routing raw traffic and balancing loads, it's acting as a reverse proxy. If it is inspecting payloads, validating tokens, and enforcing API quotas, it is acting as an API Gateway.
+
+
+---
+## Principal
+
+A principal in IAM (==Identity and Access Management==) is an entity - such as a user, a service account, or an application - that can be authenticated and authorized to access cloud resources.
+
+### Natural Language Definition
+- **Origin:** The word comes from the Latin root _principalis_, which means "first," "chief," or "main."
+- **Everyday Meaning:** In regular English, a principal is the primary person or most important thing (like a school principal).
+- **Legal Meaning:** It also means a person who has primary responsibility or who gives authority to an agent to act on their behalf.
+### Why the Word Was Chosen for IAM
+- **Primary Actor:** Security designers chose "principal" because it represents the main entity that initiates a request or action in a system.
+- **Delegation of Power:** Just like a legal principal empowers an agent, an IAM principal holds permissions and can sometimes assume roles or delegate actions within a secure environment.
+- **Neutral Umbrella Term:** The word covers humans, apps, and machines under one clear label, rather than always saying "user or service or computer."

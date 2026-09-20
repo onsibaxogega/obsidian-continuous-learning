@@ -2,13 +2,13 @@
   "customOrder": {
     "/": {
       "children": [
+        "README.md",
         "docs",
-        "web_security",
         "applied_ai",
-        "cloud_certifications",
         "linux",
         "python",
-        "README.md"
+        "web_security",
+        "cloud_certifications"
       ],
       "sortOrder": "custom"
     },
@@ -23,7 +23,8 @@
       "children": [
         "cloud_certifications/AWS",
         "cloud_certifications/Azure",
-        "cloud_certifications/Overview.md"
+        "cloud_certifications/Overview.md",
+        "cloud_certifications/GCP"
       ],
       "sortOrder": "custom"
     },
@@ -139,6 +140,26 @@
       ],
       "sortOrder": "custom"
     },
+    "cloud_certifications/GCP": {
+      "children": [
+        "cloud_certifications/GCP/Overview.md",
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Associate Cloud Engineer": {
+      "children": [
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Overview.md",
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation": {
+      "children": [
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation/Introduction.md"
+      ],
+      "sortOrder": "custom"
+    },
     "docs": {
       "children": [
         "docs/style.md"
@@ -160,6 +181,8 @@
     },
     "python": {
       "children": [
+        "python/typing.md",
+        "python/web_dev",
         "python/Core",
         "python/Tooling"
       ],
@@ -182,10 +205,16 @@
       ],
       "sortOrder": "custom"
     },
+    "python/web_dev": {
+      "children": [],
+      "sortOrder": "custom"
+    },
     "web_security": {
       "children": [
+        "web_security/learning_path.md",
         "web_security/overview_&_definitions.md",
-        "web_security/auth_n"
+        "web_security/auth_n",
+        "web_security/diagrams"
       ],
       "sortOrder": "custom"
     },
@@ -194,20 +223,42 @@
         "web_security/auth_n/overview_&_definitions.md",
         "web_security/auth_n/the_http_authentication_framework.md",
         "web_security/auth_n/http_authentication_schemes.md",
-        "web_security/auth_n/modern_architecture",
-        "web_security/auth_n/diagrams"
-      ],
-      "sortOrder": "custom"
-    },
-    "web_security/auth_n/diagrams": {
-      "children": [
-        "web_security/auth_n/diagrams/jwt_bearer.drawio"
+        "web_security/auth_n/json_web_tokens.md",
+        "web_security/auth_n/oauth_2_0_framework.md",
+        "web_security/auth_n/openid_connect_protocol.md",
+        "web_security/auth_n/modern_architecture"
       ],
       "sortOrder": "custom"
     },
     "web_security/auth_n/modern_architecture": {
       "children": [
-        "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md"
+        "web_security/auth_n/modern_architecture/the_api_gateway_abstraction.md",
+        "web_security/auth_n/modern_architecture/jwt_in_gcp_iap.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "web_security/diagrams": {
+      "children": [
+        "web_security/diagrams/gcp_iap_jwt_injection.png",
+        "web_security/diagrams/stateless_jwt_verification.png",
+        "web_security/diagrams/http_authentication_framework.png",
+        "web_security/diagrams/descriptions",
+        "web_security/diagrams/unrendered"
+      ],
+      "sortOrder": "custom"
+    },
+    "web_security/diagrams/descriptions": {
+      "children": [
+        "web_security/diagrams/descriptions/gcp_iap_jwt_injection.md",
+        "web_security/diagrams/descriptions/stateless_jwt_verification.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "web_security/diagrams/unrendered": {
+      "children": [
+        "web_security/diagrams/unrendered/gcp_iap_jwt_injection.json",
+        "web_security/diagrams/unrendered/stateless_jwt_verification.json",
+        "web_security/diagrams/unrendered/http_authentication_framework.json"
       ],
       "sortOrder": "custom"
     }
