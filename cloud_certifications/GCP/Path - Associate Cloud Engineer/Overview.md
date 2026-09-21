@@ -11,6 +11,11 @@
 - [Official Google Cloud ACE Certification Guide](https://cloud.google.com/learn/certification/cloud-engineer/)
 - [Google Cloud Skills Boost ACE Learning Path](https://www.skills.google/paths/11)
 - [[Study Plan - Google Cloud ACE]]
+- [Google Cloud products overview page](https://cloud.google.com/products/?hl=en#top_of_page)
+- [roles documentation](https://cloud.google.com/iam/docs/understanding-roles/#primitive\_roles)
+- [Google API Design Guide](https://cloud.google.com/apis/design/)
+- [Google APIs Explorer Directory](https://developers.google.com/apis-explorer/#p/)
+- 
 
 
 
