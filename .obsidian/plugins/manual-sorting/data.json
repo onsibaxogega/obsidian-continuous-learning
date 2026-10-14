@@ -2,11 +2,11 @@
   "customOrder": {
     "/": {
       "children": [
+        "Linux",
+        "Python",
         "README.md",
         "docs",
         "applied_ai",
-        "linux",
-        "python",
         "web_security",
         "cloud_certifications"
       ],
@@ -21,9 +21,9 @@
     },
     "cloud_certifications": {
       "children": [
+        "cloud_certifications/Overview.md",
         "cloud_certifications/AWS",
         "cloud_certifications/Azure",
-        "cloud_certifications/Overview.md",
         "cloud_certifications/GCP"
       ],
       "sortOrder": "custom"
@@ -108,7 +108,6 @@
       "children": [
         "cloud_certifications/Azure/AZ-900/LP2 - Azure architecture and services",
         "cloud_certifications/Azure/AZ-900/LP3 - Azure management and governance",
-        "cloud_certifications/Azure/AZ-900/Quizzes",
         "cloud_certifications/Azure/AZ-900/LP1 - Cloud concepts.md",
         "cloud_certifications/Azure/AZ-900/Overview.md"
       ],
@@ -132,14 +131,6 @@
       ],
       "sortOrder": "custom"
     },
-    "cloud_certifications/Azure/AZ-900/Quizzes": {
-      "children": [
-        "cloud_certifications/Azure/AZ-900/Quizzes/Practice Test 1.md",
-        "cloud_certifications/Azure/AZ-900/Quizzes/Practice Test 2.md",
-        "cloud_certifications/Azure/AZ-900/Quizzes/Practice Test 3.md"
-      ],
-      "sortOrder": "custom"
-    },
     "cloud_certifications/GCP": {
       "children": [
         "cloud_certifications/GCP/Overview.md",
@@ -150,63 +141,73 @@
     "cloud_certifications/GCP/Path - Associate Cloud Engineer": {
       "children": [
         "cloud_certifications/GCP/Path - Associate Cloud Engineer/Overview.md",
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation"
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine"
       ],
       "sortOrder": "custom"
     },
-    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation": {
+    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine": {
       "children": [
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course 1 - Essential Google Cloud Infrastructure - Foundation/Introduction.md"
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Overview.md",
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation": {
+      "children": [
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation/Course Contents.md",
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation/Introduction.md"
       ],
       "sortOrder": "custom"
     },
     "docs": {
       "children": [
+        "docs/prompts",
         "docs/style.md"
       ],
       "sortOrder": "custom"
     },
-    "linux": {
+    "docs/prompts": {
       "children": [
-        "linux/Bash"
+        "docs/prompts/quizblock.md"
       ],
       "sortOrder": "custom"
     },
-    "linux/Bash": {
+    "Linux": {
       "children": [
-        "linux/Bash/Common Commands.md",
-        "linux/Bash/Fundamentals.md"
+        "Linux/Bash"
       ],
       "sortOrder": "custom"
     },
-    "python": {
+    "Linux/Bash": {
       "children": [
-        "python/typing.md",
-        "python/web_dev",
-        "python/Core",
-        "python/Tooling"
+        "Linux/Bash/Common Commands.md",
+        "Linux/Bash/Fundamentals.md"
       ],
       "sortOrder": "custom"
     },
-    "python/Core": {
+    "Python": {
       "children": [
-        "python/Core/Implementations & Execution.md",
-        "python/Core/Language Guidelines.md",
-        "python/Core/Main Function.md",
-        "python/Core/Variables & Types.md",
-        "python/Core/unformatted python notes.md"
+        "Python/Core",
+        "Python/Tooling",
+        "Python/typing.md"
       ],
       "sortOrder": "custom"
     },
-    "python/Tooling": {
+    "Python/Core": {
       "children": [
-        "python/Tooling/pyenv.md",
-        "python/Tooling/venv.md"
+        "Python/Core/Implementations & Execution.md",
+        "Python/Core/Language Guidelines.md",
+        "Python/Core/Main Function.md",
+        "Python/Core/unformatted python notes.md",
+        "Python/Core/Variables & Types.md"
       ],
       "sortOrder": "custom"
     },
-    "python/web_dev": {
-      "children": [],
+    "Python/Tooling": {
+      "children": [
+        "Python/Tooling/pyenv.md",
+        "Python/Tooling/venv.md"
+      ],
       "sortOrder": "custom"
     },
     "web_security": {
