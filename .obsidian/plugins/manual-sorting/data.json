@@ -2,12 +2,13 @@
   "customOrder": {
     "/": {
       "children": [
-        "Linux",
-        "Python",
+        "linux",
+        "python",
         "README.md",
+        "web_security",
         "docs",
         "applied_ai",
-        "web_security",
+        "quizzer_webapp",
         "cloud_certifications"
       ],
       "sortOrder": "custom"
@@ -21,6 +22,7 @@
     },
     "cloud_certifications": {
       "children": [
+        "cloud_certifications/study strategy.md",
         "cloud_certifications/Overview.md",
         "cloud_certifications/AWS",
         "cloud_certifications/Azure",
@@ -134,7 +136,8 @@
     "cloud_certifications/GCP": {
       "children": [
         "cloud_certifications/GCP/Overview.md",
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer"
+        "cloud_certifications/GCP/Path - Associate Cloud Engineer",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer"
       ],
       "sortOrder": "custom"
     },
@@ -159,6 +162,20 @@
       ],
       "sortOrder": "custom"
     },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/study guide.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Course Introduction.md"
+      ],
+      "sortOrder": "custom"
+    },
     "docs": {
       "children": [
         "docs/prompts",
@@ -172,42 +189,64 @@
       ],
       "sortOrder": "custom"
     },
-    "Linux": {
+    "linux": {
       "children": [
-        "Linux/Bash"
+        "linux/Bash"
       ],
       "sortOrder": "custom"
     },
-    "Linux/Bash": {
+    "linux/Bash": {
       "children": [
-        "Linux/Bash/Common Commands.md",
-        "Linux/Bash/Fundamentals.md"
+        "linux/Bash/Common Commands.md",
+        "linux/Bash/Fundamentals.md"
       ],
       "sortOrder": "custom"
     },
-    "Python": {
+    "python": {
       "children": [
-        "Python/Core",
-        "Python/Tooling",
-        "Python/typing.md"
+        "python/Core",
+        "python/Tooling",
+        "python/web_dev",
+        "python/typing.md"
       ],
       "sortOrder": "custom"
     },
-    "Python/Core": {
+    "python/Core": {
       "children": [
-        "Python/Core/Implementations & Execution.md",
-        "Python/Core/Language Guidelines.md",
-        "Python/Core/Main Function.md",
-        "Python/Core/unformatted python notes.md",
-        "Python/Core/Variables & Types.md"
+        "python/Core/Implementations & Execution.md",
+        "python/Core/Language Guidelines.md",
+        "python/Core/Main Function.md",
+        "python/Core/unformatted python notes.md",
+        "python/Core/Variables & Types.md"
       ],
       "sortOrder": "custom"
     },
-    "Python/Tooling": {
+    "python/Tooling": {
       "children": [
-        "Python/Tooling/pyenv.md",
-        "Python/Tooling/venv.md"
+        "python/Tooling/pyenv.md",
+        "python/Tooling/venv.md"
       ],
+      "sortOrder": "custom"
+    },
+    "python/web_dev": {
+      "children": [],
+      "sortOrder": "custom"
+    },
+    "quizzer_webapp": {
+      "children": [
+        "quizzer_webapp/readme.md",
+        "quizzer_webapp/docs",
+        "quizzer_webapp/gcp_prof_cloud_dev",
+        "quizzer_webapp/quizzes"
+      ],
+      "sortOrder": "custom"
+    },
+    "quizzer_webapp/gcp_prof_cloud_dev": {
+      "children": [],
+      "sortOrder": "custom"
+    },
+    "quizzer_webapp/quizzes": {
+      "children": [],
       "sortOrder": "custom"
     },
     "web_security": {
@@ -260,6 +299,13 @@
         "web_security/diagrams/unrendered/gcp_iap_jwt_injection.json",
         "web_security/diagrams/unrendered/stateless_jwt_verification.json",
         "web_security/diagrams/unrendered/http_authentication_framework.json"
+      ],
+      "sortOrder": "custom"
+    },
+    "quizzer_webapp/docs": {
+      "children": [
+        "quizzer_webapp/docs/02_create_prompt.md",
+        "quizzer_webapp/docs/01_create_prompt.md"
       ],
       "sortOrder": "custom"
     }

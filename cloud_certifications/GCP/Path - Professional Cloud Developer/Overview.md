@@ -1,0 +1,5 @@
+A Cloud Developer designs, builds, analyzes, and maintains cloud-native applications.A Professional Cloud Developer builds and deploys scalable, secure, and highly available applications by using Google-recommended tools and best practices. This certification learning path provides the practical skills required for this role, preparing you to successfully design, build, and manage cloud-native applications on Google Cloud.
+
+Through a curated collection of on-demand courses, labs, and skill badges, you will gain real-world, applied experience with Google Cloud technologies. This path focuses on the essential skills for the Cloud Developer role, from architecting cloud-native applications and utilizing generative AI APIs to integrating services and managing application performance.
+
+Upon completion, you will be equipped with the skills validated by the Professional Cloud Developer certification. Take the next step in your professional journey and demonstrate your expertise by preparing for [the Google Cloud Professional Cloud Developer exam.](https://cloud.google.com/learn/certification/cloud-developer/)
