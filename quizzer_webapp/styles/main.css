@@ -1,0 +1,216 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #5f6c7b;
+  --border: #d5dbe3;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --good: #1a7f37;
+  --good-bg: #e6f4ea;
+  --bad: #b42318;
+  --bad-bg: #fdecea;
+  --partial: #9a6700;
+  --partial-bg: #fff4d6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1, h2, h3 { line-height: 1.25; }
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.muted { color: var(--muted); }
+
+/* ---------- Buttons ---------- */
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 20px;
+}
+button:hover:not(:disabled) { background: var(--accent-dark); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.secondary { background: var(--surface); color: var(--accent); }
+button.secondary:hover:not(:disabled) { background: #eef3ff; }
+:focus-visible { outline: 3px solid #93b4ff; outline-offset: 2px; }
+
+/* ---------- Quiz list ---------- */
+
+.quiz-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+
+.quiz-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+.quiz-card h2 { margin: 0 0 4px; font-size: 1.1rem; }
+.quiz-card p { margin: 0; }
+.quiz-card.invalid { border-color: var(--bad); background: var(--bad-bg); }
+
+/* Folder groups in the quiz selector */
+.folder-item { list-style: none; }
+.folder > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 6px 4px;
+}
+.folder > .quiz-list {
+  margin: 8px 0 8px 10px;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.empty-state {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* ---------- Sticky progress bar ---------- */
+
+.progress-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.progress-inner { max-width: 800px; margin: 0 auto; padding: 10px 16px; }
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+.progress-title { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.progress-track { height: 8px; background: #e4e8ee; border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; background: var(--accent); transition: width 0.15s ease; }
+
+/* ---------- Questions ---------- */
+
+.question {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 0 0 16px;
+  min-inline-size: 0;
+}
+.question legend { padding: 0 6px; font-weight: 600; white-space: pre-wrap; }
+.question-hint {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-dark);
+  background: #eef3ff;
+  border-radius: 4px;
+  padding: 1px 8px;
+}
+
+.choice {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.choice:hover { background: #f1f4f9; }
+.choice input { margin-top: 5px; }
+.choice-letter { font-weight: 600; min-width: 1.5em; }
+.choice-text { white-space: pre-wrap; }
+
+.submit-bar { display: flex; align-items: center; gap: 16px; margin-top: 8px; }
+
+.error-banner, .warning-banner {
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 0 0 16px;
+}
+.error-banner { background: var(--bad-bg); color: var(--bad); border: 1px solid var(--bad); }
+.warning-banner { background: var(--partial-bg); color: var(--partial); border: 1px solid var(--partial); }
+
+/* ---------- Review ---------- */
+
+.score-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.score-summary h1 { margin: 0 0 4px; font-size: 1.5rem; }
+.score-summary .actions { margin-top: 12px; }
+
+.review-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 6px;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.review-item.correct { border-left-color: var(--good); }
+.review-item.partial { border-left-color: var(--partial); }
+.review-item.incorrect { border-left-color: var(--bad); }
+
+.review-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.review-head h2 { margin: 0; font-size: 1rem; color: var(--muted); }
+.badge { font-size: 0.85rem; font-weight: 600; border-radius: 4px; padding: 2px 10px; white-space: nowrap; }
+.badge.correct { color: var(--good); background: var(--good-bg); }
+.badge.partial { color: var(--partial); background: var(--partial-bg); }
+.badge.incorrect { color: var(--bad); background: var(--bad-bg); }
+
+.review-question { margin: 8px 0 12px; font-weight: 600; white-space: pre-wrap; }
+
+.review-choices { list-style: none; margin: 0 0 12px; padding: 0; }
+.review-choices li {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+.review-choices .tag { font-size: 0.8rem; font-weight: 600; margin-left: auto; }
+.review-choices li.selected-correct { background: var(--good-bg); border-color: var(--good); }
+.review-choices li.selected-incorrect { background: var(--bad-bg); border-color: var(--bad); }
+.review-choices li.missed-correct { border: 1px dashed var(--good); }
+
+.justification {
+  background: #f1f4f9;
+  border-radius: 6px;
+  padding: 10px 14px;
+  white-space: pre-wrap;
+}
+.justification strong { display: block; margin-bottom: 2px; }

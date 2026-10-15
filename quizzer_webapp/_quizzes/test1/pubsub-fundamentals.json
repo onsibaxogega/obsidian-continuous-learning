@@ -1,0 +1,59 @@
+{
+  "title": "Pub/Sub fundamentals",
+  "description": "Sample quiz: delivery guarantees, acknowledgment deadlines, dead-letter handling, and ordering.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "Which delivery guarantee does a standard Pub/Sub subscription provide by default?",
+      "choices": {
+        "A": "At-most-once delivery",
+        "B": "At-least-once delivery",
+        "C": "Exactly-once delivery for every subscription type",
+        "D": "Best-effort delivery with no guarantee"
+      },
+      "answer": "B",
+      "justification": "Pub/Sub redelivers a message until it is acknowledged, so a message can arrive more than once. Design subscribers to be idempotent. Exactly-once delivery exists only as an opt-in feature for pull subscriptions, not as the default for every type."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "A subscriber needs up to 5 minutes to process each message, and Pub/Sub keeps redelivering messages before processing finishes. What is the best fix?",
+      "choices": {
+        "A": "Increase the acknowledgment deadline, or have the client library extend the lease while processing",
+        "B": "Switch the subscription from pull to push",
+        "C": "Delete and recreate the subscription",
+        "D": "Reduce the size of the published messages"
+      },
+      "answer": "A",
+      "justification": "Redelivery happens because the message is not acknowledged before the ack deadline expires. Extending the deadline (up to 10 minutes) or letting the client library renew the lease fixes the cause. Changing the delivery type, recreating the subscription, or shrinking messages does not address the deadline."
+    },
+    {
+      "id": 3,
+      "type": "multiple_select",
+      "question": "Which settings or features help you handle messages that repeatedly fail processing? (Select all that apply)",
+      "choices": {
+        "A": "A dead-letter topic",
+        "B": "A retry policy with exponential backoff",
+        "C": "Topic message retention set to 365 days",
+        "D": "A maximum delivery attempts value in the dead-letter policy",
+        "E": "Message ordering keys"
+      },
+      "answer": ["A", "B", "D"],
+      "justification": "A dead-letter topic (A) captures messages that cannot be processed, the maximum delivery attempts value (D) decides when a message moves there, and a backoff retry policy (B) spaces out redeliveries. Retention (C) controls how long messages are stored, and the maximum is far below 365 days. Ordering keys (E) control sequence, not failure handling."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "Messages for the same customer must be processed in the order they were published. What should you configure?",
+      "choices": {
+        "A": "Set an ordering key on each message and enable message ordering on the subscription",
+        "B": "Create one topic per message",
+        "C": "Increase the acknowledgment deadline",
+        "D": "Use a larger machine type for the subscriber"
+      },
+      "answer": "A",
+      "justification": "Pub/Sub orders messages that share an ordering key when message ordering is enabled on the subscription. Using the customer ID as the key keeps each customer's messages in sequence while still allowing parallelism across customers."
+    }
+  ]
+}
