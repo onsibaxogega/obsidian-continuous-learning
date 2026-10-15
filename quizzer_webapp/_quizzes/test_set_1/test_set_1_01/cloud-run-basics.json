@@ -1,0 +1,59 @@
+{
+  "title": "Cloud Run basics",
+  "description": "Sample quiz: what Cloud Run is, scaling behavior, and container requirements.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "Which statement best describes Cloud Run?",
+      "choices": {
+        "A": "A managed serverless platform that runs stateless containers and scales them automatically",
+        "B": "An infrastructure-as-a-service product for provisioning and managing virtual machines",
+        "C": "A managed Kubernetes service where you size and manage the node pools",
+        "D": "A messaging service for streaming events between applications"
+      },
+      "answer": "A",
+      "justification": "Cloud Run runs stateless containers without cluster or VM management and scales instances up and down based on traffic. Virtual machines describe Compute Engine, node-pool management describes GKE, and event streaming describes Pub/Sub."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "By default, what happens to a Cloud Run service that receives no requests for a while?",
+      "choices": {
+        "A": "It keeps one instance running at all times",
+        "B": "It scales down to zero instances",
+        "C": "It stops and must be redeployed before it can serve traffic again",
+        "D": "It scales up to its maximum number of instances"
+      },
+      "answer": "B",
+      "justification": "The default minimum instance count is 0, so idle services scale to zero and you pay nothing while idle. The trade-off is a cold start on the next request. If cold-start latency matters, set a minimum instance count of 1 or more."
+    },
+    {
+      "id": 3,
+      "type": "multiple_select",
+      "question": "Which actions can reduce cold-start latency for a Cloud Run service? (Select all that apply)",
+      "choices": {
+        "A": "Set the minimum number of instances to 1 or more",
+        "B": "Reduce the container image size and the work done at startup",
+        "C": "Enable startup CPU boost",
+        "D": "Lower the maximum number of instances to 1",
+        "E": "Set request concurrency to 1"
+      },
+      "answer": ["A", "B", "C"],
+      "justification": "Keeping warm instances (A), starting less work at boot (B), and giving the container extra CPU during startup (C) all shorten or avoid cold starts. Lowering the maximum instances (D) limits scale-out and can increase queuing. A concurrency of 1 (E) forces more instances to start, which causes more cold starts."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "Which requirement applies to a container deployed as a Cloud Run service?",
+      "choices": {
+        "A": "It must listen on port 80",
+        "B": "It must listen for HTTP requests on the port in the PORT environment variable (8080 by default)",
+        "C": "It must run as the root user",
+        "D": "It must be built with Cloud Build"
+      },
+      "answer": "B",
+      "justification": "Cloud Run injects the PORT environment variable (8080 by default) and sends requests to that port, so your server should bind to 0.0.0.0 on that port. Port 80, root, and Cloud Build are not required, and you can build the image with any tool."
+    }
+  ]
+}

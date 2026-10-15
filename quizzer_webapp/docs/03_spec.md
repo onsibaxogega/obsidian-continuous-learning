@@ -124,12 +124,47 @@ A single-page app. Vanilla HTML/CSS/JS — no frameworks, no build step.
 | `start` | User clicks "Start Quiz" | `quiz` (slug, including any subdirectory path, for example `aws/networking/vpc-basics`), `title`, `total_questions`, `started_at` |
 | `answer` | User submits the quiz (one line per question) | `question_id`, `type`, `selected`, `correct`, `is_correct`, `score`, `answered_at` |
 | `complete` | All answer events written | `score` (sum), `total` (question count), `percentage`, `completed_at` |
+| `resume` | User resumes an unfinished quiz | `resumed_at` |
+| `abandon` | User discards an unfinished quiz | `abandoned_at` |
 
 ### Crash resilience
 
 - The `start` event is written immediately when the quiz begins.
 - All `answer` events + the `complete` event are written at submission time. Each answer is a separate POST call flushed individually.
 - If the `complete` event is missing, the session was interrupted — any consumer can detect this.
+- A `resume` event marks each time the user continues an interrupted session. An `abandon` event marks a session the user discarded. A file with `abandon` and no `complete` was deliberately dropped.
+- Result files from sessions that were interrupted before this feature existed (a `start` line only) are never modified.
+- The server ignores a duplicate `answer` (same `question_id`) or `complete` event for a session, so a retry after a dropped connection cannot create duplicate lines.
+- The server rejects a `resume` event with HTTP 409 if the session already has a `complete` event.
+
+---
+
+## Resuming unfinished quizzes
+
+Answers stay in the browser until the user submits, so a closed tab, refresh, or lost connection would lose them. The frontend saves progress in the browser's `localStorage` so the user can continue.
+
+### Stored data
+
+- **Key:** `quizzer.sessions.v1`. The value is an object that maps each session ID to one record, so several unfinished quizzes can exist at once.
+- **Record fields:** `session`, `slug`, `title`, `total`, `order` (question IDs in the shuffled order shown), `answers` (question ID to selected letters), `pending` (events still to be written, or `null`), `updatedAt`.
+- **When it is written:** when a quiz starts, on every answer change, and while submitting.
+- **When it is removed:** after the `complete` event is written successfully, or when the user discards the session.
+- **Scope:** `localStorage` belongs to one browser profile and one origin (host and port). Progress does not carry over to another browser or port.
+
+### Submitting and retrying
+
+1. On submit, the frontend stores every event it must write (one `answer` per question, then `complete`) in the record's `pending` list.
+2. It sends the events in order and removes each one from `pending` after the server confirms it.
+3. If a request fails, the review screen shows a warning and a **Retry saving** button that sends the remaining events.
+4. A record whose `pending` list is not empty appears in the Unfinished section with a **Retry saving** button instead of **Resume**.
+
+### Unfinished section (quiz selector)
+
+- Shown at the top of the quiz selector, above the folder tree, only when at least one unfinished session exists.
+- Visually distinct from the folder tree: a dashed accent border, a tinted background, and its own heading, "Unfinished". Entries are a flat list and are not grouped by folder.
+- Each entry shows the quiz title, its folder path, how many questions are answered, and when it was last updated.
+- **Resume** reloads the quiz, restores the same question order and selected answers, and writes a `resume` event. If the quiz file changed so that the question IDs no longer match, or the file is missing, resume is disabled or fails with a message, and the user can discard the session.
+- **Discard** asks for confirmation, writes an `abandon` event (best effort), and removes the record.
 
 ---
 
@@ -220,7 +255,13 @@ After the user clicks Submit:
 
 ### Visual design
 
-- Clean, minimal, readable. Light theme. Nothing fancy needed.
+- **Dark theme.** A deep navy background with a soft blue glow at the top and a faint red glow at the bottom. Surfaces are translucent, rounded panels with thin borders.
+- **Typography.** The whole UI uses a terminal-style system monospace font stack (Cascadia Mono, Consolas, SF Mono, Menlo, DejaVu Sans Mono, then the generic `monospace`). Labels, headings, buttons, and tags are small, uppercase, and letter-spaced. Question text, choices, and justifications stay in normal case. The app loads no web fonts.
+- **Color roles.** White is the primary accent (buttons, progress). Orange (`#FF4C29`) is the secondary accent (title node, folder carets and tiles, question numbers, selected choices, hover glow, focus rings, and review labels). Green means correct, red means incorrect or an alert, and yellow means partially correct. Orange is never used for a status. Color never carries meaning alone: the review screen also shows text labels.
+- **Selector.** Each folder group shows a small cluster of rounded tiles, one per quiz in that folder (up to 12), next to its name.
+- **Progress.** The sticky progress bar is a row of rounded tiles, one per question, in the order shown on the page. A tile turns white when its question is answered.
+- **Review score.** The overall score appears as a segmented ring. The green portion equals the score percentage and the red portion is the remainder. The percentage shows in the center.
+- **Motion.** Short transitions on hover and progress changes. The app does not special-case `prefers-reduced-motion`.
 - Responsive enough to be usable on a laptop browser — no mobile optimization required.
 
 ---

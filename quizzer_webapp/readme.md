@@ -73,6 +73,16 @@ Reload the page to pick up new or changed files. A quiz file looks like this:
 
 For multiple-select questions, each correct pick adds 1 point and each incorrect pick subtracts 1. The question score is that sum (minimum 0) divided by the number of correct choices.
 
+## Resume an unfinished quiz
+
+The app saves your progress in the browser as you answer. If you close the tab, refresh, or lose the connection, an **Unfinished** section appears at the top of the quiz list the next time you open the app.
+
+- **Resume** restores the same question order and your selected answers.
+- **Retry saving** appears if you submitted but the results were not fully written. It sends only the missing lines.
+- **Discard** removes the saved progress after you confirm.
+
+Progress is stored per browser profile and per address, so use the same browser and port (for example, `http://localhost:8000`) to find it.
+
 ## Results
 
 The app writes results to `_results/` as JSON Lines files. The folder structure mirrors `_quizzes/`:
@@ -81,4 +91,4 @@ The app writes results to `_results/` as JSON Lines files. The folder structure 
 _results/aws/networking/vpc-basics_result_2026-10-14T154500.jsonl
 ```
 
-Each file has a `start` line, one `answer` line per question, and a final `complete` line. If the `complete` line is missing, the session was interrupted.
+Each file has a `start` line, one `answer` line per question, and a final `complete` line. A `resume` line is added each time you continue an unfinished quiz, and an `abandon` line is added if you discard it. If the `complete` line is missing, the session was interrupted or abandoned.

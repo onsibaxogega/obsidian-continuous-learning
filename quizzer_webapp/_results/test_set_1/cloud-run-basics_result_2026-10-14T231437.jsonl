@@ -1,0 +1,6 @@
+{"event": "start", "quiz": "test_set_1/cloud-run-basics", "title": "Cloud Run basics", "total_questions": 4, "started_at": "2026-10-14T23:14:37-05:00"}
+{"event": "answer", "question_id": 1, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-14T23:14:46-05:00"}
+{"event": "answer", "question_id": 2, "type": "multiple_choice", "selected": "C", "correct": "B", "is_correct": false, "score": 0, "answered_at": "2026-10-14T23:14:47-05:00"}
+{"event": "answer", "question_id": 3, "type": "multiple_select", "selected": ["A"], "correct": ["A", "B", "C"], "is_correct": false, "score": 0.3333, "answered_at": "2026-10-14T23:14:47-05:00"}
+{"event": "answer", "question_id": 4, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-14T23:14:47-05:00"}
+{"event": "complete", "score": 2.3333, "total": 4, "percentage": 58.33, "completed_at": "2026-10-14T23:14:47-05:00"}

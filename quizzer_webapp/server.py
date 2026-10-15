@@ -204,13 +204,54 @@ def resolve_session(session):
     return path
 
 
+def read_events(path):
+    """Return the parsed JSON lines of a results file, skipping blank or damaged lines."""
+    events = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    events.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
+    except OSError:
+        pass
+    return events
+
+
+def is_duplicate(existing, record):
+    """A retry after a dropped connection must not write the same event twice."""
+    if record["event"] == "complete":
+        return any(e.get("event") == "complete" for e in existing)
+    if record["event"] == "answer":
+        return any(
+            e.get("event") == "answer" and e.get("question_id") == record["question_id"]
+            for e in existing
+        )
+    return False
+
+
 def append_result(path, record):
-    """Append one line and force it to disk so a crash loses nothing."""
+    """Append one line and force it to disk so a crash loses nothing.
+
+    Returns False (and writes nothing) if the event is a duplicate.
+    """
     with _write_lock:
+        if is_duplicate(read_events(path), record):
+            return False
         with open(path, "a", encoding="utf-8") as f:
             f.write(dump_line(record))
             f.flush()
             os.fsync(f.fileno())
+        return True
+
+
+def is_completed(path):
+    with _write_lock:
+        return any(e.get("event") == "complete" for e in read_events(path))
 
 
 def is_number(value):
@@ -245,6 +286,12 @@ def build_answer_record(body):
         "score": body["score"],
         "answered_at": now_iso(),
     }
+
+
+def build_marker_record(event):
+    """Records for 'resume' and 'abandon': just the event name and a timestamp."""
+    field = "resumed_at" if event == "resume" else "abandoned_at"
+    return {"event": event, field: now_iso()}
 
 
 def build_complete_record(body):
@@ -366,19 +413,30 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json({"session": session}, HTTPStatus.CREATED)
             return
 
-        if event not in ("answer", "complete"):
-            raise ApiError(HTTPStatus.BAD_REQUEST, "'event' must be start, answer, or complete.")
+        if event not in ("answer", "complete", "resume", "abandon"):
+            raise ApiError(
+                HTTPStatus.BAD_REQUEST,
+                "'event' must be start, answer, complete, resume, or abandon.",
+            )
 
         result_path = resolve_session(body.get("session"))
         if result_path is None:
             raise ApiError(HTTPStatus.BAD_REQUEST, "Invalid or unknown 'session'.")
 
+        if event == "resume" and is_completed(result_path):
+            raise ApiError(HTTPStatus.CONFLICT, "This quiz session was already completed.")
+
         try:
-            record = build_answer_record(body) if event == "answer" else build_complete_record(body)
+            if event == "answer":
+                record = build_answer_record(body)
+            elif event == "complete":
+                record = build_complete_record(body)
+            else:
+                record = build_marker_record(event)
         except ValueError as exc:
             raise ApiError(HTTPStatus.BAD_REQUEST, str(exc))
-        append_result(result_path, record)
-        self._send_json({"ok": True}, HTTPStatus.CREATED)
+        written = append_result(result_path, record)
+        self._send_json({"ok": True, "duplicate": not written}, HTTPStatus.CREATED)
 
     def _serve_static(self, path):
         target = STATIC_ROUTES.get(path)
