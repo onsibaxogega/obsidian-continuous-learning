@@ -2,13 +2,13 @@
   "customOrder": {
     "/": {
       "children": [
+        "README.md",
+        "docs",
+        "mini_web_apps",
         "linux",
         "python",
-        "README.md",
         "web_security",
-        "docs",
         "applied_ai",
-        "quizzer_webapp",
         "cloud_certifications"
       ],
       "sortOrder": "custom"
@@ -172,7 +172,26 @@
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure": {
       "children": [
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Course Introduction.md"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Course introduction.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Cloud computing overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/IaaS and PaaS.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/The Google Cloud network.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Environmental impact.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Security.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Open source ecosystems.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Pricing and billing.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Google Cloud resource hierarchy.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Identity and Access Management (IAM).md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Service accounts.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Cloud Identity.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments/gcp_resource_hierarchy.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments/iam_principal_role_permission_relationship.png"
       ],
       "sortOrder": "custom"
     },
@@ -232,23 +251,6 @@
       "children": [],
       "sortOrder": "custom"
     },
-    "quizzer_webapp": {
-      "children": [
-        "quizzer_webapp/readme.md",
-        "quizzer_webapp/docs",
-        "quizzer_webapp/gcp_prof_cloud_dev",
-        "quizzer_webapp/quizzes"
-      ],
-      "sortOrder": "custom"
-    },
-    "quizzer_webapp/gcp_prof_cloud_dev": {
-      "children": [],
-      "sortOrder": "custom"
-    },
-    "quizzer_webapp/quizzes": {
-      "children": [],
-      "sortOrder": "custom"
-    },
     "web_security": {
       "children": [
         "web_security/learning_path.md",
@@ -302,10 +304,67 @@
       ],
       "sortOrder": "custom"
     },
-    "quizzer_webapp/docs": {
+    "mini_web_apps": {
       "children": [
-        "quizzer_webapp/docs/02_create_prompt.md",
-        "quizzer_webapp/docs/01_create_prompt.md"
+        "mini_web_apps/quizzer"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer": {
+      "children": [
+        "mini_web_apps/quizzer/_results",
+        "mini_web_apps/quizzer/_quizzes",
+        "mini_web_apps/quizzer/server.py",
+        "mini_web_apps/quizzer/styles",
+        "mini_web_apps/quizzer/index.html",
+        "mini_web_apps/quizzer/readme.md",
+        "mini_web_apps/quizzer/docs",
+        "mini_web_apps/quizzer/scripts"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcloud_core_infrastructure_result_2026-10-16T085207.jsonl"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev",
+        "mini_web_apps/quizzer/_quizzes/gcloud_core_infrastructure.json"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/styles": {
+      "children": [
+        "mini_web_apps/quizzer/styles/main.css"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/docs": {
+      "children": [
+        "mini_web_apps/quizzer/docs/spec.md",
+        "mini_web_apps/quizzer/docs/generate_quiz_prompt.md",
+        "mini_web_apps/quizzer/docs/pcd_exam_prep_prompt.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/scripts": {
+      "children": [
+        "mini_web_apps/quizzer/scripts/app.js"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/core_infrastructure"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/core_infrastructure": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/core_infrastructure/01_introduction_thru_cloud-identity.json"
       ],
       "sortOrder": "custom"
     }

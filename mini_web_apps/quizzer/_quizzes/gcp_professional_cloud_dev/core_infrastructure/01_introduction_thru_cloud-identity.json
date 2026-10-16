@@ -1,0 +1,405 @@
+
+{
+  "title": "GCP Fundamentals: Core Infrastructure",
+  "description": "Cloud computing concepts, Google Cloud service models, resource hierarchy, IAM, security, billing, and identity management.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "Your company is migrating its first workload to Google Cloud. A manager asks how Google Cloud differs from a traditional virtualized data center. You need to describe the key advantage of the third-wave, container-based cloud model. What should you say?",
+      "choices": {
+        "A": "It gives users rented physical rack space in a shared facility.",
+        "B": "It provides virtual devices that match physical building blocks, but the enterprise still maintains and configures the infrastructure.",
+        "C": "It requires the enterprise to purchase and install its own hardware in a Google-owned facility.",
+        "D": "It uses a fully automated, elastic architecture where services automatically provision and configure the infrastructure used to run applications."
+      },
+      "answer": "D",
+      "justification": "The third wave of cloud computing is a container-based architecture that is fully automated and elastic, with services that automatically provision and configure the infrastructure. Rented rack space (A) describes the first wave (colocation). Virtual devices maintained by the enterprise (B) describes the second wave (virtualized data centers). Purchasing hardware in a Google facility (C) is not a cloud model."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "A startup wants to adopt Google Cloud, but the CTO is concerned about vendor lock-in. You need to explain how Google Cloud addresses this concern. What should you highlight?",
+      "choices": {
+        "A": "Google publishes key elements of technology using open source licenses to create ecosystems that provide customers with options other than Google.",
+        "B": "Google Cloud requires a long-term contract that locks in pricing but guarantees portability.",
+        "C": "Google prevents customers from exporting data to other clouds.",
+        "D": "Google only supports workloads built on proprietary Google frameworks."
+      },
+      "answer": "A",
+      "justification": "Google addresses vendor lock-in fears by publishing key technologies under open source licenses, creating ecosystems with alternatives to Google. Examples include TensorFlow and Kubernetes. Long-term contracts (B), export restrictions (C), and proprietary-only frameworks (D) are not how Google Cloud operates."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "You are designing an application on Google Cloud that must remain available even if an entire geographic region experiences a natural disaster. What should you do?",
+      "choices": {
+        "A": "Deploy all resources in a single zone within one region.",
+        "B": "Deploy resources across multiple zones within a single region.",
+        "C": "Deploy resources in multiple regions.",
+        "D": "Use content caching nodes exclusively to serve the application."
+      },
+      "answer": "C",
+      "justification": "Running resources in different regions protects against region-wide failures such as natural disasters. Multiple zones within one region (B) protects against zone failure but not region failure. A single zone (A) offers no redundancy. Content caching nodes (D) help with latency but are not a high-availability deployment strategy."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "Your team runs Compute Engine VMs that consistently operate for the entire month. Your manager asks how Google Cloud helps reduce the compute bill without requiring any action from your team. What should you explain?",
+      "choices": {
+        "A": "Google Cloud offers a free tier that covers all Compute Engine usage.",
+        "B": "Compute Engine automatically applies sustained-use discounts when a VM runs for more than 25% of a month.",
+        "C": "Compute Engine pauses VMs during off-peak hours to reduce costs.",
+        "D": "Google Cloud bills Compute Engine in hourly increments, which naturally reduces costs."
+      },
+      "answer": "B",
+      "justification": "Sustained-use discounts are automatic: when a VM runs for more than 25% of the billing month, Compute Engine gives a discount for every incremental minute. No action from the team is required. There is no all-inclusive free tier (A). Google does not automatically pause VMs (C). Compute Engine uses per-second billing, not hourly (D)."
+    },
+    {
+      "id": 5,
+      "type": "multiple_choice",
+      "question": "You need to deploy a containerized microservices application in a fully managed serverless environment on Google Cloud. Which service should you use?",
+      "choices": {
+        "A": "Compute Engine",
+        "B": "App Engine",
+        "C": "Google Kubernetes Engine",
+        "D": "Cloud Run"
+      },
+      "answer": "D",
+      "justification": "Cloud Run deploys containerized microservices-based applications in a fully managed environment and is a serverless offering. Compute Engine (A) is IaaS, not serverless. App Engine (B) is PaaS, not specifically for containerized microservices in a serverless model. Google Kubernetes Engine (C) is container IaaS that requires cluster management."
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "A new team member asks you to explain the difference between a region and a zone in Google Cloud. Which description is correct?",
+      "choices": {
+        "A": "A region is an independent geographic area composed of zones, and a zone is where resources are deployed.",
+        "B": "A zone is a collection of regions grouped by continent.",
+        "C": "A region and a zone are identical concepts in Google Cloud.",
+        "D": "A zone spans multiple regions to provide redundancy."
+      },
+      "answer": "A",
+      "justification": "A region is an independent geographic area composed of zones, and resources such as VMs are deployed into specific zones within a region. A zone does not contain regions (B), the two are not identical (C), and a zone does not span multiple regions (D)."
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "Your team is building a data-intensive application. You need to choose where to place resources to optimize for low latency for users in Europe. Which factor is most important when choosing a Google Cloud location?",
+      "choices": {
+        "A": "The availability of sustained-use discounts in the region.",
+        "B": "The number of projects already running in the region.",
+        "C": "The proximity of the region to end users, which directly affects latency.",
+        "D": "Whether the region has an organization node."
+      },
+      "answer": "C",
+      "justification": "Choosing where to locate applications affects availability, durability, and latency. Latency is the time a packet takes to travel from source to destination, so deploying close to European users minimizes it. Sustained-use discounts (A) are about billing, not location. The number of existing projects (B) does not affect latency. Organization nodes (D) are a hierarchy concept, not tied to specific regions."
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "You are a project owner and want to prevent accidental overspending on Google Cloud. You want to be notified when spending reaches 90% of your planned budget. What should you do?",
+      "choices": {
+        "A": "Set a rate quota on the project to limit API calls.",
+        "B": "Configure a budget on the billing account or project and set an alert at 90%.",
+        "C": "Create a custom IAM role that restricts resource creation after a spending threshold.",
+        "D": "Use Cloud Identity to enforce spending limits across all users."
+      },
+      "answer": "B",
+      "justification": "Budgets can be defined at the billing account or project level, and alerts notify you when costs approach the limit. Setting an alert at 90% triggers a notification at that threshold. Rate quotas (A) limit API calls, not spending. Custom IAM roles (C) control permissions, not budgets. Cloud Identity (D) manages users and groups, not spending limits."
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "Your organization uses Google Workspace and is adopting Google Cloud. A colleague asks whether you need to manually create an organization node. What should you tell them?",
+      "choices": {
+        "A": "You must use the Resource Manager API to create an organization node before any projects.",
+        "B": "Organization nodes do not exist for Google Workspace customers.",
+        "C": "You must purchase Cloud Identity Premium to generate an organization node.",
+        "D": "Projects will automatically belong to your organization node because your company is a Google Workspace customer."
+      },
+      "answer": "D",
+      "justification": "If your company is a Google Workspace customer, projects automatically belong to your organization node. There is no need to create one manually via the Resource Manager API (A). Organization nodes do exist for Workspace customers (B). Cloud Identity is used to generate an organization node only if the company is not a Workspace customer (C)."
+    },
+    {
+      "id": 10,
+      "type": "multiple_choice",
+      "question": "You need to programmatically list all projects associated with your Google Cloud account, create new ones, and recover deleted ones. Which tool should you use?",
+      "choices": {
+        "A": "Cloud Identity",
+        "B": "Google Admin Console",
+        "C": "Resource Manager",
+        "D": "Google Cloud Observability"
+      },
+      "answer": "C",
+      "justification": "Resource Manager is an API designed to programmatically manage projects. It can list, create, update, delete, and recover projects, and is accessible through the RPC API and the REST API. Cloud Identity (A) manages users and groups. The Google Admin Console (B) manages users, not projects programmatically. Google Cloud Observability (D) monitors workloads."
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "question": "A developer on your team has the IAM editor basic role on a project that contains sensitive customer data. The developer should be able to view resources but not modify them. What is the problem with the current setup?",
+      "choices": {
+        "A": "Basic roles are broad in scope and the editor role allows the developer to make changes, which violates the principle of least privilege for this use case.",
+        "B": "The editor role does not allow viewing resources.",
+        "C": "The editor role is too narrow for the developer's needs.",
+        "D": "The editor role automatically grants billing administrator permissions."
+      },
+      "answer": "A",
+      "justification": "Basic roles are broad. The editor role allows access and changes to resources, which is more than the developer needs if they should only view. The viewer role or a predefined role would be more appropriate. The editor role does allow viewing (B). It is too broad, not too narrow (C). The editor role does not include billing administrator permissions (D)."
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "question": "Your security team requires that a specific group of users be prevented from deleting Cloud Storage objects, regardless of any roles they have been granted. What IAM feature should you use?",
+      "choices": {
+        "A": "Basic roles",
+        "B": "Custom roles",
+        "C": "Predefined roles",
+        "D": "Deny rules"
+      },
+      "answer": "D",
+      "justification": "Deny rules prevent certain principals from using certain permissions, regardless of the roles they are granted. IAM always checks deny policies before allow policies. Basic (A), custom (B), and predefined (C) roles all grant permissions but do not override other grants the way deny rules do."
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "question": "You are building an application on a Compute Engine VM that needs to write data to Cloud Storage without granting public access to the bucket. You want to avoid embedding user credentials in the application. What should you do?",
+      "choices": {
+        "A": "Grant the Storage Object Viewer role to allUsers on the bucket.",
+        "B": "Create a service account with the appropriate Cloud Storage role and assign it to the VM.",
+        "C": "Embed a personal Google account password in the application's configuration file.",
+        "D": "Disable IAM on the project so the VM can access any resource."
+      },
+      "answer": "B",
+      "justification": "A service account lets you assign specific permissions to a VM so it can interact with Cloud Storage without human credentials. Service accounts use cryptographic keys, not passwords. Granting access to allUsers (A) makes the bucket public. Embedding passwords (C) is insecure. Disabling IAM (D) is not possible and would remove all access controls."
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "question": "Your organization is not a Google Workspace customer but needs centralized user management and the ability to disable accounts when employees leave. What should you use?",
+      "choices": {
+        "A": "Gmail accounts for each employee",
+        "B": "Google Groups with no central management",
+        "C": "Resource Manager",
+        "D": "Cloud Identity"
+      },
+      "answer": "D",
+      "justification": "Cloud Identity lets organizations define policies and manage users and groups through the Google Admin Console. It also integrates with existing Active Directory or LDAP systems and enables centralized offboarding. Individual Gmail accounts (A) and unmanaged Google Groups (B) do not provide centralized identity management. Resource Manager (C) manages projects, not user identities."
+    },
+    {
+      "id": 15,
+      "type": "multiple_choice",
+      "question": "You are explaining Google Cloud's security to a client. They want to know how Google protects data stored on its servers. Which layer of Google's security infrastructure addresses this?",
+      "choices": {
+        "A": "The storage services layer, which applies encryption at rest using centrally managed keys",
+        "B": "The internet communication layer, via the Google Front End",
+        "C": "The operational security layer, via intrusion detection",
+        "D": "The hardware infrastructure layer, via premises security"
+      },
+      "answer": "A",
+      "justification": "The storage services layer applies encryption at rest using centrally managed keys and also enables hardware encryption support in drives. The internet communication layer (B) handles TLS and DoS protection for traffic. Intrusion detection (C) is an operational security concern. Premises security (D) protects the physical data center."
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "question": "A colleague wants to run event-driven code on Google Cloud and pay only when the code executes. Which service best fits this requirement?",
+      "choices": {
+        "A": "Compute Engine",
+        "B": "Cloud Run functions",
+        "C": "Google Kubernetes Engine",
+        "D": "App Engine standard environment"
+      },
+      "answer": "B",
+      "justification": "Cloud Run functions manage event-driven code as a pay-as-you-go service. Compute Engine (A) is IaaS that bills for allocated resources. Google Kubernetes Engine (C) requires managing a cluster. App Engine standard environment (D) is PaaS with a different billing model and is not specifically event-driven."
+    },
+    {
+      "id": 17,
+      "type": "multiple_choice",
+      "question": "Your company has multiple departments, each with its own set of Google Cloud projects. You want to apply a shared IAM policy to all projects in a department without duplicating it across each project. What should you use?",
+      "choices": {
+        "A": "A folder for each department, with the shared policy applied to the folder",
+        "B": "A deny rule at the organization node level",
+        "C": "A custom IAM role applied to each project individually",
+        "D": "A billing account for each department"
+      },
+      "answer": "A",
+      "justification": "Folders let you group resources by department and apply shared policies in one place. Resources in a folder inherit policies assigned to that folder. A deny rule at the organization level (B) affects all departments, not one. Custom roles applied per project (C) duplicates effort. Billing accounts (D) manage payments, not IAM policies."
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice",
+      "question": "You need to create an IAM role that allows users to stop and start Compute Engine VMs but not reconfigure them, and this role must be usable across all projects in your organization. At which levels can custom roles be applied?",
+      "choices": {
+        "A": "Project level and folder level only",
+        "B": "Organization level and folder level only",
+        "C": "Project level, folder level, and organization level",
+        "D": "Project level and organization level only"
+      },
+      "answer": "D",
+      "justification": "Custom roles can only be applied at the project level or organization level, not the folder level. Applying the custom role at the organization level makes it available across all projects. Options that include the folder level (A, B, C) are incorrect because custom roles cannot be applied at the folder level."
+    },
+    {
+      "id": 19,
+      "type": "multiple_choice",
+      "question": "Your Google Cloud project has reached the limit of 15 Virtual Private Cloud networks. You need to create additional networks. What type of quota is this, and what should you do?",
+      "choices": {
+        "A": "This is a rate quota. Wait for it to reset after the specified time period.",
+        "B": "This is an allocation quota. Request an increase from Google Cloud Support.",
+        "C": "This is a rate quota. Request an increase from Google Cloud Support.",
+        "D": "This is an allocation quota. Create a new billing account to reset the quota."
+      },
+      "answer": "B",
+      "justification": "The limit of 15 VPC networks per project is an allocation quota, which governs the number of resources you can have. Some quotas can be increased by requesting a change from Google Cloud Support. Rate quotas (A, C) reset after time and limit API call frequency. Creating a new billing account (D) does not reset allocation quotas."
+    },
+    {
+      "id": 20,
+      "type": "multiple_choice",
+      "question": "You are tasked with monitoring workloads that run across multiple cloud providers. Which Google Cloud tool supports this use case?",
+      "choices": {
+        "A": "Cloud Identity",
+        "B": "Resource Manager",
+        "C": "Google Cloud Observability",
+        "D": "Google Front End"
+      },
+      "answer": "C",
+      "justification": "Google Cloud Observability lets customers monitor workloads across multiple cloud providers. Cloud Identity (A) manages users and groups. Resource Manager (B) manages projects. The Google Front End (D) terminates TLS connections and protects against denial of service attacks."
+    },
+    {
+      "id": 21,
+      "type": "multiple_choice",
+      "question": "A team member claims that Google Cloud uses per-hour billing for Compute Engine. You need to correct them. Which statement accurately describes Google Cloud's billing granularity?",
+      "choices": {
+        "A": "Google was the first major cloud provider to deliver per-second billing for Compute Engine.",
+        "B": "Compute Engine uses per-minute billing.",
+        "C": "Compute Engine uses per-day billing with daily invoices.",
+        "D": "Compute Engine uses per-hour billing with sustained-use discounts applied on top."
+      },
+      "answer": "A",
+      "justification": "Google was the first major cloud provider to deliver per-second billing for its IaaS compute offering, Compute Engine. Per-minute (B), per-day (C), and per-hour (D) are all incorrect granularities for Compute Engine."
+    },
+    {
+      "id": 22,
+      "type": "multiple_choice",
+      "question": "You are explaining Google's physical data center security to an auditor. The auditor asks how Google ensures its servers boot the correct software. Which technology does Google use?",
+      "choices": {
+        "A": "Risk-based authentication challenges for each server at boot time",
+        "B": "Cryptographic signatures over the BIOS, bootloader, kernel, and base operating system image",
+        "C": "Universal 2nd Factor (U2F) keys attached to each server",
+        "D": "Google Front End TLS termination on each server's boot sequence"
+      },
+      "answer": "B",
+      "justification": "Google server machines use a secure boot stack with cryptographic signatures over the BIOS, bootloader, kernel, and base OS image to ensure the correct software stack is booted. Risk-based authentication (A) applies to user sign-in, not server boot. U2F keys (C) are used by employees for account access. The Google Front End (D) handles internet-facing TLS, not boot integrity."
+    },
+    {
+      "id": 23,
+      "type": "multiple_choice",
+      "question": "Your application on Google Cloud needs a database with low-latency reads from multiple locations in Europe. You want data replicated across zones in multiple regions. Which Google Cloud feature supports this?",
+      "choices": {
+        "A": "Content caching nodes",
+        "B": "Allocation quotas set per region",
+        "C": "Spanner multi-region configurations",
+        "D": "Sustained-use discounts in European regions"
+      },
+      "answer": "C",
+      "justification": "Spanner multi-region configurations replicate a database's data across multiple zones in multiple regions, enabling low-latency reads from locations close to or within configured regions. Content caching nodes (A) cache high-demand content but are not a database replication feature. Allocation quotas (B) limit resources, not replicate data. Sustained-use discounts (D) are a billing feature."
+    },
+    {
+      "id": 24,
+      "type": "multiple_select",
+      "question": "Which of the following are traits of cloud computing as defined by NIST?",
+      "choices": {
+        "A": "On-demand and self-service",
+        "B": "Requires dedicated hardware per customer",
+        "C": "Elasticity",
+        "D": "Pay-as-you-go",
+        "E": "Fixed capacity that cannot scale"
+      },
+      "answer": ["A", "C", "D"],
+      "justification": "NIST defines five traits of cloud computing: on-demand and self-service (A), access from anywhere, resource pooling, elasticity (C), and pay-as-you-go (D). Dedicated hardware per customer (B) contradicts resource pooling. Fixed capacity (E) contradicts elasticity."
+    },
+    {
+      "id": 25,
+      "type": "multiple_select",
+      "question": "Which of the following Google Cloud services use per-second billing?",
+      "choices": {
+        "A": "Compute Engine",
+        "B": "Google Kubernetes Engine",
+        "C": "Cloud Identity free edition",
+        "D": "Managed Service for Apache Spark",
+        "E": "App Engine flexible environment VMs"
+      },
+      "answer": ["A", "B", "D", "E"],
+      "justification": "Compute Engine (A), Google Kubernetes Engine (B), Managed Service for Apache Spark (D), and App Engine flexible environment VMs (E) all use per-second billing. Cloud Identity free edition (C) is an identity management tool, not a billed compute service."
+    },
+    {
+      "id": 26,
+      "type": "multiple_select",
+      "question": "You need to control who can act as a specific service account and who can view the list of service accounts. Which statements about service accounts are true?",
+      "choices": {
+        "A": "A service account can only be used with Cloud Storage, not with Compute Engine.",
+        "B": "A service account is named with an email address and uses cryptographic keys instead of passwords.",
+        "C": "A service account can be granted IAM roles just like any other principal.",
+        "D": "Service accounts require a human to manually approve every API call.",
+        "E": "A service account can have IAM policies attached to it, controlling who can use or manage the service account itself."
+      },
+      "answer": ["B", "C", "E"],
+      "justification": "Service accounts are named with email addresses and use cryptographic keys (B). They function as identities that can be granted roles (C). They are also resources with their own IAM policies (E). Service accounts work with many services including Compute Engine (A is wrong). They are designed to operate without human intervention (D is wrong)."
+    },
+    {
+      "id": 27,
+      "type": "multiple_select",
+      "question": "Which of the following are levels in the Google Cloud resource hierarchy?",
+      "choices": {
+        "A": "Billing accounts",
+        "B": "Resources",
+        "C": "Projects",
+        "D": "Folders",
+        "E": "Organization node"
+      },
+      "answer": ["B", "C", "D", "E"],
+      "justification": "The four levels of the Google Cloud resource hierarchy are resources (B), projects (C), folders (D), and the organization node (E). Billing accounts (A) are related to payment management but are not one of the four levels in the resource hierarchy."
+    },
+    {
+      "id": 28,
+      "type": "multiple_select",
+      "question": "Which of the following are part of Google's operational security layer?",
+      "choices": {
+        "A": "Encrypting data at rest using centrally managed keys",
+        "B": "Intrusion detection using rules and machine intelligence",
+        "C": "Reducing insider risk by limiting and monitoring administrative access",
+        "D": "Requiring employee use of U2F-compatible security keys",
+        "E": "Stringent software development practices including two-party code review"
+      },
+      "answer": ["B", "C", "D", "E"],
+      "justification": "The operational security layer includes intrusion detection (B), reducing insider risk (C), employee U2F use (D), and stringent software development practices with two-party code review (E). Encryption at rest (A) belongs to the storage services layer, not the operational security layer."
+    },
+    {
+      "id": 29,
+      "type": "multiple_select",
+      "question": "Which of the following capabilities does the Resource Manager tool provide?",
+      "choices": {
+        "A": "Create new projects",
+        "B": "Manage IAM deny rules",
+        "C": "Recover previously deleted projects",
+        "D": "Gather a list of all projects associated with an account",
+        "E": "Delete projects"
+      },
+      "answer": ["A", "C", "D", "E"],
+      "justification": "Resource Manager can list projects (D), create new ones (A), update and delete them (E), and recover previously deleted projects (C). Managing IAM deny rules (B) is handled through IAM policy configuration, not the Resource Manager tool."
+    },
+    {
+      "id": 30,
+      "type": "multiple_select",
+      "question": "Your company is evaluating Google Cloud and wants to understand which qualities are affected by the geographic location of deployed resources. Which qualities does Google Cloud documentation highlight?",
+      "choices": {
+        "A": "Billing currency",
+        "B": "Availability",
+        "C": "IAM role type",
+        "D": "Durability",
+        "E": "Latency"
+      },
+      "answer": ["B", "D", "E"],
+      "justification": "Choosing where to locate applications affects availability (B), durability (D), and latency (E). Billing currency (A) is determined by the billing account, not resource location. IAM role types (C) are a permission concept unrelated to geographic placement."
+    }
+  ]
+}
+

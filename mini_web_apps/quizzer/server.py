@@ -25,7 +25,7 @@ QUIZ_DIR = ROOT / "_quizzes"
 RESULTS_DIR = ROOT / "_results"
 
 HOST = "127.0.0.1"
-DEFAULT_PORT = 8000
+DEFAULT_PORT = 8003
 MAX_BODY_BYTES = 1_000_000
 
 # Only these paths are served as static files (no directory listing, no traversal).
