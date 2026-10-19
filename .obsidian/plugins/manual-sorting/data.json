@@ -165,33 +165,77 @@
     "cloud_certifications/GCP/Path - Professional Cloud Developer": {
       "children": [
         "cloud_certifications/GCP/Path - Professional Cloud Developer/Overview.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/study guide.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/Study guide.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure"
       ],
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure": {
       "children": [
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Course introduction.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Cloud computing overview.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/IaaS and PaaS.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/The Google Cloud network.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Environmental impact.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Security.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Open source ecosystems.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Pricing and billing.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Google Cloud resource hierarchy.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Identity and Access Management (IAM).md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Service accounts.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Cloud Identity.md"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Prompt Engineering.md"
       ],
       "sortOrder": "custom"
     },
-    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments": {
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments": {
       "children": [
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments/gcp_resource_hierarchy.png",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/attachments/iam_principal_role_permission_relationship.png"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/gcp_resource_hierarchy.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/iam_principal_role_permission_relationship.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/vpc_global_subnet_layout.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications": {
+      "children": [],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers": {
+      "children": [],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/Cloud computing overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/IaaS and PaaS.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/The Google Cloud network.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/Environmental impact.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/Security.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/Open source ecosystems.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud/Pricing and billing.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Google Cloud resource hierarchy.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Identity and Access Management (IAM).md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Service accounts.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Cloud Identity.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Interacting with Google Cloud.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage": {
+      "children": [],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Virtual Private Cloud networking.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Compute Engine.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Scaling virtual machines.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Important VPC compatibilities.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Cloud Load Balancing.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Cloud DNS and Cloud CDN.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Connecting networks to Google VPC.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Lab Summary.md"
       ],
       "sortOrder": "custom"
     },
@@ -218,6 +262,81 @@
       "children": [
         "linux/Bash/Common Commands.md",
         "linux/Bash/Fundamentals.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps": {
+      "children": [
+        "mini_web_apps/quizzer"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer": {
+      "children": [
+        "mini_web_apps/quizzer/_results",
+        "mini_web_apps/quizzer/_quizzes",
+        "mini_web_apps/quizzer/server.py",
+        "mini_web_apps/quizzer/styles",
+        "mini_web_apps/quizzer/index.html",
+        "mini_web_apps/quizzer/readme.md",
+        "mini_web_apps/quizzer/docs",
+        "mini_web_apps/quizzer/scripts"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/01_introduction_thru_cloud-identity.json"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/01_introduction_thru_cloud-identity_result_2026-10-16T151802.jsonl"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/docs": {
+      "children": [
+        "mini_web_apps/quizzer/docs/spec.md",
+        "mini_web_apps/quizzer/docs/generate_quiz_prompt.md",
+        "mini_web_apps/quizzer/docs/pcd_exam_prep_prompt.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/scripts": {
+      "children": [
+        "mini_web_apps/quizzer/scripts/app.js"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/styles": {
+      "children": [
+        "mini_web_apps/quizzer/styles/main.css"
       ],
       "sortOrder": "custom"
     },
@@ -301,70 +420,6 @@
         "web_security/diagrams/unrendered/gcp_iap_jwt_injection.json",
         "web_security/diagrams/unrendered/stateless_jwt_verification.json",
         "web_security/diagrams/unrendered/http_authentication_framework.json"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps": {
-      "children": [
-        "mini_web_apps/quizzer"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer": {
-      "children": [
-        "mini_web_apps/quizzer/_results",
-        "mini_web_apps/quizzer/_quizzes",
-        "mini_web_apps/quizzer/server.py",
-        "mini_web_apps/quizzer/styles",
-        "mini_web_apps/quizzer/index.html",
-        "mini_web_apps/quizzer/readme.md",
-        "mini_web_apps/quizzer/docs",
-        "mini_web_apps/quizzer/scripts"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/_results": {
-      "children": [
-        "mini_web_apps/quizzer/_results/gcloud_core_infrastructure_result_2026-10-16T085207.jsonl"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/_quizzes": {
-      "children": [
-        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev",
-        "mini_web_apps/quizzer/_quizzes/gcloud_core_infrastructure.json"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/styles": {
-      "children": [
-        "mini_web_apps/quizzer/styles/main.css"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/docs": {
-      "children": [
-        "mini_web_apps/quizzer/docs/spec.md",
-        "mini_web_apps/quizzer/docs/generate_quiz_prompt.md",
-        "mini_web_apps/quizzer/docs/pcd_exam_prep_prompt.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/scripts": {
-      "children": [
-        "mini_web_apps/quizzer/scripts/app.js"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev": {
-      "children": [
-        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/core_infrastructure"
-      ],
-      "sortOrder": "custom"
-    },
-    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/core_infrastructure": {
-      "children": [
-        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/core_infrastructure/01_introduction_thru_cloud-identity.json"
       ],
       "sortOrder": "custom"
     }

@@ -23,7 +23,7 @@ You can should add an explanation that is hidden until the user answers. Put it 
 What is the capital of France?
 [ ] London
 [ ] Berlin
-[c] Paris
+[r] Paris
 [ ] Madrid
 
 Paris has been the capital of France since the 10th century. **Île de la Cité** was its historic centre.
