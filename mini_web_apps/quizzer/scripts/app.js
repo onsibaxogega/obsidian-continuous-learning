@@ -14,6 +14,7 @@ const state = {
   displayOrder: [], // questions in the shuffled order shown to the user
   answers: new Map(), // question id -> array of selected letters
   record: null, // the saved-session record for the quiz in progress (see "saved sessions")
+  historyReturn: null, // slug whose attempt history to reopen when the quiz list is shown next
 };
 
 // ---------------------------------------------------------------- helpers
@@ -211,10 +212,18 @@ async function showQuizList() {
     .filter(isValidRecord)
     .sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
 
+  const returnSlug = state.historyReturn;
   render(el("main", { className: "container" },
     unfinished.length ? unfinishedSection(unfinished, knownSlugs) : null,
     el("h1", { text: "Choose a quiz" }),
     body));
+
+  // After viewing an attempt, put the user back at the quiz they came from.
+  state.historyReturn = null;
+  if (returnSlug) {
+    const card = [...document.querySelectorAll(".quiz-card[data-slug]")].find((c) => c.dataset.slug === returnSlug);
+    if (card) card.scrollIntoView({ block: "center" });
+  }
 }
 
 // ---- Unfinished section: a flat list, deliberately separate from the folder tree.
@@ -364,15 +373,128 @@ function quizCard(item) {
   const count = `${item.question_count} question${item.question_count === 1 ? "" : "s"}`;
   // Slugs drop the extension, so rebuild the file name as it exists on disk (all quiz files are .json).
   const filename = `${item.slug.split("/").pop()}.json`;
-  return el("li", { className: "quiz-card" },
-    el("div", {},
-      el("h2", {},
-        item.title,
-        " ",
-        el("span", { className: "quiz-filename", text: `(${filename})` })),
-      item.description ? el("p", { text: item.description }) : null,
-      el("p", { className: "muted", text: count })),
-    el("button", { type: "button", onClick: (event) => startQuiz(item.slug, event.currentTarget) , text: "Start quiz" }));
+  return el("li", { className: "quiz-card", "data-slug": item.slug },
+    el("div", { className: "quiz-card-row" },
+      el("div", {},
+        el("h2", {},
+          item.title,
+          " ",
+          el("span", { className: "quiz-filename", text: `(${filename})` })),
+        item.description ? el("p", { text: item.description }) : null,
+        el("p", { className: "muted", text: count })),
+      el("button", { type: "button", onClick: (event) => startQuiz(item.slug, event.currentTarget) , text: "Start quiz" })),
+    historySection(item));
+}
+
+// ---------------------------------------------------------------- attempt history
+
+// Collapsible list of completed attempts on a quiz card. The list is fetched the first
+// time the section opens. Selecting an attempt shows the same results page as after a quiz.
+function historySection(item) {
+  const list = el("div", { className: "history-body" });
+  const details = el("details", { className: "history" },
+    el("summary", { text: `View attempt history (${item.attempt_count ?? 0})` }),
+    list);
+
+  let loaded = false;
+  async function load() {
+    if (loaded) return;
+    loaded = true;
+    list.replaceChildren(el("p", { className: "muted", text: "Loading…" }));
+    try {
+      const attempts = await api(`/api/attempts?quiz=${encodeURIComponent(item.slug)}`);
+      list.replaceChildren(attempts.length
+        ? el("ul", { className: "attempt-list" },
+            attempts.map((attempt, index) => attemptRow(item.slug, attempt, attempts.length - index)))
+        : el("p", { className: "muted", text: "No completed attempts yet." }));
+    } catch (err) {
+      loaded = false; // let the next open try again
+      list.replaceChildren(el("p", { className: "error-banner", role: "alert", text: `Could not load attempts: ${err.message}` }));
+    }
+  }
+
+  details.addEventListener("toggle", () => { if (details.open) load(); });
+  // Coming back from an attempt's results page: reopen the section the user was in.
+  if (state.historyReturn === item.slug) {
+    details.open = true;
+    load();
+  }
+  return details;
+}
+
+function attemptRow(slug, attempt, number) {
+  const score = `${round(attempt.score, 2)} / ${attempt.total}`;
+  return el("li", {},
+    el("button", {
+      type: "button",
+      className: "secondary attempt-row",
+      onClick: (event) => openAttempt(slug, attempt, event.currentTarget),
+    },
+      el("span", { className: "attempt-number", text: `#${number}` }),
+      el("span", { className: "attempt-date", text: formatTime(attempt.completed_at) || "Unknown date" }),
+      el("span", { className: "attempt-score", text: `${score} (${round(attempt.percentage, 1)}%)` })));
+}
+
+// Rebuild the results page for a past attempt from the stored answers (what was selected,
+// the correct answer, and the score at the time). Question text and justifications come
+// from the current quiz file, shown in the order the user saw them.
+async function openAttempt(slug, attempt, button) {
+  button.disabled = true;
+  try {
+    const quiz = await api(quizUrl(slug));
+    const questionById = new Map(quiz.questions.map((q) => [q.id, q]));
+    const answerById = new Map(attempt.answers.map((a) => [a.question_id, a]));
+    // Attempts saved before the order was recorded fall back to the order answers were written in.
+    const order = attempt.order ?? attempt.answers.map((a) => a.question_id);
+
+    const items = [];
+    let skipped = 0;
+    for (const id of order) {
+      const question = questionById.get(id);
+      const answer = answerById.get(id);
+      if (question && answer) items.push(gradedFromAnswer(question, answer));
+      else skipped += 1;
+    }
+
+    const completed = formatTime(attempt.completed_at);
+    const statusLine = el("div", {},
+      el("p", { className: "muted", text: completed ? `Completed ${completed}` : "Completed attempt" }),
+      skipped
+        ? el("p", {
+            className: "warning-banner",
+            role: "alert",
+            text: `${skipped} question${skipped === 1 ? "" : "s"} could not be shown because the quiz file no longer matches this attempt.`,
+          })
+        : null);
+
+    renderReviewPage({
+      title: quiz.title,
+      summary: { totalScore: attempt.score, total: attempt.total, percentage: attempt.percentage },
+      items,
+      statusLine,
+      actions: [el("button", {
+        type: "button",
+        className: "secondary",
+        text: "Back to quizzes",
+        onClick: () => { state.historyReturn = slug; showQuizList(); },
+      })],
+    });
+  } catch (err) {
+    button.disabled = false;
+    alert(`Could not open this attempt: ${err.message}`);
+  }
+}
+
+// Same shape gradeQuestion() returns, built from a saved answer event.
+function gradedFromAnswer(question, answer) {
+  const toSet = (value) => new Set(Array.isArray(value) ? value : value ? [value] : []);
+  return {
+    question,
+    selectedSet: toSet(answer.selected),
+    correctSet: toSet(answer.correct),
+    isCorrect: answer.is_correct,
+    score: answer.score,
+  };
 }
 
 // ---------------------------------------------------------------- quiz screen
@@ -381,13 +503,15 @@ async function startQuiz(slug, button) {
   button.disabled = true;
   try {
     const quiz = await api(quizUrl(slug));
+    const displayOrder = shuffled(quiz.questions);
     // Writing the start event first means a crashed session still leaves a file.
-    const { session } = await postResult({ event: "start", quiz: slug });
+    // It records the shuffled order so the attempt can be reviewed in the same order later.
+    const { session } = await postResult({ event: "start", quiz: slug, order: displayOrder.map((q) => q.id) });
     state.slug = slug;
     state.quiz = quiz;
     state.session = session;
     state.answers = new Map();
-    state.displayOrder = shuffled(quiz.questions);
+    state.displayOrder = displayOrder;
     // Save immediately so even a quiz with no answers yet can be resumed.
     state.record = {
       session,
@@ -531,6 +655,32 @@ function renderReview(graded, summary, saveError) {
   const byId = new Map(graded.map((g) => [g.question.id, g]));
   const inDisplayOrder = state.displayOrder.map((q) => byId.get(q.id));
 
+  const statusLine = saveError
+    ? el("p", { className: "warning-banner", role: "alert", text: `Your results were not fully saved to disk: ${saveError}` })
+    : el("p", { className: "muted", text: "Results saved." });
+  const retryButton = saveError
+    ? el("button", {
+        type: "button",
+        text: "Retry saving",
+        onClick: async (event) => {
+          event.currentTarget.disabled = true;
+          renderReview(graded, summary, await flushPending(state.record));
+        },
+      })
+    : null;
+
+  renderReviewPage({
+    title: state.quiz.title,
+    summary,
+    items: inDisplayOrder,
+    statusLine,
+    actions: [retryButton, el("button", { type: "button", className: "secondary", onClick: () => showQuizList(), text: "Back to quizzes" })],
+  });
+}
+
+// Shared by the results screen after a quiz and the read-only screen for a past attempt,
+// so both look identical.
+function renderReviewPage({ title, summary, items, statusLine, actions }) {
   // Results files keep full precision; the screen shows at most 2 decimals.
   const scoreText = `Score: ${round(summary.totalScore, 2)} / ${summary.total} (${round(summary.percentage, 1)}%)`;
   const ring = el("div", {
@@ -544,24 +694,11 @@ function renderReview(graded, summary, saveError) {
     ring,
     el("div", {},
       el("h1", { text: scoreText }),
-      el("p", { className: "muted", text: state.quiz.title }),
-      saveError
-        ? el("p", { className: "warning-banner", role: "alert", text: `Your results were not fully saved to disk: ${saveError}` })
-        : el("p", { className: "muted", text: "Results saved." }),
-      el("div", { className: "actions" },
-        saveError
-          ? el("button", {
-              type: "button",
-              text: "Retry saving",
-              onClick: async (event) => {
-                event.currentTarget.disabled = true;
-                renderReview(graded, summary, await flushPending(state.record));
-              },
-            })
-          : null,
-        el("button", { type: "button", className: "secondary", onClick: showQuizList, text: "Back to quizzes" }))));
+      el("p", { className: "muted", text: title }),
+      statusLine,
+      el("div", { className: "actions" }, actions)));
 
-  render(el("main", { className: "container" }, summaryBox, inDisplayOrder.map(reviewItem)));
+  render(el("main", { className: "container" }, summaryBox, items.map(reviewItem)));
 }
 
 function reviewItem(graded, index) {

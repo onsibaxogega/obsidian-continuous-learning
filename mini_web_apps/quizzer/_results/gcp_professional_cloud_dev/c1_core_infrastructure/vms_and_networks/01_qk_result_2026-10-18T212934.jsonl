@@ -1,0 +1,22 @@
+{"event": "start", "quiz": "gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks/01_qk", "title": "VPC Networking & Compute Engine", "total_questions": 20, "started_at": "2026-10-18T21:29:34-05:00", "order": [13, 17, 1, 8, 5, 19, 6, 18, 4, 20, 16, 14, 11, 7, 9, 3, 12, 10, 15, 2]}
+{"event": "answer", "question_id": 1, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:45-05:00"}
+{"event": "answer", "question_id": 2, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:45-05:00"}
+{"event": "answer", "question_id": 3, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:45-05:00"}
+{"event": "answer", "question_id": 4, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:46-05:00"}
+{"event": "answer", "question_id": 5, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:46-05:00"}
+{"event": "answer", "question_id": 6, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:46-05:00"}
+{"event": "answer", "question_id": 7, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:46-05:00"}
+{"event": "answer", "question_id": 8, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:46-05:00"}
+{"event": "answer", "question_id": 9, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:46-05:00"}
+{"event": "answer", "question_id": 10, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 11, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 12, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 13, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 14, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 15, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 16, "type": "multiple_select", "selected": ["A", "C", "D"], "correct": ["A", "C", "D"], "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:47-05:00"}
+{"event": "answer", "question_id": 17, "type": "multiple_select", "selected": ["B", "D", "E"], "correct": ["B", "D", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:48-05:00"}
+{"event": "answer", "question_id": 18, "type": "multiple_select", "selected": ["A", "C", "D"], "correct": ["A", "D"], "is_correct": false, "score": 0.5, "answered_at": "2026-10-18T21:46:48-05:00"}
+{"event": "answer", "question_id": 19, "type": "multiple_select", "selected": ["B", "C", "E"], "correct": ["B", "C", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:48-05:00"}
+{"event": "answer", "question_id": 20, "type": "multiple_select", "selected": ["A", "C", "E"], "correct": ["A", "C", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-18T21:46:48-05:00"}
+{"event": "complete", "score": 19.5, "total": 20, "percentage": 97.5, "completed_at": "2026-10-18T21:46:48-05:00"}

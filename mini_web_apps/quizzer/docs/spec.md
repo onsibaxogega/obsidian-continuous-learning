@@ -41,8 +41,9 @@ A single Python file using **only `http.server`** from the standard library (zer
 
 | Endpoint | Method | Description |
 |---|---|---|
-| `GET /api/quizzes` | GET | Returns a flat JSON array of available quizzes. The server searches `_quizzes/` and all of its subdirectories recursively. Each entry includes the slug (the quiz's path relative to `_quizzes/`, without the `.json` extension, using `/` separators), title, description, and question count. |
+| `GET /api/quizzes` | GET | Returns a flat JSON array of available quizzes. The server searches `_quizzes/` and all of its subdirectories recursively. Each entry includes the slug (the quiz's path relative to `_quizzes/`, without the `.json` extension, using `/` separators), title, description, question count, and `attempt_count` (the number of completed attempts). |
 | `GET /api/quizzes/<slug>` | GET | Returns the full quiz JSON for a given slug. The slug can contain `/`, for example `GET /api/quizzes/aws/networking/vpc-basics`. |
+| `GET /api/attempts?quiz=<slug>` | GET | Returns the completed attempts for one quiz, newest first. An attempt is a results file with both a `start` and a `complete` event. Each entry has `session`, `started_at`, `completed_at`, `score`, `total`, `percentage`, `order` (question ids in the order shown, or `null` for files saved before the order was recorded), and `answers` (the stored `answer` events). The slug is matched against the `quiz` field of each `start` event and is never used to build a path. |
 | `POST /api/results` | POST | Accepts a JSONL event (one line) and appends it to the appropriate results file. The frontend calls this once per event (start, each answer, complete). |
 
 The server must auto-create `_quizzes/` and `_results/` directories on startup if they don't exist.
@@ -111,7 +112,7 @@ A single-page app. Vanilla HTML/CSS/JS — no frameworks, no build step.
 **Example filename:** `_results/aws-networking-fundamentals_result_2026-10-14T154500.jsonl` for `_quizzes/aws-networking-fundamentals.json`, or `_results/aws/networking/vpc-basics_result_2026-10-14T154500.jsonl` for `_quizzes/aws/networking/vpc-basics.json`.
 
 ```
-{"event":"start","quiz":"aws-networking-fundamentals","title":"AWS Networking Fundamentals","total_questions":2,"started_at":"2026-10-14T15:45:00-05:00"}
+{"event":"start","quiz":"aws-networking-fundamentals","title":"AWS Networking Fundamentals","total_questions":2,"started_at":"2026-10-14T15:45:00-05:00","order":[2,1]}
 {"event":"answer","question_id":1,"type":"multiple_choice","selected":"B","correct":"B","is_correct":true,"score":1.0,"answered_at":"2026-10-14T15:45:32-05:00"}
 {"event":"answer","question_id":2,"type":"multiple_select","selected":["A","B","D"],"correct":["A","B","D","E"],"is_correct":false,"score":0.75,"answered_at":"2026-10-14T15:46:10-05:00"}
 {"event":"complete","score":1.75,"total":2,"percentage":87.5,"completed_at":"2026-10-14T15:46:10-05:00"}
@@ -121,7 +122,7 @@ A single-page app. Vanilla HTML/CSS/JS — no frameworks, no build step.
 
 | Event | When written | Key fields |
 |---|---|---|
-| `start` | User clicks "Start Quiz" | `quiz` (slug, including any subdirectory path, for example `aws/networking/vpc-basics`), `title`, `total_questions`, `started_at` |
+| `start` | User clicks "Start Quiz" | `quiz` (slug, including any subdirectory path, for example `aws/networking/vpc-basics`), `title`, `total_questions`, `started_at`, `order` (question ids in the shuffled order shown; the server rejects a list that is not a permutation of the quiz's ids) |
 | `answer` | User submits the quiz (one line per question) | `question_id`, `type`, `selected`, `correct`, `is_correct`, `score`, `answered_at` |
 | `complete` | All answer events written | `score` (sum), `total` (question count), `percentage`, `completed_at` |
 | `resume` | User resumes an unfinished quiz | `resumed_at` |
@@ -226,6 +227,8 @@ Partial credit model:
   - Each quiz is a card showing title, description, and question count.
   - Within a level, subdirectories are listed first, then quizzes. Both are sorted alphabetically (case-insensitive) by directory or file name.
   - Quizzes placed directly in `_quizzes/` appear at the top level of the tree.
+  - Each card has a collapsible **View attempt history (N)** section, where N is `attempt_count`. The attempts load from `GET /api/attempts` the first time it opens, newest first, each showing its number, completion time, and score. With no completed attempts, the section shows "No completed attempts yet."
+  - Selecting an attempt opens the same results page shown after a quiz: the stored selections, correct answers, and scores, in the order the user saw the questions. Question text and justifications come from the current quiz file. A warning appears if some questions no longer match the quiz file. **Back to quizzes** returns to the list with that quiz's history reopened.
 
 ### Quiz screen (single scrollable page)
 

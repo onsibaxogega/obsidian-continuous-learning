@@ -114,13 +114,48 @@ button.secondary:hover:not(:disabled) { background: var(--panel-raised); box-sha
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 16px 20px;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
   backdrop-filter: blur(8px);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
+/* Title, description, and Start button on one row; the history dropdown sits underneath. */
+.quiz-card-row { display: flex; gap: 16px; align-items: center; justify-content: space-between; }
+
+/* Attempt history dropdown */
+.history { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
+.history > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.history > summary::-webkit-details-marker { display: none; }
+.history > summary::before {
+  content: "\25B8";
+  color: var(--orange);
+  transition: transform 0.15s ease;
+}
+.history[open] > summary::before { transform: rotate(90deg); }
+.history > summary:hover { color: var(--text); }
+.history-body { margin-top: 10px; }
+.history-body p { margin: 0; font-size: 0.8rem; }
+.attempt-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.attempt-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 14px;
+  text-align: left;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+.attempt-number { color: var(--orange); min-width: 2.5em; }
+.attempt-date { flex: 1; text-transform: none; }
+.attempt-score { white-space: nowrap; }
 .quiz-card:hover { border-color: var(--orange-line); box-shadow: 0 0 24px var(--orange-glow); }
 .quiz-card h2 { margin: 0 0 4px; font-size: 0.95rem; font-weight: 600; }
 /* File name shown beside the title: orange, and exempt from the heading's uppercase transform. */

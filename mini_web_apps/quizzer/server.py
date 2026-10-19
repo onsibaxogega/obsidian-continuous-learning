@@ -18,7 +18,7 @@ from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent
 QUIZ_DIR = ROOT / "_quizzes"
@@ -133,6 +133,7 @@ def find_quiz_path(slug):
 
 def list_quizzes():
     items = []
+    attempts = collect_attempts()
     for path in discover_quiz_files():
         quiz, error = read_quiz_file(path)
         if error:
@@ -141,6 +142,7 @@ def list_quizzes():
                 "title": path.stem,
                 "description": "",
                 "question_count": 0,
+                "attempt_count": 0,
                 "error": error,
             })
         else:
@@ -149,6 +151,7 @@ def list_quizzes():
                 "title": quiz["title"],
                 "description": quiz.get("description", ""),
                 "question_count": len(quiz["questions"]),
+                "attempt_count": len(attempts.get(slug_for(path), [])),
             })
     return items
 
@@ -252,6 +255,47 @@ def append_result(path, record):
 def is_completed(path):
     with _write_lock:
         return any(e.get("event") == "complete" for e in read_events(path))
+
+
+ANSWER_FIELDS = ("question_id", "type", "selected", "correct", "is_correct", "score")
+
+
+def collect_attempts():
+    """Return {quiz slug: [completed attempts, newest first]} from every results file.
+
+    An attempt is a results file with both a 'start' and a 'complete' event. Files for
+    abandoned or unfinished sessions are skipped. The slug comes from the 'start' event,
+    so renaming a results file or folder does not detach it from its quiz.
+    """
+    by_slug = {}
+    for path in RESULTS_DIR.rglob("*.jsonl"):
+        if not SESSION_RE.match(path.name) or not path.is_file():
+            continue
+        events = read_events(path)
+        start = next((e for e in events if e.get("event") == "start"), None)
+        complete = next((e for e in events if e.get("event") == "complete"), None)
+        if start is None or complete is None or not isinstance(start.get("quiz"), str):
+            continue
+        order = start.get("order")
+        if not (isinstance(order, list) and all(isinstance(i, int) for i in order)):
+            order = None
+        by_slug.setdefault(start["quiz"], []).append({
+            "session": path.relative_to(RESULTS_DIR).as_posix(),
+            "started_at": start.get("started_at"),
+            "completed_at": complete.get("completed_at"),
+            "score": complete.get("score"),
+            "total": complete.get("total"),
+            "percentage": complete.get("percentage"),
+            # Question ids in the order shown to the user (null for files saved before this was recorded).
+            "order": order,
+            "answers": [
+                {field: e.get(field) for field in ANSWER_FIELDS}
+                for e in events if e.get("event") == "answer"
+            ],
+        })
+    for attempts in by_slug.values():
+        attempts.sort(key=lambda a: str(a["completed_at"]), reverse=True)
+    return by_slug
 
 
 def is_number(value):
@@ -363,6 +407,8 @@ class Handler(BaseHTTPRequestHandler):
                 self._send_json(list_quizzes())
             elif path.startswith("/api/quizzes/"):
                 self._get_quiz(path[len("/api/quizzes/"):])
+            elif path == "/api/attempts":
+                self._get_attempts(urlsplit(self.path).query)
             elif path.startswith("/api/"):
                 raise ApiError(HTTPStatus.NOT_FOUND, "Unknown API endpoint.")
             else:
@@ -390,6 +436,14 @@ class Handler(BaseHTTPRequestHandler):
             raise ApiError(HTTPStatus.UNPROCESSABLE_ENTITY, error)
         self._send_json(quiz)
 
+    def _get_attempts(self, query):
+        """GET /api/attempts?quiz=<slug>: completed attempts for one quiz, newest first."""
+        slugs = parse_qs(query).get("quiz", [])
+        if len(slugs) != 1 or not slugs[0]:
+            raise ApiError(HTTPStatus.BAD_REQUEST, "Provide exactly one 'quiz' query parameter.")
+        # The slug is only compared against slugs in the results files; it never builds a path.
+        self._send_json(collect_attempts().get(slugs[0], []))
+
     def _post_result(self):
         body = self._read_json_body()
         event = body.get("event")
@@ -409,6 +463,16 @@ class Handler(BaseHTTPRequestHandler):
                 "total_questions": len(quiz["questions"]),
                 "started_at": now_iso(),
             }
+            order = body.get("order")
+            if order is not None:
+                quiz_ids = [q["id"] for q in quiz["questions"]]
+                if (
+                    not isinstance(order, list)
+                    or not all(isinstance(i, int) and not isinstance(i, bool) for i in order)
+                    or sorted(order) != sorted(quiz_ids)
+                ):
+                    raise ApiError(HTTPStatus.BAD_REQUEST, "'order' must list every question id exactly once.")
+                record["order"] = order
             session = create_result_file(quiz_path, record)
             self._send_json({"session": session}, HTTPStatus.CREATED)
             return
