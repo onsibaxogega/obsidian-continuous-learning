@@ -362,9 +362,14 @@ function quizCard(item) {
         el("p", { text: `This quiz file is invalid: ${item.error}` })));
   }
   const count = `${item.question_count} question${item.question_count === 1 ? "" : "s"}`;
+  // Slugs drop the extension, so rebuild the file name as it exists on disk (all quiz files are .json).
+  const filename = `${item.slug.split("/").pop()}.json`;
   return el("li", { className: "quiz-card" },
     el("div", {},
-      el("h2", { text: item.title }),
+      el("h2", {},
+        item.title,
+        " ",
+        el("span", { className: "quiz-filename", text: `(${filename})` })),
       item.description ? el("p", { text: item.description }) : null,
       el("p", { className: "muted", text: count })),
     el("button", { type: "button", onClick: (event) => startQuiz(item.slug, event.currentTarget) , text: "Start quiz" }));

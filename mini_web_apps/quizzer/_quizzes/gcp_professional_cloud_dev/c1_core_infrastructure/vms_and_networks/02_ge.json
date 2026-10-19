@@ -1,0 +1,287 @@
+{
+  "title": "Google Compute Engine and VPC Networking",
+  "description": "Comprehensive practice questions covering VPC architecture, Compute Engine VM instances, autoscaling, load balancing, hybrid connectivity, and network security.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "You manage a web application deployed across multiple Compute Engine instances in a regional subnet. Due to rapid user growth, the subnet is running out of available private IP addresses, and you need to allocate more IP addresses without disrupting the running virtual machines. What should you do?",
+      "choices": {
+        "A": "Expand the IP address range of the existing subnet directly in the VPC configuration.",
+        "B": "Deploy a Cloud Router to perform Border Gateway Protocol route splitting across subnets.",
+        "C": "Create a new secondary VPC network and peer it with the existing VPC network.",
+        "D": "Migrate the virtual machines to a new subnet with a larger CIDR block during a scheduled maintenance window."
+      },
+      "answer": "A",
+      "justification": "In Google Cloud, subnets can be expanded by increasing their IP address range without affecting virtual machines that are already configured. Cloud Router (B) exchanges BGP routes dynamically with on-premises networks and does not expand subnet IP capacity. VPC peering (C) connects separate VPC networks rather than addressing subnet IP exhaustion. Migrating VMs to a new subnet (D) causes unnecessary downtime and operational complexity when the subnet range can simply be expanded in place."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "You are designing an asynchronous data processing pipeline that processes large batches of non-critical analytics tasks overnight. The tasks can take up to eight hours to complete, do not require immediate human oversight, and can checkpoint and resume their state if stopped. You need to minimize compute infrastructure costs as much as possible. Which Compute Engine configuration should you choose?",
+      "choices": {
+        "A": "Provision standard predefined VMs with one-year committed-use discounts.",
+        "B": "Provision Spot VMs configured with automated checkpointing and retry logic.",
+        "C": "Provision high-memory VMs with sustained-use discounts enabled.",
+        "D": "Provision custom machine types with preemptible maximum runtimes of 24 hours."
+      },
+      "answer": "B",
+      "justification": "Spot VMs provide discounts of up to 90% off standard pricing and have no maximum runtime, making them ideal for fault-tolerant, checkpoint-capable batch workloads that can handle preemption. Committed-use discounts (A) require a one-year or three-year commitment for predictable baseline workloads and offer up to 57% savings, which is significantly lower than Spot VM discounts. Sustained-use discounts (C) apply automatically to steady-state VMs running over 25% of a month but do not match the cost reduction of Spot instances. Preemptible VMs (D) have a strict 24-hour runtime limit and represent the older model, whereas Spot VMs have no maximum runtime limit."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "Your team runs an online booking service on Compute Engine that experiences unpredictable traffic spikes during promotional sales. You notice that instances occasionally suffer from rapid scaling cycles (flapping) where VMs are added and removed repeatedly within a short window. You need to stabilize the managed instance group while keeping the architecture resilient. What should you do?",
+      "choices": {
+        "A": "Scale up vertically to the largest available machine family in the zone to prevent adding new instances.",
+        "B": "Replace the managed instance group with unmanaged instances behind a proxy Network Load Balancer.",
+        "C": "Configure a stabilization window on the autoscaler to serve as a cooldown period.",
+        "D": "Switch the autoscaling metric from CPU utilization to fixed per-minute schedule scaling."
+      },
+      "answer": "C",
+      "justification": "Configuring a stabilization window (cooldown period) on the autoscaler prevents rapid scale-in and scale-out cycles (flapping) by smoothing out transient metric fluctuations. Scaling up vertically (A) is contrary to the best practice of horizontal scaling, risks hitting zone CPU quotas, and does not provide resilience against single points of failure. Unmanaged instance groups (B) do not support autoscaling, which would break dynamic elasticity. Schedule-based scaling (D) cannot respond effectively to unpredictable traffic spikes during promotional events."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "You are deploying a fleet of web servers into a managed instance group that autoscales dynamically based on traffic. You must restrict ingress traffic to ports 80 and 443 so that only the web servers accept HTTP and HTTPS connections, while avoiding the administrative overhead of manually updating IP addresses when instances scale out. What should you do?",
+      "choices": {
+        "A": "Create a static route in the VPC routing table forwarding traffic for ports 80 and 443 to the default gateway.",
+        "B": "Configure individual internal IP address filters for each instance in an ingress firewall rule.",
+        "C": "Deploy an on-premises firewall virtual appliance into each zone where the web servers reside.",
+        "D": "Apply a network tag such as WEB to the instance template and target that tag in an ingress firewall rule."
+      },
+      "answer": "D",
+      "justification": "Applying a network tag to Compute Engine instances allows firewall rules to target instances based on the tag rather than explicit IP addresses. When autoscaling launches new instances from the template, they automatically inherit the tag and firewall permissions. Routing tables (A) determine traffic paths between destinations but do not enforce access control or port filtering. Individual IP filtering (B) is unmanageable with autoscaling because ephemeral IP addresses change constantly. Deploying virtual firewall appliances (C) adds unnecessary cost and complexity, bypassing Google Cloud's built-in global distributed firewall."
+    },
+    {
+      "id": 5,
+      "type": "multiple_select",
+      "question": "You are designing the networking architecture for a high-performance gaming backend that communicates over raw TCP and UDP protocols. You require the client source IP addresses to be preserved for real-time geolocation matching, and the backends require direct server return. Which statements accurately describe the Cloud Load Balancing solution you should select?",
+      "choices": {
+        "A": "An Application Load Balancer should be selected because it can terminate SSL/TLS connections at the edge.",
+        "B": "A passthrough Network Load Balancer should be selected because it preserves the original client source IP address.",
+        "C": "A proxy Network Load Balancer should be selected because it operates as a reverse proxy for TCP and UDP traffic.",
+        "D": "The chosen load balancer does not terminate connections and forwards packets directly to the backends.",
+        "E": "The load balancer inspects HTTP host headers to perform content-based routing to specific instance groups."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "justification": "A passthrough Network Load Balancer operates at Layer 4, does not terminate connections, and directly forwards traffic to backend instances while preserving the original client source IP address, which suits direct server return requirements (B and D). Application Load Balancers (A, E) operate at Layer 7 for HTTP/HTTPS traffic and perform reverse proxying and content-based routing rather than raw UDP handling. Proxy Network Load Balancers (C) terminate client connections and replace the original client source IP, failing the requirement."
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "An enterprise organization with multiple departments has established separate Google Cloud projects for development, testing, and production. The central networking team requires full administrative control over network topology, subnets, and firewalls, while allowing application developers to provision Compute Engine instances into assigned subnets without network admin privileges. Which solution should you implement?",
+      "choices": {
+        "A": "Configure Shared VPC with the central network project as the host project and departmental projects as service projects.",
+        "B": "Configure VPC Network Peering between each departmental VPC and the central VPC network.",
+        "C": "Deploy Cloud VPN tunnels between all departmental projects using dynamic BGP routing.",
+        "D": "Attach all departmental projects to a single Carrier Peering partner connection."
+      },
+      "answer": "A",
+      "justification": "Shared VPC allows an organization to connect resources from multiple service projects to a common VPC network hosted in a central host project, using IAM to separate network administration from instance deployment. VPC Network Peering (B) is decentralized and requires each side to manage its own VPC network independently. Cloud VPN (C) creates encrypted tunnels over the internet and is meant for hybrid or multi-cloud connectivity, adding unnecessary latency and management overhead within the same cloud environment. Carrier Peering (D) provides public IP access to Google services from on-premises facilities and cannot manage internal cross-project GCP communication."
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "You are hosting a media-rich web application on Google Cloud. You want to reduce latency for global end users and decrease the load on your origin backend servers by caching static image assets at Google edge locations. How should you enable this feature with minimal operational effort?",
+      "choices": {
+        "A": "Deploy Memcached instances on Compute Engine in each region where users reside.",
+        "B": "Configure an external Application Load Balancer for the application and enable Cloud CDN on the backend service.",
+        "C": "Configure a passthrough Network Load Balancer and enable Cloud CDN caching rules.",
+        "D": "Set up a Dedicated Interconnect circuit with edge cache point-of-presence peering."
+      },
+      "answer": "B",
+      "justification": "Cloud CDN uses Google's global system of edge caches to store content close to end users, and it is activated with a single checkbox on the backend service of an external Application Load Balancer. Memcached (A) requires self-managed infrastructure and does not provide Google edge caching. Cloud CDN is not available on passthrough Network Load Balancers (C), as it requires an external Application Load Balancer. Dedicated Interconnect (D) provides private physical hybrid connectivity between on-premises data centers and Google Cloud, not content delivery caching."
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "An enterprise requires private, high-bandwidth connectivity between its on-premises corporate data center and its Google Cloud VPC. The connection must support private RFC 1918 IP communication, cannot traverse the public internet, must have an enterprise Service Level Agreement (SLA) of 99.99%, and the company already leases co-location space in a Google point of presence (PoP). Which solution should you recommend?",
+      "choices": {
+        "A": "Direct Peering connection between the data center router and the Google PoP.",
+        "B": "Cloud VPN tunnel backed by Cloud Router with Border Gateway Protocol.",
+        "C": "Dedicated Interconnect configured with topologies meeting Google specifications for 99.99% SLA.",
+        "D": "Carrier Peering connection established through an authorized network service provider."
+      },
+      "answer": "C",
+      "justification": "Dedicated Interconnect provides direct physical connections to Google Cloud in a Google point of presence, supports private RFC 1918 addressing into VPCs, and can be covered by an SLA of up to 99.99% when configured according to specifications. Direct Peering (A) and Carrier Peering (D) only exchange traffic over public IP addresses and are not covered by a Google SLA. Cloud VPN (B) traverses the public internet and does not meet the dedicated high-bandwidth and physical private circuit requirements."
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "A junior developer deleted the default VPC network in a Google Cloud sandbox project to clean up resources. Shortly afterward, another developer attempted to create a new Compute Engine VM instance in the project and encountered an error. What was the cause of this error?",
+      "choices": {
+        "A": "Compute Engine automatically disables the Compute Engine API when the default network is deleted.",
+        "B": "Deleting the default network revokes the Compute Admin IAM role for all project members.",
+        "C": "Compute Engine instances require external IP addresses, which are only generated by the default VPC.",
+        "D": "A VPC network is a mandatory prerequisite for Compute Engine instances, so instance creation fails when no VPC exists."
+      },
+      "answer": "D",
+      "justification": "In Google Cloud, a VPC network is a foundational requirement; without a VPC network, Compute Engine cannot create virtual machine instances, containers, or App Engine applications, returning a 'no more networks' error. Deleting the default network does not disable the Compute Engine API (A), does not alter IAM permissions (B), and external IPs can exist independently or be assigned to any VPC with internet access (C)."
+    },
+    {
+      "id": 10,
+      "type": "multiple_select",
+      "question": "You are reviewing cost optimization options for a diverse fleet of Compute Engine workloads, including steady-state production databases, continuous web servers, and interruptible test batch jobs. Which statements regarding Compute Engine pricing and discount models are accurate?",
+      "choices": {
+        "A": "Committed-use discounts offer up to a 57% discount for stable workloads in exchange for a one-year or three-year commitment.",
+        "B": "Compute Engine rounds all running virtual machine usage up to the nearest hour for billing purposes.",
+        "C": "Sustained-use discounts are applied automatically to VMs that run for more than 25% of a billing month.",
+        "D": "Spot VMs are strictly terminated after reaching a 24-hour maximum continuous runtime.",
+        "E": "Spot VMs offer up to 90% savings off standard pricing for workloads that can tolerate being stopped and restarted."
+      },
+      "answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "justification": "Committed-use discounts require a 1-year or 3-year term for predictable workloads and save up to 57% (A), sustained-use discounts apply automatically without manual configuration when VMs run for more than 25% of a month (C), and Spot VMs offer up to 90% savings for fault-tolerant workloads (E). Compute Engine uses per-second billing with a one-minute minimum, not hourly rounding (B). Spot VMs have no maximum runtime limit, unlike legacy Preemptible VMs which had a 24-hour cap (D)."
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "question": "You create a custom VPC network with multiple subnets and deploy several Compute Engine virtual machines. You notice that all incoming traffic from the public internet is blocked by default, even though you have not created any firewall rules yet. Why does this occur?",
+      "choices": {
+        "A": "Every Google Cloud VPC network has an implied deny-all-ingress firewall rule at the lowest priority.",
+        "B": "The default gateway drops all incoming packets unless an external routing table entry is added.",
+        "C": "Google Cloud requires all incoming traffic to pass through an Application Load Balancer.",
+        "D": "Firewall rules in Google Cloud are evaluated in reverse order, giving priority to higher integer numbers."
+      },
+      "answer": "A",
+      "justification": "Every Google Cloud VPC has two implied rules: deny-all-ingress (which blocks all incoming connections) and allow-all-egress. Explicit allow rules override the implied deny rule because they have higher priority (lower integer value). The default gateway does not perform stateful packet dropping based on routing entries (B). Incoming traffic does not mandate a load balancer if instances have public IPs and allow rules (C). In Google Cloud firewall rule evaluation, a lower integer indicates higher priority, not reverse (D)."
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "question": "An enterprise wants to connect its corporate office to Google Cloud to access Google Workspace and Google Cloud APIs. The company does not have access to a Google point of presence, does not require private RFC 1918 connectivity to VPC subnets, and wants to work through an authorized service provider partner. Which connectivity option fits these criteria?",
+      "choices": {
+        "A": "Dedicated Interconnect",
+        "B": "Carrier Peering",
+        "C": "Direct Peering",
+        "D": "Partner Interconnect"
+      },
+      "answer": "B",
+      "justification": "Carrier Peering provides direct access from an on-premises network through a service provider's network to Google Workspace and Google Cloud products over public IP addresses for customers who are not located in a Google Point of Presence. Dedicated Interconnect (A) requires physical co-location in a Google PoP and provides private VPC connectivity. Direct Peering (C) requires leasing space and managing routing equipment in a Google PoP. Partner Interconnect (D) provides private RFC 1918 connectivity into a VPC network, which is unnecessary when private internal connectivity is not required."
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "question": "You manage multiple internal microservices distributed across different subnets in a VPC. You need internal services to discover each other using fully qualified domain names such as api.internal.corp, but these domain names must not be exposed to or resolvable from the public internet. What is the recommended approach?",
+      "choices": {
+        "A": "Register the domain with a public registrar and configure split-horizon routing on Compute Engine instances.",
+        "B": "Deploy a custom BIND DNS server on a Compute Engine instance and point all VMs to its internal IP.",
+        "C": "Create a private managed zone in Cloud DNS and authorize access to your VPC network.",
+        "D": "Configure public Cloud DNS zones with firewall rules blocking external IP ingress on UDP port 53."
+      },
+      "answer": "C",
+      "justification": "Cloud DNS supports private zones that allow internal DNS resolution strictly within authorized VPC networks without exposing records to the public internet. Split-horizon hacks with public registrars (A) add unnecessary external dependencies and management overhead. Deploying a self-managed BIND server (B) introduces a single point of failure and maintenance burden instead of using Google Cloud's fully managed, redundant DNS infrastructure. Public DNS zones (D) publish records to authoritative nameservers globally, and VPC firewall rules cannot prevent external clients from querying public Cloud DNS nameservers."
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "question": "You are migrating an in-house data analytics engine to Compute Engine. The application requires 6 vCPUs and 45 GB of RAM. The standard predefined machine types offer either too little memory (causing out-of-memory errors) or excessive CPU cores (wasting cloud budget). What should you do to optimize performance and cost?",
+      "choices": {
+        "A": "Provision the smallest predefined machine type and attach an external solid-state drive with provisioned throughput.",
+        "B": "Provision a Spot VM using a large predefined memory-optimized machine type to offset the cost.",
+        "C": "Deploy the application across multiple smaller predefined VMs grouped under an unmanaged instance group.",
+        "D": "Create a custom machine type specifying exactly 6 vCPUs and 45 GB of memory."
+      },
+      "answer": "D",
+      "justification": "Compute Engine allows users to create custom machine types where they can specify the exact number of virtual CPUs and memory needed, avoiding the wasted expense or resource shortages of predefined sizes. Attaching high-throughput disks (A) does not increase VM system RAM, and Compute Engine provides high throughput to persistent disks by default at no extra cost. Using Spot VMs on oversized types (B) risks sudden preemption for a workload that may not be fault-tolerant. Dividing a single non-distributed application across smaller VMs (C) requires complex application re-architecting."
+    },
+    {
+      "id": 15,
+      "type": "multiple_select",
+      "question": "Your enterprise organization needs to establish secure communication between workloads running in two separate Google Cloud projects. Which statements correctly distinguish VPC Network Peering from Shared VPC?",
+      "choices": {
+        "A": "VPC Network Peering allows a central host project to administer all subnets and IAM permissions across both projects.",
+        "B": "VPC Network Peering is decentralized, allowing two independent VPC networks to exchange traffic while being managed separately.",
+        "C": "Shared VPC requires all data traffic to pass through an encrypted Cloud VPN gateway connecting the projects.",
+        "D": "Shared VPC can only connect projects if both projects share the same administrative owner and billing account.",
+        "E": "Shared VPC utilizes IAM to enable service projects to attach resources to a centrally managed host VPC network."
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "justification": "VPC Network Peering establishes a decentralized relationship between two VPCs where each network is managed independently by its respective team (B). Shared VPC uses IAM to allow a central host project to own and administer the network topology while individual service project teams deploy resources into shared subnets (E). Centralized host-managed IAM applies to Shared VPC, not VPC Peering (A). Shared VPC routes traffic across projects natively on Google's private network without needing Cloud VPN tunnels (C). Shared VPC requires the projects to belong to the same Google Cloud Organization, but billing accounts and team owners can vary (D)."
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "question": "You have configured a Cloud VPN tunnel connecting your on-premises data center to your Google Cloud VPC. Whenever your cloud team provisions a new subnet in the VPC, the on-premises network team must manually configure static routing entries to reach it, causing communication delays. How should you automate this route exchange?",
+      "choices": {
+        "A": "Configure Cloud Router to dynamically exchange routes with on-premises routers using Border Gateway Protocol (BGP).",
+        "B": "Deploy an Application Load Balancer to proxy internal on-premises requests to the new subnets.",
+        "C": "Enable automatic subnet expansion on the default VPC network.",
+        "D": "Switch from Cloud VPN to Direct Peering to exchange routing tables automatically."
+      },
+      "answer": "A",
+      "justification": "Cloud Router makes Cloud VPN dynamic by using Border Gateway Protocol (BGP) to exchange route information; if a new subnet is added to the VPC, the on-premises network automatically receives routes to it without manual intervention. Application Load Balancers (B) distribute HTTP/HTTPS application traffic and do not provide network-layer routing exchange. Subnet expansion (C) increases the CIDR range of an existing subnet but does not broadcast routes for new subnets to on-premises routers. Direct Peering (D) only provides public IP access to Google services and does not connect on-premises networks to private VPC subnets."
+    },
+    {
+      "id": 17,
+      "type": "multiple_choice",
+      "question": "Your company is preparing to launch a national marketing campaign that is projected to increase web traffic ten-fold within minutes. Your architecture runs on Compute Engine instances behind a Cloud Load Balancer. What action must you take to ensure the load balancer can handle the instantaneous incoming traffic spike?",
+      "choices": {
+        "A": "Submit a preemptive capacity warming support ticket to Google Cloud support 48 hours prior to the event.",
+        "B": "No pre-warming is required because Cloud Load Balancing is fully distributed and software-defined, scaling instantly.",
+        "C": "Provision dedicated load balancer virtual machines in every target zone to handle the anticipated throughput.",
+        "D": "Convert the load balancer to a passthrough Network Load Balancer to bypass edge proxies."
+      },
+      "answer": "B",
+      "justification": "Cloud Load Balancing is a fully distributed, software-defined managed service that does not run on user-managed VMs and requires no pre-warming before large traffic spikes. Submitting pre-warming support requests (A) is unnecessary on Google Cloud unlike some other cloud providers. Load balancers are managed by Google Cloud and do not require user-provisioned VMs (C). Converting to a passthrough Network Load Balancer (D) removes Layer 7 capabilities like SSL termination and URL mapping and is not required for scaling."
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice",
+      "question": "An organization is executing a multicloud strategy with enterprise workloads running in both Google Cloud and Microsoft Azure. They require a high-bandwidth, dedicated private physical connection between the two cloud service providers with options for 10 Gbps or 100 Gbps, without needing to lease co-location facilities or deploy physical hardware themselves. Which solution should they choose?",
+      "choices": {
+        "A": "Cloud VPN with multiple paired tunnels running over the public internet.",
+        "B": "Carrier Peering through a local telecommunications partner.",
+        "C": "Cross-Cloud Interconnect provisioned directly between Google Cloud and the cloud provider.",
+        "D": "Partner Interconnect with a virtual router instance running inside Compute Engine."
+      },
+      "answer": "C",
+      "justification": "Cross-Cloud Interconnect provides dedicated, high-bandwidth physical connectivity (10 Gbps or 100 Gbps) directly between Google Cloud and another cloud provider (such as Azure or AWS) without requiring the customer to lease co-location space or manage physical routing hardware. Cloud VPN (A) runs over the public internet and does not meet high-bandwidth physical circuit requirements. Carrier Peering (B) only provides public IP connectivity to Google services. Partner Interconnect (D) connects an on-premises network to Google Cloud via a service provider rather than establishing direct cloud-to-cloud physical links."
+    },
+    {
+      "id": 19,
+      "type": "multiple_select",
+      "question": "You are designing a fault-tolerant multi-tier architecture on Google Cloud. Which statements correctly reflect the structural behavior of VPC networks and subnets in Google Cloud?",
+      "choices": {
+        "A": "A single VPC network has global scope and can span all Google Cloud regions worldwide without requiring VPC peering.",
+        "B": "Each subnet in a VPC network is automatically distributed across all regions globally.",
+        "C": "Virtual machines located in different zones of the same region must always reside in separate subnets.",
+        "D": "Subnets are regional resources that can span across all zones within their designated region.",
+        "E": "Compute Engine instances communicate between subnets using external IP addresses routed over the public internet."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "justification": "Google Cloud VPC networks are global resources that can span all regions worldwide without cross-region peering (A), and subnets are regional resources whose boundaries can span multiple zones within that region (D). Subnets are regional, not global (B). Virtual machines in different zones within the same region can be placed on the exact same subnet (C). Communication between subnets within a VPC is handled by built-in internal routing tables using private IP addresses without needing external IPs or internet routing (E)."
+    },
+    {
+      "id": 20,
+      "type": "multiple_select",
+      "question": "In a connectivity verification lab, a developer tests network reachability to a Compute Engine VM with both private and public IP addresses. The VPC initially has the standard default firewall rules active: allow-ssh, allow-icmp, and allow-custom (allowing internal traffic). Which statements describe what happens as firewall rules are systematically modified?",
+      "choices": {
+        "A": "Deleting allow-icmp immediately prevents internal VMs on the same VPC from pinging each other.",
+        "B": "Deleting allow-custom blocks SSH connections originating from the public internet.",
+        "C": "Deleting allow-icmp blocks ping requests originating from outside the network while internal pings still succeed via allow-custom.",
+        "D": "Explicit allow rules have lower priority than the implied deny-all-ingress rule.",
+        "E": "Deleting allow-custom prevents internal VMs from communicating with each other across subnets."
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "justification": "In the lab experiment, allow-icmp controls ICMP from 0.0.0.0/0 (outside the network), so deleting it blocks external pings while internal pings continue to succeed via allow-custom (C). allow-custom permits all internal traffic within the VPC CIDR (such as 10.128.0.0/9), so deleting it breaks all intra-VPC communication between instances (E). Internal pings rely on allow-custom, not allow-icmp, so removing allow-icmp does not stop internal pings (A). Public SSH is governed by allow-ssh (0.0.0.0/0), not allow-custom (B). In Google Cloud, explicit rules have higher priority than the implied deny-all-ingress rule (D)."
+    }
+  ]
+}
