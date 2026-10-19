@@ -177,7 +177,11 @@
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers": {
-      "children": [],
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers/Introduction to containers.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers/Kubernetes.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers/Google Kubernetes Engine.md"
+      ],
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Introducing Google Cloud": {
@@ -288,7 +292,14 @@
     },
     "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure": {
       "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/storage",
         "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/storage": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/storage/01_ge.json"
       ],
       "sortOrder": "custom"
     },
@@ -313,7 +324,14 @@
     },
     "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure": {
       "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/storage",
         "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/storage": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/storage/01_ge_result_2026-10-19T151726.jsonl"
       ],
       "sortOrder": "custom"
     },

@@ -1,0 +1,23 @@
+{"event": "start", "quiz": "gcp_professional_cloud_dev/c1_core_infrastructure/storage/01_ge", "title": "Google Cloud Storage and Database Services", "total_questions": 20, "started_at": "2026-10-19T15:17:26-05:00", "order": [2, 13, 8, 14, 3, 1, 5, 9, 15, 18, 10, 6, 16, 7, 12, 19, 4, 11, 17, 20]}
+{"event": "resume", "resumed_at": "2026-10-19T15:23:04-05:00"}
+{"event": "answer", "question_id": 1, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:39-05:00"}
+{"event": "answer", "question_id": 2, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:39-05:00"}
+{"event": "answer", "question_id": 3, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:39-05:00"}
+{"event": "answer", "question_id": 4, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:40-05:00"}
+{"event": "answer", "question_id": 5, "type": "multiple_select", "selected": ["B", "D"], "correct": ["B", "D"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:40-05:00"}
+{"event": "answer", "question_id": 6, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:40-05:00"}
+{"event": "answer", "question_id": 7, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:40-05:00"}
+{"event": "answer", "question_id": 8, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:40-05:00"}
+{"event": "answer", "question_id": 9, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:40-05:00"}
+{"event": "answer", "question_id": 10, "type": "multiple_select", "selected": ["A", "C", "E"], "correct": ["A", "C", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:41-05:00"}
+{"event": "answer", "question_id": 11, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:41-05:00"}
+{"event": "answer", "question_id": 12, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:41-05:00"}
+{"event": "answer", "question_id": 13, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:41-05:00"}
+{"event": "answer", "question_id": 14, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:41-05:00"}
+{"event": "answer", "question_id": 15, "type": "multiple_select", "selected": ["B", "E"], "correct": ["B", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:41-05:00"}
+{"event": "answer", "question_id": 16, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:42-05:00"}
+{"event": "answer", "question_id": 17, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:42-05:00"}
+{"event": "answer", "question_id": 18, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:42-05:00"}
+{"event": "answer", "question_id": 19, "type": "multiple_select", "selected": ["A", "D"], "correct": ["A", "D"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:42-05:00"}
+{"event": "answer", "question_id": 20, "type": "multiple_select", "selected": ["C", "E"], "correct": ["C", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T15:31:42-05:00"}
+{"event": "complete", "score": 20, "total": 20, "percentage": 100, "completed_at": "2026-10-19T15:31:42-05:00"}

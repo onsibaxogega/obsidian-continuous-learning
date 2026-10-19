@@ -1,0 +1,287 @@
+{
+  "title": "Google Cloud Storage and Database Services",
+  "description": "Comprehensive PCD exam practice questions covering Cloud Storage, Cloud SQL, Spanner, Firestore, and Bigtable architecture, limits, and integration patterns.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "You are designing an object storage strategy for a new media platform on Google Cloud. You expect to store petabytes of user uploads, but the future access patterns for newly ingested media files are unpredictable. You want to automatically reduce storage costs without having to manually forecast read frequencies or write custom lifecycle scripts. What should you do?",
+      "choices": {
+        "A": "Enable Autoclass on the Cloud Storage bucket to automatically transition objects between storage classes based on access patterns.",
+        "B": "Set the default storage class of the bucket to Archive Storage and configure an object lifecycle rule to promote objects upon read.",
+        "C": "Deploy a Cloud Function triggered by Cloud Monitoring metrics to adjust object storage classes daily.",
+        "D": "Store all objects in Nearline Storage and configure Transfer Appliance batch jobs to migrate cold data."
+      },
+      "answer": "A",
+      "justification": "Cloud Storage Autoclass automatically transitions objects to colder storage classes when they are not accessed and restores them to Standard storage when they are accessed, removing the guesswork when access patterns are unknown. Archive Storage (B) incurs high access costs and a 365-day minimum storage duration, and lifecycle rules cannot detect real-time read access to promote objects. Writing custom Cloud Functions with Monitoring metrics (C) adds unnecessary operational overhead and complexity. Nearline Storage (D) still requires manual oversight and incurs access charges, while Transfer Appliance is a physical hardware appliance for moving data into Google Cloud, not an internal class optimizer."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "An enterprise financial platform running on Cloud SQL is approaching its vertical scaling limit of 64 TB of storage and high transaction volume. The engineering team requires a managed relational database that supports full SQL semantics, ACID transactions, and horizontal scalability with strong global consistency across multiple regions. Which Google Cloud storage product should you select?",
+      "choices": {
+        "A": "Bigtable",
+        "B": "Spanner",
+        "C": "Firestore in Datastore mode",
+        "D": "Cloud Storage"
+      },
+      "answer": "B",
+      "justification": "Spanner is Google Cloud's fully managed relational database that scales horizontally across nodes while providing strong global consistency, full SQL semantics, joins, and ACID transactions. Bigtable (A) is a wide-column NoSQL database that does not support SQL queries or multi-row transactions. Firestore (C) is a document-oriented NoSQL database that does not support standard relational schemas or joins. Cloud Storage (D) is an object store for unstructured blobs, not a transactional relational database."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "You are developing a mobile inspection app for field technicians who frequently work in remote areas with intermittent or zero internet connectivity. The app must allow technicians to read, write, and query inspection documents offline, and automatically synchronize local changes back to the cloud when connectivity is restored, while also pushing live updates to connected web dashboards. Which database should you choose?",
+      "choices": {
+        "A": "Cloud SQL for PostgreSQL",
+        "B": "Bigtable",
+        "C": "Firestore",
+        "D": "Spanner"
+      },
+      "answer": "C",
+      "justification": "Firestore is a document-oriented NoSQL database designed for mobile, web, and serverless applications that includes built-in offline caching and automatic bi-directional data synchronization in its client SDKs, alongside real-time data sync. Cloud SQL (A) and Spanner (D) are relational databases that do not provide client SDK offline data caching or automatic client-side sync. Bigtable (B) is a wide-column NoSQL database optimized for high-throughput backend big data workloads, lacking mobile client SDK offline synchronization capabilities."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "Your company is building an IoT telemetry platform that will ingest continuous time-series sensor data from millions of smart utility meters. The dataset will exceed 50 TB, with high-velocity write throughput and low-latency operational lookups based on sensor IDs and timestamps. The data model does not require multi-row transactions or SQL joins. Which storage solution is best suited for this workload?",
+      "choices": {
+        "A": "Cloud Storage",
+        "B": "Cloud SQL for MySQL",
+        "C": "Firestore in Native mode",
+        "D": "Bigtable"
+      },
+      "answer": "D",
+      "justification": "Bigtable is a managed wide-column NoSQL database optimized for high-throughput reads and writes at low latency, particularly for datasets larger than 1 TB with natural time-series ordering and high-velocity ingestion without SQL joins. Cloud Storage (A) is an object store designed for unstructured files, not low-latency individual record lookups. Cloud SQL (B) is limited to 64 TB and scales vertically, making it unsuitable for massive IoT write velocity. Firestore (C) is optimized for document-oriented mobile/web workloads and has an entity size limit of 1 MB, which is less cost-effective and performant for massive multi-terabyte time-series telemetry streams."
+    },
+    {
+      "id": 5,
+      "type": "multiple_select",
+      "question": "You are establishing data governance and compliance policies for object data stored in Cloud Storage. Which statements correctly describe the immutability and versioning behavior of Cloud Storage objects?",
+      "choices": {
+        "A": "Objects in Cloud Storage are mutable and support byte-level in-place edits by default.",
+        "B": "By default, when object versioning is disabled, overwriting an existing object completely replaces the older version destructively.",
+        "C": "Object versioning is enabled globally across all buckets in a Google Cloud project simultaneously.",
+        "D": "When object versioning is enabled, Cloud Storage preserves a history of modifications, allowing previous versions to be listed or restored.",
+        "E": "Enabling versioning automatically prevents objects from ever being permanently deleted."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "justification": "Cloud Storage objects are immutable; when versioning is off (the default), an overwrite replaces the older version destructively (B). When versioning is explicitly enabled on a bucket, Cloud Storage maintains a history of modifications and deletions, allowing older versions to be retrieved or restored (D). Objects are immutable and cannot be edited in place (A). Versioning is configured on a per-bucket basis, not project-wide (C). Versioned objects can still be permanently deleted either directly by deleting specific version IDs or via bucket lifecycle rules (E)."
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "You maintain a web application deployed on Compute Engine instances that connects to a Cloud SQL for MySQL backend. In an initial prototype lab, developers connected using the instance public IP address and an allowlisted CIDR IP range. You need to upgrade this architecture to meet enterprise production security standards. What should you do?",
+      "choices": {
+        "A": "Connect using Cloud SQL Auth Proxy or a Private IP within the VPC, enforcing IAM-based authentication and SSL/TLS encryption.",
+        "B": "Allow unencrypted network traffic on the Cloud SQL public IP to reduce handshake latency.",
+        "C": "Store the database root credentials in the Compute Engine instance startup script metadata.",
+        "D": "Configure an external HTTP Load Balancer to proxy database connections directly to the MySQL port."
+      },
+      "answer": "A",
+      "justification": "In production Google Cloud environments, applications should connect to Cloud SQL using the Cloud SQL Auth Proxy or Private IP within the VPC, utilizing IAM authentication and automatic SSL/TLS encryption instead of public IP allowlisting. Allowing unencrypted traffic (B) exposes credentials and data in transit. Storing credentials in instance metadata or startup scripts (C) violates security best practices; credentials should be securely managed in Secret Manager. HTTP Load Balancers (D) operate at Layer 7 for web traffic and do not proxy standard MySQL database connection streams."
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "Your architecture team is designing an analytics data pipeline. The solution requires a low-latency operational datastore to ingest fast-moving streaming event data, alongside a query engine capable of running interactive ad-hoc SQL queries and business intelligence reports across multi-petabyte historical datasets. How should you partition these responsibilities between Bigtable and BigQuery?",
+      "choices": {
+        "A": "Use BigQuery as the high-throughput operational ingest store, and export tables to Bigtable for ad-hoc SQL reporting.",
+        "B": "Use Bigtable as the low-latency ingest and operational serving layer, and export summarized data to BigQuery for ad-hoc SQL analytics.",
+        "C": "Use Bigtable for both operational streaming ingestion and interactive ad-hoc SQL reporting via Google Standard SQL.",
+        "D": "Use Cloud SQL for high-throughput streaming ingest, and export raw data to Bigtable for data warehousing."
+      },
+      "answer": "B",
+      "justification": "Bigtable serves as a low-latency, high-throughput NoSQL datastore ideal for operational ingestion, while BigQuery is a serverless data warehouse purpose-built for ad-hoc SQL analytics and reporting over massive datasets; using Bigtable for ingestion and exporting to BigQuery for analysis is a standard Google Cloud pattern. BigQuery is not designed for row-by-row low-latency operational serving, and Bigtable does not support ad-hoc SQL queries (A, C). Cloud SQL (D) has vertical scaling limits (64 TB) that cannot match Bigtable for high-throughput streaming ingest at petabyte scale."
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "An enterprise organization needs to migrate two petabytes of on-premises archival video files to a Google Cloud Storage bucket. The corporate data center has limited internet uplink bandwidth, and an online network transfer would take several months to complete. Which data transfer method should you implement?",
+      "choices": {
+        "A": "Execute parallel gcloud storage cp commands using the Cloud SDK.",
+        "B": "Upload the files in batches using the Google Chrome browser and the Cloud Console drag-and-drop interface.",
+        "C": "Request a Transfer Appliance from Google Cloud to load data locally and ship it to an upload facility.",
+        "D": "Establish a Cloud VPN tunnel and use Storage Transfer Service to transfer files over the public internet."
+      },
+      "answer": "C",
+      "justification": "Transfer Appliance is a high-capacity, rackable storage server leased from Google Cloud designed specifically for petabyte-scale offline data migrations when internet bandwidth is constrained. Running gcloud storage commands (A) or using the browser console (B) is constrained by network bandwidth and impractical for petabytes. Storage Transfer Service over Cloud VPN (D) still relies on the constrained internet connection and would take months to complete."
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "You are building a social media application on Firestore. Each user profile includes basic textual attributes (username, email, bio) and high-resolution profile images and video clips that can be up to 15 MB in size. How should you design the storage architecture while respecting Firestore technical limits?",
+      "choices": {
+        "A": "Encode the high-resolution images as Base64 strings and store them directly in the Firestore user document.",
+        "B": "Split the images into multiple nested subcollections within the user document to bypass the document limit.",
+        "C": "Migrate the entire application datastore to Cloud SQL because Firestore does not support multimedia applications.",
+        "D": "Store the images and video clips in Cloud Storage and save the corresponding object URLs in the Firestore user document."
+      },
+      "answer": "D",
+      "justification": "Firestore has a maximum entity/document size limit of 1 MiB; storing large binary files such as 15 MB images in Cloud Storage and storing the object URL reference inside the Firestore document is the recommended architectural pattern. Storing Base64 images directly (A) or splitting across subcollections (B) fails or creates unnecessary overhead because individual documents cannot exceed 1 MiB and documents are not meant for raw blob storage. Migrating entirely to Cloud SQL (C) is unnecessary because pairing Firestore with Cloud Storage is the standard best-practice pattern."
+    },
+    {
+      "id": 10,
+      "type": "multiple_select",
+      "question": "You are evaluating Cloud Storage storage classes for various enterprise backup and archival workflows. Which statements accurately describe the characteristics and trade-offs of the available storage classes?",
+      "choices": {
+        "A": "All Cloud Storage classes provide worldwide accessibility, high durability, and a uniform API and security model.",
+        "B": "Archive Storage is optimized for data accessed at least once every 90 days with zero retrieval fees.",
+        "C": "Nearline Storage is designed for infrequently accessed data read or modified on average once a month or less.",
+        "D": "Deleting an object from Coldline Storage after 30 days incurs no additional duration charges.",
+        "E": "Archive Storage offers the lowest storage cost per gigabyte but requires a 365-day minimum storage duration."
+      },
+      "answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "justification": "All Cloud Storage classes share uniform APIs, security, low latency, and high durability (A); Nearline Storage is intended for data accessed on average once a month or less (C); and Archive Storage provides the lowest storage cost but enforces a 365-day minimum storage duration and higher access fees (E). Archive Storage is meant for data accessed less than once a year and incurs data access fees, while Coldline is for access every 90 days (B). Coldline Storage has a 90-day minimum storage duration, so deleting an object after 30 days incurs the remaining minimum duration charge (D)."
+    },
+    {
+      "id": 11,
+      "type": "multiple_choice",
+      "question": "Your company is migrating several hundred terabytes of online analytical logs from Amazon S3 buckets and external HTTP endpoints into Google Cloud Storage. You want an automated, fully managed service that can schedule and run recurring batch transfers without provisioning compute instances. Which tool should you use?",
+      "choices": {
+        "A": "Storage Transfer Service",
+        "B": "Transfer Appliance",
+        "C": "Cloud SQL import utility",
+        "D": "BigQuery Data Transfer Service"
+      },
+      "answer": "A",
+      "justification": "Storage Transfer Service is designed for importing large amounts of online data into Cloud Storage quickly and cost-effectively, supporting scheduled and managed batch transfers from other cloud providers (such as Amazon S3), other Cloud Storage buckets, or HTTP(S) endpoints. Transfer Appliance (B) is a physical hardware appliance for offline data transport. Cloud SQL import (C) imports database dump files into relational tables, not object buckets. BigQuery Data Transfer Service (D) automates data loading into BigQuery data warehouse tables rather than Cloud Storage buckets."
+    },
+    {
+      "id": 12,
+      "type": "multiple_choice",
+      "question": "You are ingesting time-series telemetry into a Bigtable cluster. Under peak load, your monitoring dashboards indicate high latency and uneven resource utilization, where a single node is overwhelmed while other nodes remain idle. What is the most likely cause of this issue, and how should you resolve it?",
+      "choices": {
+        "A": "The table lacks secondary indexes; create indexes for all query filters.",
+        "B": "Row keys start with sequential timestamps causing hotspotting; redesign keys to distribute writes evenly.",
+        "C": "The Bigtable instance is running in single-row eventual consistency mode; switch to strong consistency.",
+        "D": "The storage engine is using persistent disk instead of solid-state drives; recreate the cluster."
+      },
+      "answer": "B",
+      "justification": "Bigtable performance depends heavily on row key design; sequentially increasing keys (such as timestamps at the start of a key) cause writes to target a single tablet and node, resulting in hotspotting. Redesigning row keys with well-distributed prefixes spreads traffic evenly across nodes. Bigtable does not support secondary indexes (A). Consistency mode does not cause node hotspotting (C). Disk type does not resolve hotspotting caused by sequential key access patterns (D)."
+    },
+    {
+      "id": 13,
+      "type": "multiple_choice",
+      "question": "You are assessing database options for an internal departmental ERP application. The system requires standard SQL relational support and transactions, with an anticipated maximum storage requirement of 25 TB and a database size that can fit within 64 processor cores and 256 GB of RAM. The organization wants to minimize licensing and operational maintenance costs. Which service is most appropriate?",
+      "choices": {
+        "A": "Spanner",
+        "B": "Firestore",
+        "C": "Cloud SQL",
+        "D": "Bigtable"
+      },
+      "answer": "C",
+      "justification": "Cloud SQL is a fully managed relational database service supporting MySQL, PostgreSQL, and SQL Server that scales vertically up to 128 cores and 64 TB of storage, making it cost-effective and operationally ideal for regional enterprise relational workloads that do not require horizontal scaling. Spanner (A) provides horizontal scaling and global distribution but at a significantly higher cost point than Cloud SQL for a 25 TB workload. Firestore (B) and Bigtable (D) are NoSQL databases that do not provide full relational SQL semantics or table joins required by traditional ERP systems."
+    },
+    {
+      "id": 14,
+      "type": "multiple_choice",
+      "question": "You are implementing access controls on a sensitive Cloud Storage bucket that contains compliance reports. You need to grant the internal auditing team read access to all current and future reports within the bucket while ensuring adherence to the principle of least privilege. According to Google Cloud best practices, what approach should you use?",
+      "choices": {
+        "A": "Create individual object-level Access Control Lists (ACLs) every time a new report is uploaded.",
+        "B": "Set the public read permission allUsers:R on the bucket.",
+        "C": "Grant the Project Owner IAM role to the auditing group.",
+        "D": "Grant a Cloud Storage read IAM role to the auditing group directly at the bucket level."
+      },
+      "answer": "D",
+      "justification": "Google Cloud recommends using IAM roles over ACLs for most access control requirements because IAM roles are simpler, inherit permissions reliably (project to bucket to object), and enforce the principle of least privilege. Applying object ACLs manually (A) creates high administrative overhead and error risk. Making the bucket public to allUsers (B) violates security and privacy policies. Granting Project Owner (C) grants broad unnecessary administrative rights across the entire project, violating least privilege."
+    },
+    {
+      "id": 15,
+      "type": "multiple_select",
+      "question": "Your engineering group is evaluating Google Cloud Spanner for an international e-commerce checkout platform. Which characteristics correctly represent Spanner's capabilities?",
+      "choices": {
+        "A": "Spanner is an eventually consistent NoSQL database that trades ACID transactions for low latency.",
+        "B": "Spanner provides strong global consistency, guaranteeing that reads return the most recent committed data worldwide.",
+        "C": "Spanner scales exclusively through vertical hardware upgrades up to a maximum of 64 TB.",
+        "D": "Spanner stores data as semi-structured JSON documents organized into collections and subcollections.",
+        "E": "Spanner supports relational features including SQL queries, relational schemas, ACID transactions, and secondary indexes."
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "justification": "Spanner is a globally distributed relational database that guarantees strong consistency across regions (B) and provides full relational features including SQL, ACID transactions, relational schemas, and secondary indexes (E). Spanner is not an eventually consistent NoSQL database (A). Spanner scales horizontally by adding nodes rather than scaling vertically with a 64 TB limit like Cloud SQL (C). Firestore uses documents and collections, not Spanner (D)."
+    },
+    {
+      "id": 16,
+      "type": "multiple_choice",
+      "question": "A development team is designing queries for a user management service on Firestore. As the user base grows from ten thousand users to ten million users, developers are concerned about potential query performance degradation. How does Firestore handle query performance as collection size increases?",
+      "choices": {
+        "A": "Query performance is proportional to the size of the result set, not the total number of documents in the collection.",
+        "B": "Query latency scales linearly with the total number of documents stored in the database.",
+        "C": "Queries perform full collection scans unless a nightly indexing job is executed.",
+        "D": "Query throughput decreases unless read replicas are manually provisioned across zones."
+      },
+      "answer": "A",
+      "justification": "Firestore indexes documents by default; consequently, query execution time depends on the size of the result set being returned, not on the total number of items in the collection. Latency does not scale with the total collection size (B). Firestore does not perform full collection table scans or require manual batch indexing jobs (C). Firestore is a serverless, horizontally scaling database that does not require manual read replica management (D)."
+    },
+    {
+      "id": 17,
+      "type": "multiple_choice",
+      "question": "Your company stores regulatory audit logs in Cloud Storage. Company compliance policy mandates that all log files must be retained for exactly seven years (2,555 days), after which they must be permanently deleted to minimize storage liability and cost. How should you automate this policy?",
+      "choices": {
+        "A": "Deploy a Cloud Scheduler job that invokes a Compute Engine VM to run gsutil rm daily.",
+        "B": "Configure an Object Lifecycle Management rule on the bucket with an age condition of 2,555 days and a Delete action.",
+        "C": "Create an Access Control List (ACL) with an expiration timestamp on each uploaded log file.",
+        "D": "Enable Autoclass on the bucket and set the deletion threshold parameter to seven years."
+      },
+      "answer": "B",
+      "justification": "Cloud Storage Object Lifecycle Management rules run automatically at the bucket level, allowing administrators to define rules such as deleting objects when their age reaches a specific number of days without ongoing manual intervention. Running scheduled VMs with deletion scripts (A) adds unnecessary infrastructure, maintenance, and failure modes. ACLs define access permissions (who can read/write) and do not enforce automated time-based object deletion (C). Autoclass transitions objects between storage classes based on access frequency, but it does not delete objects based on age (D)."
+    },
+    {
+      "id": 18,
+      "type": "multiple_choice",
+      "question": "Your enterprise is preparing to migrate an on-premises MySQL database to Cloud SQL for MySQL. To minimize application downtime during the cutover window, your database administration team wants to continuously synchronize changes from the on-premises primary database to Google Cloud prior to switching traffic. How can Cloud SQL support this strategy?",
+      "choices": {
+        "A": "By utilizing the Transfer Appliance to replicate real-time database transactions over a physical fiber link.",
+        "B": "By exporting hourly SQL dumps to Cloud Storage and importing them into Cloud Spanner.",
+        "C": "By configuring Cloud SQL replication from an external MySQL primary instance.",
+        "D": "By setting up an active-active cross-cloud Bigtable replication cluster."
+      },
+      "answer": "C",
+      "justification": "Cloud SQL supports replication from an external primary instance (such as an on-premises MySQL server), which allows teams to continuously sync database changes into Cloud SQL as a stepping stone for seamless migrations with minimal downtime. Transfer Appliance (A) is a physical offline data transport box, not an active network replication mechanism. Hourly dumps (B) do not provide continuous replication and target Spanner rather than Cloud SQL. Bigtable (D) is a NoSQL database and does not replicate MySQL relational tables."
+    },
+    {
+      "id": 19,
+      "type": "multiple_select",
+      "question": "You are creating new Cloud Storage buckets for an enterprise application. Which statements accurately describe Cloud Storage bucket naming rules and default security mechanisms?",
+      "choices": {
+        "A": "Cloud Storage bucket names are globally unique across the entire Google Cloud platform.",
+        "B": "Data stored in Cloud Storage is unencrypted by default unless Customer-Managed Encryption Keys (CMEK) are enabled.",
+        "C": "Bucket names only need to be unique within the specific Google Cloud project where they are created.",
+        "D": "Cloud Storage always encrypts customer data on the server side at rest before writing to disk, at no additional charge.",
+        "E": "Network traffic between clients and Cloud Storage traverses unencrypted unless an IPSec VPN is established."
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "justification": "Cloud Storage bucket names exist in a global namespace and must be globally unique across all Google Cloud customers (A), and Cloud Storage always automatically encrypts customer data on the server side at rest at no extra charge (D). Bucket names are globally unique, not project-scoped (C). Cloud Storage encrypts all data at rest by default without requiring CMEK (B). Traffic in transit between client devices and Google Cloud is encrypted by default using HTTPS/TLS (E)."
+    },
+    {
+      "id": 20,
+      "type": "multiple_select",
+      "question": "You are designing a big data processing pipeline on Google Cloud that integrates with an existing open-source big data ecosystem. You plan to use Cloud Bigtable as the primary storage layer. Which integration and connectivity options are supported by Bigtable?",
+      "choices": {
+        "A": "Bigtable supports full ANSI SQL queries natively through standard JDBC and ODBC drivers.",
+        "B": "Bigtable directly exposes a native MongoDB wire protocol for document storage.",
+        "C": "Bigtable provides an HBase-compatible API, allowing existing Hadoop and HBase workloads to migrate with minimal code changes.",
+        "D": "Bigtable instances automatically synchronize data to mobile devices via offline client SDKs.",
+        "E": "Bigtable integrates natively with streaming and batch processing frameworks such as Dataflow and Apache Spark."
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "justification": "Bigtable exposes an HBase-compatible API that simplifies migration for workloads built on the Hadoop and HBase ecosystems (C), and it integrates natively with data processing frameworks including Dataflow Streaming, Apache Spark, and Hadoop MapReduce (E). Bigtable does not support SQL queries or standard JDBC/ODBC drivers (A). Bigtable is a wide-column NoSQL store and does not support the MongoDB wire protocol (B). Mobile offline synchronization is a feature of Firestore, not Bigtable (D)."
+    }
+  ]
+}

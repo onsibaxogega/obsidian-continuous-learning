@@ -58,15 +58,15 @@
 - [x] firestore
 - [x] bigtable
 - [x] comparing storage options
-- [ ] **lab**: Google Cloud fundamentals: getting started with cloud storage and cloud SQL
-- [ ] **quiz**
+- [x] **lab**: Google Cloud fundamentals: getting started with cloud storage and cloud SQL
+- [x] **quiz**
 
 ## Containers in the Cloud
 
-- [ ] introduction to containers
-- [ ] kubernetes
-- [ ] Google Kubernetes Engine
-- [ ] **quiz**
+- [x] introduction to containers
+- [x] kubernetes
+- [x] Google Kubernetes Engine
+- [x] **quiz**
 
 ## Applications in the Cloud
 
