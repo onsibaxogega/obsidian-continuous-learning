@@ -135,30 +135,7 @@
     },
     "cloud_certifications/GCP": {
       "children": [
-        "cloud_certifications/GCP/Overview.md",
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer",
         "cloud_certifications/GCP/Path - Professional Cloud Developer"
-      ],
-      "sortOrder": "custom"
-    },
-    "cloud_certifications/GCP/Path - Associate Cloud Engineer": {
-      "children": [
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Overview.md",
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine"
-      ],
-      "sortOrder": "custom"
-    },
-    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine": {
-      "children": [
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Overview.md",
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation"
-      ],
-      "sortOrder": "custom"
-    },
-    "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation": {
-      "children": [
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation/Course Contents.md",
-        "cloud_certifications/GCP/Path - Associate Cloud Engineer/Course Series I - Architecting with Google Compute Engine/Course 1 - Essential Google Cloud Infrastructure - Foundation/Introduction.md"
       ],
       "sortOrder": "custom"
     },
@@ -166,6 +143,7 @@
       "children": [
         "cloud_certifications/GCP/Path - Professional Cloud Developer/Overview.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/Study guide.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/Contents.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure"
       ],
       "sortOrder": "custom"
@@ -179,8 +157,7 @@
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Prompt Engineering.md"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications"
       ],
       "sortOrder": "custom"
     },
@@ -188,7 +165,10 @@
       "children": [
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/gcp_resource_hierarchy.png",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/iam_principal_role_permission_relationship.png",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/vpc_global_subnet_layout.png"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/vpc_global_subnet_layout.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/gcp_storage_decision_flow.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/cloud_storage_integration_map.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/_attachments/bigtable_data_flow.png"
       ],
       "sortOrder": "custom"
     },
@@ -223,7 +203,17 @@
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage": {
-      "children": [],
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Google Cloud storage options.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Cloud Storage.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Cloud Storage - Storage classes and data transfer.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Cloud SQL.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Spanner.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Firestore.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Bigtable.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Comparing storage options.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage/Lab summary.md"
+      ],
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks": {
@@ -235,7 +225,7 @@
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Cloud Load Balancing.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Cloud DNS and Cloud CDN.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Connecting networks to Google VPC.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Lab Summary.md"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Lab summary.md"
       ],
       "sortOrder": "custom"
     },
@@ -298,7 +288,14 @@
     },
     "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure": {
       "children": [
-        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/01_introduction_thru_cloud-identity.json"
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks/02_ge.json",
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks/01_qk.json"
       ],
       "sortOrder": "custom"
     },
@@ -316,7 +313,13 @@
     },
     "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure": {
       "children": [
-        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/01_introduction_thru_cloud-identity_result_2026-10-16T151802.jsonl"
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks/01_qk_result_2026-10-18T212934.jsonl"
       ],
       "sortOrder": "custom"
     },

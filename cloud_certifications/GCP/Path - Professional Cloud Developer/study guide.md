@@ -13,7 +13,7 @@ A Professional Cloud Developer builds and configures scalable, secure applicatio
 - [ ] understanding the use cases for load balancers
 - [ ] enabling session affinity for performant content delivery
 - [ ] implementing caching solutions (e.g., Memorystore)
-- [ ] creating and deploying APIs (e.g., HTTP REST, gRPC [Remote Procedure Call])
+- [ ] creating and deploying APIs (e.g., HTTP REST, gRPC)
 - [ ] using application rate limiting, authentication, and observability (e.g., Apigee, Cloud API Gateway)
 - [ ] integrating applications using asynchronous or event-driven approaches (e.g., Eventarc, Pub/Sub)
 - [ ] defining resource requirements for workloads
