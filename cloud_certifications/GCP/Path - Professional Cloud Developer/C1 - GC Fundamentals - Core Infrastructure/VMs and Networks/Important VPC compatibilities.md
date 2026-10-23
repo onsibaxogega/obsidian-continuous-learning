@@ -34,7 +34,7 @@
 
 - **Definition:** VPCs provide a `global distributed firewall` that can be controlled to restrict access to instances through both `incoming and outgoing traffic` #firewall_rules
 - **No Provisioning Needed:** like routing tables, you don't have to `provision or manage` the firewall infrastructure
-- **Network Tags:** firewall rules can be defined through `network tags` on [[Compute Engine]] instances — this is the key convenience feature
+- **Network Tags:** firewall rules can be defined through `network tags` on [[cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Compute Engine]] instances — this is the key convenience feature
 
 ### Example: Tag-Based Firewall Rules
 

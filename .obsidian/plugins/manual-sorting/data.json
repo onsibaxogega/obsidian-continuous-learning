@@ -144,7 +144,9 @@
         "cloud_certifications/GCP/Path - Professional Cloud Developer/Overview.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/Study guide.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/Contents.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud"
       ],
       "sortOrder": "custom"
     },
@@ -157,7 +159,8 @@
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Storage",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Prompt engineering.md"
       ],
       "sortOrder": "custom"
     },
@@ -173,7 +176,11 @@
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications": {
-      "children": [],
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications/Cloud Run.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications/Development in the cloud.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications/Lab summary.md"
+      ],
       "sortOrder": "custom"
     },
     "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Containers": {
@@ -202,7 +209,8 @@
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Identity and Access Management (IAM).md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Service accounts.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Cloud Identity.md",
-        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Interacting with Google Cloud.md"
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Interacting with Google Cloud.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Resources and Access/Lab summary.md"
       ],
       "sortOrder": "custom"
     },
@@ -230,6 +238,159 @@
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Cloud DNS and Cloud CDN.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Connecting networks to Google VPC.md",
         "cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Lab summary.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Course introduction.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Best practices for cloud application development",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Data storage options",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Adding intelligence to your application",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Deploying applications",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/cloud_apis.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/gcloud_storage_services_suite.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/example_multi-db_archt.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/gcp_authentication_decision_tree.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/adc_credential_search_flow.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/software_supply_chain_security.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/_attachments/compute_options_level_of_control.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Adding intelligence to your application": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Adding intelligence to your application/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Adding intelligence to your application/Using pre-trained machine learning models.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Adding intelligence to your application/Intro to generative AI.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Adding intelligence to your application/Lab summary.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Best practices for cloud application development": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Best practices for cloud application development/Part 1.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Best practices for cloud application development/Part 2.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application/Compute Engine.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application/Google Kubernetes Engine.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application/Cloud Run.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Compute options for your application/Comparisons.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Data storage options": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Data storage options/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Data storage options/Cloud Storage and databases.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Data storage options/BigQuery - Memorystore - and product comparisons.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Data storage options/Lab summary.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Deploying applications": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Deploying applications/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Deploying applications/Continuous integration and delivery.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Deploying applications/Containers and building application images.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development/Cloud APIs and the Google Cloud SDK.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development/The Google Cloud CLI.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development/Cloud Client Libraries.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Getting started with Google Cloud development/Cloud Shell and Cloud Code.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization/Authorization with IAM.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization/Authenticating to Google APIs and service accounts.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization/Choosing an authentication method.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization/Other authentication and authorization methods.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Handling authentication and authorization/Using Secret Manager.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning/Google Cloud Observability.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning/Logging and metrics.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning/Error Reporting.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning/Managing performance.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C2 - Developing Applications with Google Cloud - Foundations/Monitoring and performance tuning/Lab summary.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Course introduction.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Introduction to Microservices",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Event-Driven Applications",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/event_driven_architecture.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/pubsub_usage.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/image_resize_example_pubsub.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/eventarc_usage.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/cloudevents.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/workflows_usage.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/product_order_example_workflow.png",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/_attachments/chorgh_orcht_lab.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Overview.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Coordinating microservices.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Choreography in Google Cloud.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Orchestration in Google Cloud.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Should I use choreography or orchestration.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Cloud Tasks.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Cloud Scheduler.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Choreography and Orchestration/Lab summary.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Event-Driven Applications": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Event-Driven Applications/Event-driven architecture.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Event-Driven Applications/Benefits of event-driven applications.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Introduction to Microservices": {
+      "children": [
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Introduction to Microservices/What are microservices.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Introduction to Microservices/Benefits of microservices architectures.md",
+        "cloud_certifications/GCP/Path - Professional Cloud Developer/C3 - Service Orchestration and Choreography on Google Cloud/Introduction to Microservices/Challenges of microservices architectures.md"
       ],
       "sortOrder": "custom"
     },
@@ -286,14 +447,22 @@
     },
     "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev": {
       "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c2_developing_with_gcp",
         "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure"
       ],
       "sortOrder": "custom"
     },
     "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure": {
       "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/containers",
         "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/storage",
         "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/containers": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c1_core_infrastructure/containers/01_ge.json"
       ],
       "sortOrder": "custom"
     },
@@ -310,6 +479,18 @@
       ],
       "sortOrder": "custom"
     },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c2_developing_with_gcp": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices": {
+      "children": [
+        "mini_web_apps/quizzer/_quizzes/gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices/01_ge.json"
+      ],
+      "sortOrder": "custom"
+    },
     "mini_web_apps/quizzer/_results": {
       "children": [
         "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev"
@@ -318,14 +499,22 @@
     },
     "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev": {
       "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c2_developing_with_gcp",
         "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure"
       ],
       "sortOrder": "custom"
     },
     "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure": {
       "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/containers",
         "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/storage",
         "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/containers": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/containers/01_ge_result_2026-10-19T192507.jsonl"
       ],
       "sortOrder": "custom"
     },
@@ -338,6 +527,18 @@
     "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks": {
       "children": [
         "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c1_core_infrastructure/vms_and_networks/01_qk_result_2026-10-18T212934.jsonl"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c2_developing_with_gcp": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices"
+      ],
+      "sortOrder": "custom"
+    },
+    "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices": {
+      "children": [
+        "mini_web_apps/quizzer/_results/gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices/01_ge_result_2026-10-20T122506.jsonl"
       ],
       "sortOrder": "custom"
     },

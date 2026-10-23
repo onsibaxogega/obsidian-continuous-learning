@@ -61,7 +61,7 @@
 
 > Consider a VPC network named `vpc1` with two subnets defined in the `asia-east1` and `us-east1` regions.
 
-- **Setup:** `vpc1` has three [[Compute Engine]] VMs attached to it
+- **Setup:** `vpc1` has three [[cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Compute Engine]] VMs attached to it
 - **Behavior:** the VMs are `neighbors on the same subnet` even though they're in `different zones`
 - **Takeaway:** this demonstrates how Google Cloud's global VPC model lets you distribute resources across zones (and regions) while keeping them logically connected on the same network
 

@@ -7,7 +7,7 @@
 
 ## 1. Core Concept
 
-> `Autoscaling` in [[Compute Engine]] allows VMs to be `automatically added to or subtracted from` an application based on `load metrics`. Combined with `load balancing`, this forms the foundation of elastic, resilient infrastructure on Google Cloud. #Autoscaling
+> `Autoscaling` in [[cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Compute Engine]] allows VMs to be `automatically added to or subtracted from` an application based on `load metrics`. Combined with `load balancing`, this forms the foundation of elastic, resilient infrastructure on Google Cloud. #Autoscaling
 
 - **Scaling Out vs. Scaling Up:** most Google Cloud customers start with `scaling out (horizontal)`, not `scaling up (vertical)` — even though Compute Engine supports very large VM configurations
 - **Two-Part System:**
@@ -26,7 +26,7 @@
 
 ## 2. Autoscaling
 
-- **Definition:** a [[Compute Engine]] feature that automatically adds or removes VMs from a `managed instance group` based on load metrics #Autoscaling
+- **Definition:** a [[cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/VMs and Networks/Compute Engine]] feature that automatically adds or removes VMs from a `managed instance group` based on load metrics #Autoscaling
 - **Load Metrics:** scaling decisions are driven by metrics such as `CPU utilization`, `HTTP load balancing serving capacity`, or `custom Cloud Monitoring metrics`
 - **Scale Out (Horizontal):** add more VM instances to handle increased load — the preferred approach for most workloads
 - **Scale In:** remove VM instances when demand drops, reducing cost
@@ -66,4 +66,4 @@
 - **set appropriate cooldown periods:** avoid flapping (rapid scale-in and scale-out cycles) by configuring `stabilization windows` on your autoscaler
 - **use custom metrics for smarter scaling:** CPU utilization is the default, but `custom Cloud Monitoring metrics` (e.g., queue depth, request latency) can trigger scaling decisions that better match your application's actual behavior
 - **check your quotas:** the maximum vCPUs per VM is `zone-dependent` — if you need large VMs, verify your quota in the target zone before deploying
-- **combine with [[Cloud Run]] for serverless:** for workloads already on Cloud Run, autoscaling is fully managed — consider Compute Engine autoscaling only when you need `VM-level control` that Cloud Run doesn't offer
+- **combine with [[cloud_certifications/GCP/Path - Professional Cloud Developer/C1 - GC Fundamentals - Core Infrastructure/Applications/Cloud Run]] for serverless:** for workloads already on Cloud Run, autoscaling is fully managed — consider Compute Engine autoscaling only when you need `VM-level control` that Cloud Run doesn't offer

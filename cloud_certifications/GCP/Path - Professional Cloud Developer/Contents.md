@@ -1,10 +1,11 @@
+# Overview
 
 |     | **...** | **course**                                                           | **duration** | **module count** | **lab count** | **completion timeframe** |
 | --- | ------- | -------------------------------------------------------------------- | ------------ | ---------------- | ------------- | ------------------------ |
-| 1   | 🕒      | ⭐ Google Cloud Fundamentals: Core Infrastructure                     | 5h           | 7                | 4             | 10/16/26 - 10/19/26      |
-| 2   |         | Developing Applications with Google Cloud: Foundations               | 6h 45m       | 8                | 3             |                          |
-| 3   |         | Service Orchestration and Choreography on Google Cloud               | 4h           | 3                | 1             |                          |
-| 4   |         | Developing Applications with Cloud Run Functions on Google Cloud     | 7h 15m       | 5                | 3             |                          |
+| 1   | ✅🔬     | ⭐ Google Cloud Fundamentals: Core Infrastructure                     | 5h           | 7                | 4             | 10/16/26 - 10/19/26      |
+| 2   | ✅🔬     | Developing Applications with Google Cloud: Foundations               | 6h 45m       | 8                | 3             | 10/20/26-10/22/26        |
+| 3   | ✅🔬     | Service Orchestration and Choreography on Google Cloud               | 4h           | 3                | 1             | 10/22/26-10/22/26        |
+| 4   | 🕒      | Developing Applications with Cloud Run Functions on Google Cloud     | 7h 15m       | 5                | 3             | 10/23/26-10/23/26        |
 | 5   |         | Developing Containerized Applications on Google Cloud                | 5h           | 2                | 3             |                          |
 | 6   |         | Developing Applications with Cloud Run on Google Cloud: Fundamentals | 8h           | 3                | 2             |                          |
 | 7   |         | Integrate Applications with Gemini on Google Cloud                   | 1h 45m       | 1                | 1             |                          |
@@ -12,6 +13,17 @@
 | 9   |         | ⭐ Develop Serverless Applications on Cloud Run                       | 1h 15m       | 1                | 5             |                          |
 | 10  |         | ⭐ Develop and Secure APIs with Apigee X                              | 45m          | 1                | 6             |                          |
 |     |         | **Total**                                                            | **41h 30m**  | **32**           | **32**        | 🎯*10/16/26 - 10/24/26*  |
+
+### Progress(...) legend
+
+| 🕒  | course in-progress       |
+| --- | ------------------------ |
+| ✅🔬 | all but lab(s) completed |
+| ✅   | course fully completed   |
+
+
+
+---
 
 # Course 1 - Google Cloud Fundamentals: Core Infrastructure
 
@@ -70,15 +82,15 @@
 
 ## Applications in the Cloud
 
-- [ ] cloud run
-- [ ] development in the cloud
+- [x] cloud run
+- [x] development in the cloud
 - [ ] **lab**: hello cloud run
-- [ ] **quiz**
+- [x] **quiz**
 
 ## Prompt Engineering
 
-- [ ] prompt engineering
-- [ ] **quiz**
+- [x] prompt engineering
+- [x] **quiz**
 ---
 
 
@@ -87,80 +99,80 @@
 
 ## Best Practices for Cloud Application Development
 
-- [ ] best practices for cloud application development (1)
-- [ ] best practices for cloud application development (2)
-- [ ] **quiz**: best practices for cloud application development
+- [x] best practices for cloud application development (1)
+- [x] best practices for cloud application development (2)
+- [x] **quiz**: best practices for cloud application development
 
 ## Getting Started with Google Cloud Development
 
-- [ ] overview
-- [ ] cloud APIs and the Google Cloud SDK
-- [ ] the Google Cloud CLI
-- [ ] cloud client libraries
-- [ ] cloud shell and cloud code
-- [ ] **quiz**: getting started with Google Cloud development
-- [ ] summary
+- [x] overview
+- [x] cloud APIs and the Google Cloud SDK
+- [x] the Google Cloud CLI
+- [x] cloud client libraries
+- [x] cloud shell and cloud code
+- [x] **quiz**: getting started with Google Cloud development
+- [x] summary
 
 ## Data Storage Options
 
-- [ ] overview
-- [ ] cloud storage and databases
-- [ ] BigQuery, Memorystore, and product comparisons
-- [ ] lab overview
+- [x] overview
+- [x] cloud storage and databases
+- [x] BigQuery, Memorystore, and product comparisons
+- [x] lab overview
 - [ ] **lab**: developing applications with Google Cloud: storing application data
-- [ ] **quiz**: data storage options
-- [ ] summary
+- [x] **quiz**: data storage options
+- [x] summary
 
 ## Handling Authentication and Authorization
 
-- [ ] overview
-- [ ] authorization with cloud IAM
-- [ ] authenticating to Google APIs and service accounts
-- [ ] choosing an authentication method
-- [ ] other authentication/authorization methods
-- [ ] using Secret Manager
-- [ ] **quiz**: handling authentication and authorization
-- [ ] summary
+- [x] overview
+- [x] authorization with cloud IAM
+- [x] authenticating to Google APIs and service accounts
+- [x] choosing an authentication method
+- [x] other authentication/authorization methods
+- [x] using Secret Manager
+- [x] **quiz**: handling authentication and authorization
+- [x] summary
 
 ## Adding Intelligence to Your Application
 
-- [ ] overview
-- [ ] using pre-trained machine learning models
-- [ ] intro to generative AI
-- [ ] lab overview
+- [x] overview
+- [x] using pre-trained machine learning models
+- [x] intro to generative AI
+- [x] lab overview
 - [ ] **lab**: developing applications on Google Cloud: adding user authentication and intelligence to your application
-- [ ] **quiz**: adding intelligence to your application
-- [ ] summary
+- [x] **quiz**: adding intelligence to your application
+- [x] summary
 
 ## Deploying Applications
 
-- [ ] overview
-- [ ] continuous integration and delivery
-- [ ] containers and building application images
-- [ ] **quiz**: deploying applications
-- [ ] summary
+- [x] overview
+- [x] continuous integration and delivery
+- [x] containers and building application images
+- [x] **quiz**: deploying applications
+- [x] summary
 
 ## Compute Options for Your Application
 
-- [ ] overview
-- [ ] compute engine
-- [ ] Google Kubernetes Engine
-- [ ] cloud run
-- [ ] comparisons
-- [ ] **quiz**: compute options for your application
-- [ ] summary
+- [x] overview
+- [x] compute engine
+- [x] Google Kubernetes Engine
+- [x] cloud run
+- [x] comparisons
+- [x] **quiz**: compute options for your application
+- [x] summary
 
 ## Monitoring and Performance Tuning
 
-- [ ] overview
-- [ ] Google Cloud observability
-- [ ] logging and metrics
-- [ ] error reporting
-- [ ] managing performance
-- [ ] lab overview
+- [x] overview
+- [x] Google Cloud observability
+- [x] logging and metrics
+- [x] error reporting
+- [x] managing performance
+- [x] lab overview
 - [ ] **lab**: developing applications on Google Cloud: deploying and maintaining your application
-- [ ] **quiz**: monitoring and performance tuning
-- [ ] summary
+- [x] **quiz**: monitoring and performance tuning
+- [x] summary
 
 
 ---
@@ -170,34 +182,34 @@
 
 ## Introduction to Microservices
 
-- [ ] module overview
-- [ ] what are microservices?
-- [ ] benefits of microservices architectures
-- [ ] challenges of microservices architectures
-- [ ] **quiz**: introduction to microservices
-- [ ] module summary
+- [x] module overview
+- [x] what are microservices?
+- [x] benefits of microservices architectures
+- [x] challenges of microservices architectures
+- [x] **quiz**: introduction to microservices
+- [x] module summary
 
 ## Event-Driven Applications
 
-- [ ] module overview
-- [ ] event-driven architecture
-- [ ] benefits of event-driven applications
-- [ ] **quiz**: event-driven applications
-- [ ] module summary
+- [x] module overview
+- [x] event-driven architecture
+- [x] benefits of event-driven applications
+- [x] **quiz**: event-driven applications
+- [x] module summary
 
 ## Choreography and Orchestration
 
-- [ ] module overview
-- [ ] coordinating microservices
-- [ ] choreography in Google Cloud
-- [ ] orchestration in Google Cloud
-- [ ] should I use choreography or orchestration?
-- [ ] cloud tasks
-- [ ] cloud scheduler
+- [x] module overview
+- [x] coordinating microservices
+- [x] choreography in Google Cloud
+- [x] orchestration in Google Cloud
+- [x] should I use choreography or orchestration?
+- [x] cloud tasks
+- [x] cloud scheduler
 - [ ] lab intro: building event-driven orchestration on Google Cloud
 - [ ] **lab**: building event-driven orchestration on Google Cloud
-- [ ] **quiz**: choreography and orchestration
-- [ ] module summary
+- [x] **quiz**: choreography and orchestration
+- [x] module summary
 
 
 ---

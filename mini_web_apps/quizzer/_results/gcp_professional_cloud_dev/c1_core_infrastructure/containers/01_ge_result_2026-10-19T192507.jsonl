@@ -1,0 +1,12 @@
+{"event": "start", "quiz": "gcp_professional_cloud_dev/c1_core_infrastructure/containers/01_ge", "title": "Containers, Kubernetes, and Google Kubernetes Engine", "total_questions": 10, "started_at": "2026-10-19T19:25:07-05:00", "order": [3, 8, 10, 7, 5, 2, 9, 4, 6, 1]}
+{"event": "answer", "question_id": 1, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:36-05:00"}
+{"event": "answer", "question_id": 2, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 3, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 4, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 5, "type": "multiple_select", "selected": ["B", "D"], "correct": ["B", "D"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 6, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 7, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 8, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:37-05:00"}
+{"event": "answer", "question_id": 9, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:38-05:00"}
+{"event": "answer", "question_id": 10, "type": "multiple_select", "selected": ["A", "C", "E"], "correct": ["A", "C", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-19T19:31:38-05:00"}
+{"event": "complete", "score": 10, "total": 10, "percentage": 100, "completed_at": "2026-10-19T19:31:38-05:00"}

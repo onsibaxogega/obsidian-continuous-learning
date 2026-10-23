@@ -1,0 +1,12 @@
+{"event": "start", "quiz": "gcp_professional_cloud_dev/c2_developing_with_gcp/01_best_practices/01_ge", "title": "Best Practices for Cloud Application Development", "total_questions": 10, "started_at": "2026-10-20T12:25:06-05:00", "order": [8, 5, 7, 2, 9, 3, 1, 6, 10, 4]}
+{"event": "answer", "question_id": 1, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:06-05:00"}
+{"event": "answer", "question_id": 2, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:06-05:00"}
+{"event": "answer", "question_id": 3, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:06-05:00"}
+{"event": "answer", "question_id": 4, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:07-05:00"}
+{"event": "answer", "question_id": 5, "type": "multiple_select", "selected": ["B", "D", "E"], "correct": ["B", "D"], "is_correct": false, "score": 0.5, "answered_at": "2026-10-20T12:33:07-05:00"}
+{"event": "answer", "question_id": 6, "type": "multiple_choice", "selected": "A", "correct": "A", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:07-05:00"}
+{"event": "answer", "question_id": 7, "type": "multiple_choice", "selected": "B", "correct": "B", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:07-05:00"}
+{"event": "answer", "question_id": 8, "type": "multiple_choice", "selected": "C", "correct": "C", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:07-05:00"}
+{"event": "answer", "question_id": 9, "type": "multiple_choice", "selected": "D", "correct": "D", "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:07-05:00"}
+{"event": "answer", "question_id": 10, "type": "multiple_select", "selected": ["A", "C", "E"], "correct": ["A", "C", "E"], "is_correct": true, "score": 1, "answered_at": "2026-10-20T12:33:08-05:00"}
+{"event": "complete", "score": 9.5, "total": 10, "percentage": 95, "completed_at": "2026-10-20T12:33:08-05:00"}

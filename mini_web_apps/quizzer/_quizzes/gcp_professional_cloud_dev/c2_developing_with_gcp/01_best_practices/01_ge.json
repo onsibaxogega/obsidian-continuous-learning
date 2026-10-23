@@ -1,0 +1,145 @@
+{
+  "title": "Best Practices for Cloud Application Development",
+  "description": "PCD exam preparation questions on 12-factor principles, loose coupling, statelessness, error resilience, caching, API gateways, identity, and CI/CD pipelines.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "You are developing a microservice for Cloud Run that connects to a database and external third-party APIs. Currently, database connection strings and API endpoints are hardcoded as static constants within the application code. You need to follow cloud-native best practices to ensure that the exact same compiled container image can be promoted seamlessly across development, testing, and production environments. What should you do?",
+      "choices": {
+        "A": "Extract configuration settings out of the code and pass them to the application using environment variables.",
+        "B": "Embed separate configuration property files for each environment directly inside the container image.",
+        "C": "Create distinct branches in Git for each environment and recompile the application code with environment-specific constants.",
+        "D": "Store configuration values in local flat files on the container file system and edit them manually after container startup."
+      },
+      "answer": "A",
+      "justification": "Separating configuration from source code and supplying values via environment variables allows the exact same tested container image to run across development, testing, and production environments without code modification or recompilation. Embedding environment config files in the container image (B) couples environment details into build artifacts and risks leaking credentials. Branching Git for environment constants (C) breaks the principle of testing the exact code artifact that will run in production. Editing local flat files in running containers (D) is impossible or antipattern in stateless container environments like Cloud Run, where instances are ephemeral."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "Your team maintains an order-processing microservice that invokes a customer account service via an internal HTTP REST API. The customer service response returns complete customer profiles containing dozens of fields. To ensure loose coupling and prevent breaking changes as the customer service schema evolves over time, how should the order-processing service handle API payloads?",
+      "choices": {
+        "A": "Bind strictly to the entire customer JSON schema to enforce comprehensive payload validation.",
+        "B": "Bind loosely by parsing and referencing only the specific fields necessary for order processing.",
+        "C": "Require the customer service team to publish an immutable schema definition that never adds new fields.",
+        "D": "Buffer all API payload fields in an in-memory Redis cache before passing them to the application logic."
+      },
+      "answer": "B",
+      "justification": "Loosely binding to API payloads by consuming only the fields required allows the upstream publisher service to evolve its API and introduce new fields in a backward-compatible manner without breaking downstream consumers. Binding strictly to the entire schema (A) creates tight coupling and causes downstream consumers to break whenever harmless optional fields are added upstream. Enforcing frozen schemas (C) impedes agile service evolution across business boundaries. Caching payloads in Redis (D) addresses latency or caching needs, not payload schema coupling."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "You are optimizing an e-commerce catalog application running on Cloud Run. Certain database queries that calculate complex personalized product pricing take hundreds of milliseconds, causing slow page render times under heavy traffic. You want to implement an in-memory caching tier using a fully managed Google Cloud service to return precomputed data quickly. Which service should you choose?",
+      "choices": {
+        "A": "Cloud Storage",
+        "B": "Apigee",
+        "C": "Memorystore",
+        "D": "Identity Platform"
+      },
+      "answer": "C",
+      "justification": "Memorystore is Google Cloud's fully managed, in-memory caching service supporting Redis and Memcached, designed specifically for caching frequently accessed or computationally intensive application data to achieve sub-millisecond latency. Cloud Storage (A) is an object store for unstructured files and blobs, not an in-memory key-value cache. Apigee (B) is an API management platform for proxying, security, rate limiting, and analytics. Identity Platform (C) manages user authentication and federated identity."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "A critical payment microservice on Cloud Run calls an external third-party fraud detection API. The third-party API has suffered a major datacenter outage that will take several hours to resolve. Instead of having payment service instances repeatedly exhaust their connection pools and CPU cycles retrying requests that are guaranteed to fail, what design pattern should you implement?",
+      "choices": {
+        "A": "Aggressive linear retry loops with zero delay between attempts",
+        "B": "Asynchronous event queues with infinite message retention",
+        "C": "Strangler facade routing",
+        "D": "Circuit breaker"
+      },
+      "answer": "D",
+      "justification": "When a downstream service suffers an extended outage, a circuit breaker prevents the application from repeatedly generating doomed traffic and wasting system resources by immediately failing fast or falling back gracefully once failure thresholds are tripped. Aggressive retries without delay (A) worsen resource exhaustion and can exacerbate downstream outages. Infinite queues (B) buffer messages but do not protect synchronous payment verification flows from thread pool starvation. The Strangler facade (C) is a migration pattern for incrementally replacing legacy systems, not an error resilience mechanism."
+    },
+    {
+      "id": 5,
+      "type": "multiple_select",
+      "question": "You are architecting a high-throughput transaction processing application using Cloud Run. Which architectural patterns should you adopt to achieve elastic horizontal scalability and high resilience during sudden traffic surges?",
+      "choices": {
+        "A": "Store active user session states inside local container memory to avoid database round trips.",
+        "B": "Design compute components to be stateless, externalizing persistence to services like Firestore or Cloud SQL.",
+        "C": "Deploy a single monolithic container to eliminate inter-service network serialization latency.",
+        "D": "Use Pub/Sub message queues or Eventarc triggers between services to buffer requests and decouple processing.",
+        "E": "Maintain sticky client TCP sessions to ensure all subsequent user requests route to the same container instance."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "justification": "Stateless design allows compute instances to start quickly, shut down gracefully, and scale horizontally without shared state bottlenecks by externalizing data persistence to databases like Firestore or Cloud SQL (B). Using message queues such as Pub/Sub or Eventarc achieves loose runtime coupling, allowing asynchronous execution and buffering sudden spikes in traffic (D). Storing session state in local container memory (A) or using sticky sessions (E) inhibits horizontal autoscaling because container instances cannot be dynamically added, replaced, or terminated without losing session state. Monolithic containers (C) lead to bloated codebases with tangled dependencies, hindering independent scaling."
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "Your enterprise organization has several mission-critical legacy on-premises applications that communicate over disparate legacy protocols and cannot currently be refactored or migrated to the cloud. You need to expose their core functionality to modern web and mobile clients while providing standardized security, rate limiting, quota enforcement, and usage analytics. Which solution should you implement?",
+      "choices": {
+        "A": "Implement Apigee as an API gateway facade in front of the legacy backend services.",
+        "B": "Rebuild the legacy applications as Cloud Run functions before exposing them to clients.",
+        "C": "Configure Cloud CDN to cache TCP socket requests originating from the legacy services.",
+        "D": "Deploy an Identity Platform proxy to rewrite legacy protocols at the transport layer."
+      },
+      "answer": "A",
+      "justification": "Apigee serves as an enterprise API management platform that acts as a proxy and facade in front of backend services, allowing organizations to modernize legacy systems by exposing standardized modern APIs with security, rate limiting, quotas, and analytics without rewriting legacy backends. Rebuilding the applications (B) contradicts the constraint that the legacy systems cannot currently be refactored or migrated. Cloud CDN (C) caches web content (HTTP/HTTPS) at edge locations and does not proxy or translate arbitrary TCP socket protocols. Identity Platform (D) provides authentication services, not API protocol abstraction."
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "You are standardizing application logging practices across several microservices running in containerized environments like Cloud Run. Developers currently configure application logging libraries to write and rotate local log files within the container filesystem. According to cloud application development best practices, how should application logging be handled?",
+      "choices": {
+        "A": "Maintain local rotating log files on persistent disks attached to each container instance.",
+        "B": "Treat logs as a continuous event stream by writing to standard out (stdout) and allowing the platform to collate events.",
+        "C": "Batch log entries in local SQLite databases and upload them periodically to Cloud Storage via cron jobs.",
+        "D": "Disable application logging entirely to preserve CPU cycles, relying only on network packet captures."
+      },
+      "answer": "B",
+      "justification": "Cloud-native best practices dictate treating logs as a continuous stream of events by writing structured logs directly to standard out (stdout) or standard error (stderr), allowing the underlying cloud platform (such as Cloud Logging) to ingest, collate, and analyze them automatically. Managing local log files (A, C) violates stateless container design, consumes container disk space, and risks data loss when ephemeral containers terminate. Disabling logging (D) eliminates visibility into application health, error reporting, and request tracing."
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "You are tasked with migrating a massive, business-critical monolithic legacy application to Google Cloud. A complete cutover (big-bang migration) carries unacceptable business risk. You want to incrementally replace specific legacy features with new microservices on Cloud Run, routing traffic through an intermediary facade until the legacy monolith is entirely phased out. Which architectural pattern describes this approach?",
+      "choices": {
+        "A": "Circuit breaker pattern",
+        "B": "Worker pattern",
+        "C": "Strangler pattern",
+        "D": "Blue/green pattern"
+      },
+      "answer": "C",
+      "justification": "The Strangler pattern involves placing a facade in front of a legacy application, incrementally replacing individual components with modern services, and routing traffic to the new services until the legacy system is completely superseded and retired. The circuit breaker pattern (A) prevents cascading failures during downstream outages. The worker pattern (B) involves stateless compute instances pulling work from queues. Blue/green (D) is a release deployment strategy using two identical production environments, not an incremental application migration architecture."
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "Your DevOps team uses Cloud Build, Artifact Registry, and Cloud Deploy to automate their release pipeline. Currently, after automated unit and integration tests pass, deployment artifacts are staged, and an operations lead must manually approve the release before it deploys to production. Management wants to transition to Continuous Deployment. What change characterizes Continuous Deployment compared to Continuous Delivery?",
+      "choices": {
+        "A": "Developers commit directly to the production branch without code review or testing.",
+        "B": "Build artifacts are deployed to staging environments without running automated tests.",
+        "C": "Unit tests are replaced with manual end-to-end user acceptance validation.",
+        "D": "Validated code changes are deployed to production automatically without manual approval, gated only by test results."
+      },
+      "answer": "D",
+      "justification": "Continuous Deployment takes Continuous Delivery a step further by automatically deploying every change that passes the automated CI/CD test gates directly to production without any manual approval intervention. Direct unreviewed commits (A) and skipping automated tests (B) undermine software quality and security. Replacing unit tests with manual validation (C) is the exact opposite of automated continuous deployment."
+    },
+    {
+      "id": 10,
+      "type": "multiple_select",
+      "question": "You are defining deployment safety mechanisms and user authentication standards for a new suite of cloud applications. Which statements align with Google Cloud application development best practices?",
+      "choices": {
+        "A": "Canary testing rolls out new releases to a small percentage of users first, minimizing the blast radius of unexpected issues.",
+        "B": "Applications should build proprietary authentication systems rather than delegating identity to external providers.",
+        "C": "Blue/green deployments maintain two identical production environments and switch traffic between them once validated.",
+        "D": "All third-party package dependencies should be committed directly to Git repositories alongside application source code.",
+        "E": "Identity Platform provides a customizable authentication service supporting federated providers, SAML, OIDC, and multi-factor authentication."
+      },
+      "answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "justification": "Canary testing limits risk by exposing new builds to a subset of users before widespread rollout (A); blue/green deployments utilize two identical environments to switch traffic seamlessly after validation (C); and Identity Platform provides managed, federated authentication supporting SAML, OIDC, and MFA without building proprietary auth engines (E). Building proprietary authentication systems (B) increases operational burden and security risks compared to delegated identity management. Committing third-party package dependencies to source control (D) bloats repositories; dependencies should be declared explicitly in files like package.json and installed via package managers."
+    }
+  ]
+}

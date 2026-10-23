@@ -1,0 +1,145 @@
+{
+  "title": "Containers, Kubernetes, and Google Kubernetes Engine",
+  "description": "Practice questions covering container architecture, Kubernetes Pods, Deployments, Services, and Google Kubernetes Engine Autopilot and Standard modes.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "Your engineering team is migrating a monolithic application running on Compute Engine virtual machines to a microservices architecture. Developers express concern about startup latency and resource overhead during horizontal scaling events. How does the architectural execution model of containers differ from traditional virtual machines?",
+      "choices": {
+        "A": "Containers virtualize the operating system kernel and start in seconds as processes, whereas virtual machines virtualize the hardware and require booting a full guest OS.",
+        "B": "Containers virtualize physical server hardware components, whereas virtual machines share a single operating system kernel.",
+        "C": "Containers require a dedicated hypervisor and virtual hardware emulation for each running application component.",
+        "D": "Containers bundle a full multi-gigabyte guest operating system kernel to ensure complete hardware-level isolation."
+      },
+      "answer": "A",
+      "justification": "Containers virtualize the operating system rather than the underlying hardware; they only require a few system calls to launch and start as quickly as a process (in seconds), without the multi-gigabyte footprint or boot latency of a guest OS. Virtual machines virtualize hardware, not containers (B). Hypervisors and virtual hardware emulation are components of virtual machine architectures, not containers (C). Containers share the host OS kernel and do not bundle full guest OS kernels (D)."
+    },
+    {
+      "id": 2,
+      "type": "multiple_choice",
+      "question": "Your company is deploying containerized workloads to Google Kubernetes Engine (GKE). Management wants to reduce operational overhead by having Google manage node configuration, autoscaling, auto-upgrades, and security baselines automatically, while also optimizing costs by paying only for Pod resources requested rather than unallocated node capacity. Which GKE mode should you recommend?",
+      "choices": {
+        "A": "GKE Standard mode with custom node pools",
+        "B": "GKE Autopilot mode",
+        "C": "Compute Engine with containerized startup scripts",
+        "D": "GKE Standard mode with node auto-repair enabled"
+      },
+      "answer": "B",
+      "justification": "GKE Autopilot is Google Cloud's recommended mode where Google manages the underlying node infrastructure, autoscaling, security baselines, and upgrades, and customers pay only for Pod resources requested rather than full VM nodes. GKE Standard mode (A, D) requires teams to configure, manage, and scale the underlying nodes, and charges for full VM nodes regardless of resource utilization. Compute Engine with startup scripts (C) is an unmanaged IaaS approach requiring full VM maintenance."
+    },
+    {
+      "id": 3,
+      "type": "multiple_choice",
+      "question": "You have deployed a multi-tier web application on GKE consisting of frontend Pods and backend Pods managed by Deployments. During autoscaling and rolling updates, backend Pods are frequently created and destroyed, causing their IP addresses to change constantly. You need to ensure frontend Pods can reliably communicate with the backend tier without tracking individual Pod IP addresses. What should you configure?",
+      "choices": {
+        "A": "A DaemonSet to pin backend Pods to static node IP addresses",
+        "B": "A stateful static IP reservation on each backend Pod network interface",
+        "C": "A Kubernetes Service to provide a stable IP address and load balance traffic to the backend Pods",
+        "D": "An external passthrough Network Load Balancer attached directly to each backend Pod"
+      },
+      "answer": "C",
+      "justification": "A Kubernetes Service provides a stable endpoint (fixed virtual IP address) that load balances traffic across a dynamic set of Pods, enabling service discovery and decoupling consumers from changing Pod IPs. DaemonSets (A) run a copy of a Pod on every node rather than providing stable service discovery endpoints. Kubernetes Pods receive ephemeral IP addresses that cannot be statically reserved across restarts (B). External passthrough load balancers (D) are not attached directly to individual ephemeral Pods, but rather front Kubernetes Services for external traffic ingress."
+    },
+    {
+      "id": 4,
+      "type": "multiple_choice",
+      "question": "You are configuring a continuous deployment pipeline for a mission-critical service running on GKE. The application must experience zero downtime during version updates, and the cluster must never terminate an existing Pod before a new version Pod is fully initialized, healthy, and available to receive traffic. Which rolling update strategy configuration in the Deployment manifest achieves this requirement?",
+      "choices": {
+        "A": "Set maxSurge to 0 and maxUnavailable to 1",
+        "B": "Set type to Recreate in the deployment strategy specification",
+        "C": "Set maxSurge to 0 and maxUnavailable to 0",
+        "D": "Set maxSurge to 1 and maxUnavailable to 0"
+      },
+      "answer": "D",
+      "justification": "In a Kubernetes Deployment rolling update strategy, setting maxSurge to 1 and maxUnavailable to 0 guarantees that a new Pod replica is created and confirmed healthy before any old Pod replica is destroyed, ensuring zero downtime and maintaining full serving capacity throughout the rollout. Setting maxUnavailable to 1 (A) allows an existing Pod to be taken down before a replacement is ready, reducing serving capacity. The Recreate strategy (B) terminates all existing Pods before creating new ones, causing immediate downtime. Setting both maxSurge and maxUnavailable to 0 (C) is an invalid Kubernetes configuration because no progress could ever occur."
+    },
+    {
+      "id": 5,
+      "type": "multiple_select",
+      "question": "You are designing containerized workloads to run on Google Kubernetes Engine. Which statements accurately describe the architecture and best practices for Kubernetes Pods?",
+      "choices": {
+        "A": "A Pod can only contain a single container and cannot support multi-container architectures.",
+        "B": "A Pod is the smallest deployable unit in Kubernetes and represents a running process on the cluster.",
+        "C": "All containers running within different Pods automatically share the same local localhost networking loopback.",
+        "D": "The standard pattern is one container per Pod unless containers have a tight coupling requiring shared storage and networking.",
+        "E": "Pods remain permanently bound to their original node and automatically restart on that same node if the node suffers hardware failure."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "justification": "A Pod is the smallest deployable unit in Kubernetes that wraps one or more containers (B), and the recommended best practice is one container per Pod unless there is a hard dependency (such as a logging sidecar) requiring shared storage and network namespaces (D). Pods can contain multiple containers (A). Containers only share localhost networking if they reside within the exact same Pod, not across different Pods (C). If a node fails, the Kubernetes control plane or Deployment controller schedules replacement Pods onto healthy nodes rather than keeping them tied to failed hardware (E)."
+    },
+    {
+      "id": 6,
+      "type": "multiple_choice",
+      "question": "Your DevOps engineering team wants to transition from ad-hoc manual command-line deployments to a production-ready Infrastructure as Code (IaC) deployment model using Git version control and Cloud Build CI/CD pipelines. Which Kubernetes management approach should your team adopt?",
+      "choices": {
+        "A": "Declarative management using version-controlled YAML configuration files applied via kubectl apply -f",
+        "B": "Imperative management using sequential shell scripts executing kubectl run and kubectl scale commands",
+        "C": "Ad-hoc cluster mutation by running interactive debugging shells directly inside worker nodes",
+        "D": "Manual container execution on individual Compute Engine instances using the local container runtime CLI"
+      },
+      "answer": "A",
+      "justification": "Declarative management allows teams to define their desired state in version-controlled YAML configuration files and apply them using kubectl apply -f, making deployments reproducible, auditable, and automated within CI/CD pipelines. Imperative commands (B) are useful for temporary experimentation and debugging, but they lack reproducibility and version tracking for production pipelines. Interactive node mutation (C) and manual container runtime execution on individual VMs (D) bypass Kubernetes orchestration and declarative state management entirely."
+    },
+    {
+      "id": 7,
+      "type": "multiple_choice",
+      "question": "You are managing a GKE cluster that hosts both CPU-intensive front-end microservices and GPU-accelerated machine learning model training workloads. In GKE Standard mode, what cluster feature allows you to run workloads with different machine types, CPU architectures, or hardware accelerators within the same GKE cluster?",
+      "choices": {
+        "A": "Cluster Autoscaler profiles",
+        "B": "Node pools",
+        "C": "Kubernetes Service selectors",
+        "D": "Pod Disruption Budgets"
+      },
+      "answer": "B",
+      "justification": "Node pools are subsets of node instances within a GKE cluster that share the same configuration (such as machine type or GPU accelerators); using multiple node pools allows a single cluster to host heterogeneous workloads with distinct hardware requirements. Autoscaler profiles (A) adjust the scaling aggressiveness of the cluster autoscaler but do not create heterogeneous hardware groupings. Service selectors (C) route network traffic to matching Pods based on labels. Pod Disruption Budgets (D) define limits on the number of concurrent voluntary Pod disruptions during maintenance."
+    },
+    {
+      "id": 8,
+      "type": "multiple_choice",
+      "question": "Your operations team is evaluating whether to run self-managed Kubernetes on Compute Engine VMs or migrate to Google Kubernetes Engine (GKE). Which built-in operational feature is provided automatically by GKE to detect and remediate unhealthy nodes without administrator intervention?",
+      "choices": {
+        "A": "VPC Flow Logs",
+        "B": "Cloud Run container health probes",
+        "C": "Node auto-repair",
+        "D": "Cloud Trace latency sampling"
+      },
+      "answer": "C",
+      "justification": "GKE includes a node auto-repair feature that automatically monitors node health checks; if a node fails health checks consistently, GKE drains and recreates the node to restore cluster health without manual administrator intervention. VPC Flow Logs (A) records network traffic samples for analysis and auditing. Cloud Run health probes (B) monitor serverless container instances on Cloud Run, not GKE nodes. Cloud Trace (D) samples distributed application request latency."
+    },
+    {
+      "id": 9,
+      "type": "multiple_choice",
+      "question": "You need to provision a new production-ready GKE Autopilot cluster named web-cluster in the us-central1 region using the Google Cloud CLI. Which command should you execute?",
+      "choices": {
+        "A": "gcloud container clusters create web-cluster --region us-central1",
+        "B": "gcloud compute instances create web-cluster --zone us-central1-a",
+        "C": "gcloud run deploy web-cluster --region us-central1",
+        "D": "gcloud container clusters create-auto web-cluster --region us-central1"
+      },
+      "answer": "D",
+      "justification": "The gcloud container clusters create-auto command is specifically used to create GKE Autopilot clusters where Google manages the underlying nodes and security baselines. The gcloud container clusters create command without create-auto (A) creates a GKE Standard cluster where the user manages node configurations. The gcloud compute instances create command (B) provisions an individual Compute Engine virtual machine. The gcloud run deploy command (C) deploys a container to Cloud Run."
+    },
+    {
+      "id": 10,
+      "type": "multiple_select",
+      "question": "You are managing deployment rollouts and health operations for containerized applications on GKE. Which statements accurately describe Kubernetes Deployment and rollback operations?",
+      "choices": {
+        "A": "A Deployment keeps Pods running even if the physical nodes they are scheduled on experience hardware failure.",
+        "B": "A failed rollout requires deleting the cluster and recreating it from scratch using declarative templates.",
+        "C": "The kubectl rollout status command allows engineers to track the progress of an ongoing Deployment update.",
+        "D": "Kubernetes Deployments can only scale Pod replica counts manually using the kubectl scale command.",
+        "E": "The kubectl rollout undo command can be executed to quickly revert a Deployment to its previous stable revision."
+      },
+      "answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "justification": "A Deployment ensures that the desired number of Pod replicas remain running across node failures by rescheduling Pods onto healthy nodes (A), kubectl rollout status monitors the progress of an active rollout (C), and kubectl rollout undo rolls back a failed or problematic Deployment to its previous stable revision (E). Rolling back does not require cluster deletion (B). Deployments support autoscaling based on metrics like CPU utilization using kubectl autoscale or declarative autoscaler manifests, not just manual scaling (D)."
+    }
+  ]
+}
